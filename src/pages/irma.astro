@@ -1,0 +1,205 @@
+---
+import Base from '../layouts/Base.astro';
+import CTA from '../components/CTA.astro';
+
+const title = 'Meet Irma — The Managed Agent That Runs Our Firm | Savoi.ai';
+const description = 'Irma is the managed agent that runs our own operations. Finance, pipeline, content, and reporting, around the clock on a machine in our office. She is the proof behind every agent we install.';
+
+const record = [
+  { k: 'Name', v: 'Irma' },
+  { k: 'Role', v: 'Operations, full scope' },
+  { k: 'On the job since', v: '2025 · no sick days' },
+  { k: 'Workstation', v: 'A machine in our office. Not someone else\u2019s cloud.' },
+  { k: 'Skills in production', v: '30+' },
+  { k: 'Capacity freed', v: '1 full-time equivalent and counting' },
+];
+
+const duties = [
+  { label: 'FINANCE', title: 'Back office, daily', desc: 'Deposit processing, reconciliations, bill approvals, invoicing, payroll entries. One software subscription cancelled outright.' },
+  { label: 'SALES', title: 'Pipeline discipline', desc: 'Staleness reports every Monday morning. Any deal untouched for two weeks gets flagged. Nothing dies of neglect in the CRM.' },
+  { label: 'CONTENT', title: 'First drafts, on schedule', desc: 'Newsletter editions and social drafts in the founder\u2019s voice, every week. Humans edit and publish. The blank page is gone.' },
+  { label: 'DELIVERY', title: 'Metrics without chasing', desc: 'Utilization reports, planned versus actual, timecard follow-ups. Compiled automatically instead of costing a lead an afternoon.' },
+];
+
+const transcript = [
+  { who: 'Finance Lead', time: '9:41 AM', agent: false, text: '@Irma new bill. $3,200 from Zoom, due March 15, Operations.' },
+  { who: 'Irma', time: '9:41 AM', agent: true, text: 'Created in the ERP as unpaid. Vendor and category match last month, no duplicate found. Approve for the March 14 payment run?' },
+  { who: 'Finance Lead', time: '9:43 AM', agent: false, text: 'Approved.' },
+  { who: 'Irma', time: '9:43 AM', agent: true, text: 'Queued for payment and logged. It will show in Friday\u2019s summary with the other four bills this week.' },
+];
+---
+
+<Base title={title} description={description} fileNo="SAVOI-003" classification="PERSONNEL FILE">
+  <!-- HERO -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-meta label">FILE 03 — PERSONNEL</div>
+      <div class="irma-hero-row">
+        <h1 class="page-title reveal">Meet Irma.<br /><span class="page-title-accent">She runs our firm.</span></h1>
+        <span class="stamp stamp-green stamp-animate irma-stamp">Active</span>
+      </div>
+      <p class="page-subtitle reveal">
+        Before we installed a managed agent for anyone else, we installed one for ourselves.
+        Irma runs our operations: the books, the pipeline, the content, the reports.
+        She has been on the job since 2025 and she has never taken a day off.
+      </p>
+    </div>
+  </section>
+
+  <!-- EMPLOYMENT RECORD -->
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 01 — Employment Record</span></div>
+      <div class="record-grid">
+        {record.map((item) => (
+          <div class="record-item reveal">
+            <div class="record-k label">{item.k}</div>
+            <div class="record-v">{item.v}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- EXHIBIT A: TRANSCRIPT -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 02 — Exhibit A: Channel Transcript</span></div>
+      <div class="transcript reveal">
+        <div class="transcript-head label">#finance-ops · recorded in the ordinary course of business</div>
+        {transcript.map((msg) => (
+          <div class="transcript-msg">
+            <div class="transcript-meta">
+              <span class={`transcript-who ${msg.agent ? 'transcript-agent' : ''}`}>{msg.who}</span>
+              {msg.agent && <span class="transcript-badge">AGENT</span>}
+              <span class="transcript-time">{msg.time}</span>
+            </div>
+            <p class="transcript-text">{msg.text}</p>
+          </div>
+        ))}
+      </div>
+      <p class="transcript-note reveal">
+        This is what a managed agent looks like in the wild. Real system access,
+        real approval gates, a human yes before money moves. The whole exchange took two minutes.
+      </p>
+    </div>
+  </section>
+
+  <!-- DUTIES -->
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 03 — Duties</span></div>
+      <h2 class="duties-headline reveal">She does the repetitive work.<br />The team does the judgment.</h2>
+      <div class="grid grid-2 duties-grid">
+        {duties.map((duty) => (
+          <div class="doc-card reveal">
+            <div class="duty-label label">{duty.label}</div>
+            <h3 class="duty-title">{duty.title}</h3>
+            <p class="duty-desc">{duty.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY THIS MATTERS -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 04 — Why We Show You This</span></div>
+      <div class="why-grid">
+        <h2 class="why-headline reveal">Irma is the proof,<br /><span class="why-accent">not the product.</span></h2>
+        <div class="why-body reveal">
+          <p>
+            Every agent we install for a client runs on the same architecture that runs our
+            own company. Same memory, same tool access, same approval gates, same management
+            discipline. We eat the cooking first.
+          </p>
+          <p>
+            Your version of Irma will not write newsletters. It will answer your distributors'
+            spec questions, chase your receivables, or draft your quotes. Built for one job
+            in your business, then run for you under retainer.
+          </p>
+          <a href="/what-we-install" class="btn">See What We Install</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    headline="Want one for your company?"
+    subtext="Book a 30-minute call. We'll find 1–2 things eating your team's time and show you exactly what your managed agent would own."
+    buttonLabel="Book a Workflow Call"
+    fileNo="SAVOI-003 / CTA"
+  />
+</Base>
+
+<style>
+  .page-hero { padding: 5rem 0 4rem; }
+  .page-meta { color: var(--file-tab); margin-bottom: 1rem; }
+  .page-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; }
+  .page-title-accent { color: var(--classification-soft); font-style: italic; font-weight: 600; }
+  .page-subtitle { font-size: 1.125rem; line-height: 1.65; color: var(--ink-faint); max-width: 640px; margin-top: 1.5rem; }
+
+  .irma-hero-row { display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+  .irma-stamp { margin-top: 0.75rem; }
+
+  /* EMPLOYMENT RECORD */
+  .record-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .record-item { padding: 1.5rem 1.75rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .record-k { color: var(--classification); margin-bottom: 0.5rem; }
+  .record-v { font-size: 1.0625rem; font-weight: 600; line-height: 1.4; }
+
+  /* TRANSCRIPT */
+  .transcript {
+    background: var(--ink-2);
+    border: 1px solid var(--ink-soft);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    max-width: 720px;
+  }
+  .transcript-head { color: var(--file-tab); padding-bottom: 1.25rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--ink-soft); }
+  .transcript-msg { margin-bottom: 1.25rem; }
+  .transcript-msg:last-child { margin-bottom: 0; }
+  .transcript-meta { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.25rem; }
+  .transcript-who { font-weight: 700; font-size: 0.9375rem; color: var(--paper); }
+  .transcript-agent { color: var(--classification-soft); }
+  .transcript-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 0.1rem 0.45rem;
+    border: 1px solid var(--classification-soft);
+    border-radius: var(--radius);
+    color: var(--classification-soft);
+  }
+  .transcript-time { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; color: var(--ink-faint); }
+  .transcript-text { font-size: 0.9375rem; line-height: 1.55; color: var(--paper); margin: 0; }
+  .transcript-note { margin-top: 1.75rem; font-size: 0.9375rem; color: var(--ink-faint); max-width: 640px; line-height: 1.6; }
+
+  /* DUTIES */
+  .duties-headline { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; line-height: 1.2; margin: 1.5rem 0 2rem; }
+  .duties-grid { align-items: stretch; }
+  .duty-label { color: var(--classification); margin-bottom: 0.75rem; }
+  .duty-title { font-size: 1.125rem; margin-bottom: 0.5rem; }
+  .duty-desc { font-size: 0.9375rem; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+
+  /* WHY */
+  .why-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start; margin-top: 1rem; }
+  .why-headline { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; line-height: 1.15; }
+  .why-accent { color: var(--classification-soft); font-style: italic; }
+  .why-body p { font-size: 1rem; line-height: 1.65; color: var(--ink-faint); margin-bottom: 1.25rem; }
+  .why-body .btn { margin-top: 0.5rem; }
+
+  @media (max-width: 900px) {
+    .why-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+</style>

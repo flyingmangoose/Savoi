@@ -5,18 +5,18 @@ import CTA from '../components/CTA.astro';
 const title = 'How It Works — From Painful Process to Owned Workflow | Savoi.ai';
 
 const steps = [
-  { num: '01', title: 'Quick Call', duration: '30 minutes', desc: "We talk through what's eating your time. We find 1–2 things that would make the biggest difference. No commitment, no pressure." },
-  { num: '02', title: 'We Design the Plan', duration: '2–3 weeks', desc: "We figure out what AI employees you need, what tools they'll use, and where you stay in control. You approve the plan before we build." },
-  { num: '03', title: 'We Build It', duration: '3–6 weeks', desc: 'We build the AI, connect it to your tools, train it on your business, and test it against real situations from your day-to-day.' },
-  { num: '04', title: 'Launch and Train', duration: '1–2 weeks', desc: 'Your team learns how to work with the AI. We document everything and agree on what success looks like.' },
-  { num: '05', title: 'Keep Improving', duration: 'Ongoing', desc: 'We tweak based on real use. Add new capabilities as you need them. The AI gets better over time.' },
+  { num: '01', phase: 'DIAGNOSE', title: 'Quick Call', duration: '30 minutes', desc: "We talk through what's eating your time. We find 1–2 things that would make the biggest difference. No commitment, no pressure." },
+  { num: '02', phase: 'DIAGNOSE', title: 'Service Layer Diagnostic', duration: '2 weeks · $7,500', desc: "We map the repetitive work inside every role, name the first job an agent should own, and hand you a fixed build quote. The fee is fully credited against any build signed within 60 days. If we don't find enough to justify an agent, we tell you that instead." },
+  { num: '03', phase: 'BUILD', title: 'We Build It', duration: '3–6 weeks', desc: 'We build the AI, connect it to your tools, train it on your business, and test it against real situations from your day-to-day.' },
+  { num: '04', phase: 'BUILD', title: 'Launch and Train', duration: '1–2 weeks', desc: 'Your team learns how to work with the AI. We document everything and agree on what success looks like.' },
+  { num: '05', phase: 'MANAGE', title: 'We Run It', duration: 'Ongoing', desc: 'This is the managed part. We monitor it, maintain it, and improve it under retainer. The AI gets better over time and our phone rings when something breaks.' },
 ];
 ---
 
-<Base title={title} fileNo="SAVOI-005" classification="FOR PUBLIC RELEASE">
+<Base title={title} fileNo="SAVOI-006" classification="FOR PUBLIC RELEASE">
   <section class="section section-dark page-hero">
     <div class="container">
-      <div class="page-meta label">FILE 05 — THE PROCESS</div>
+      <div class="page-meta label">FILE 06 — THE PROCESS</div>
       <h1 class="page-title reveal">From Time Sink<br /><span class="page-title-accent">to Done Automatically</span></h1>
     </div>
   </section>
@@ -32,6 +32,7 @@ const steps = [
             </div>
             <div class="step-body">
               <div class="step-header">
+                <span class="step-phase label">{step.phase}</span>
                 <h3 class="step-title">{step.title}</h3>
                 <span class="step-duration">{step.duration}</span>
               </div>
@@ -55,7 +56,7 @@ const steps = [
   <CTA
     headline="Ready to get your time back?"
     subtext="30 minutes. No commitment. We'll find 1–2 things eating your time and show you exactly what your AI employee would handle."
-    fileNo="SAVOI-005 / CTA"
+    fileNo="SAVOI-006 / CTA"
   />
 </Base>
 
@@ -85,6 +86,7 @@ const steps = [
   }
   .step-body { padding-bottom: 0.5rem; }
   .step-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 0.625rem; flex-wrap: wrap; }
+  .step-phase { color: var(--classification); font-size: 0.6875rem; }
   .step-title { font-size: 1.25rem; margin: 0; }
   .step-duration {
     font-family: 'JetBrains Mono', monospace;

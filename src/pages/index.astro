@@ -4,7 +4,7 @@ import CTA from '../components/CTA.astro';
 import AgentPanel from '../components/AgentPanel.astro';
 import SystemDiagram from '../components/SystemDiagram.astro';
 
-const title = 'Savoi.ai — AI Employees That Actually Do the Work';
+const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Work';
 ---
 
 <Base title={title} fileNo="SAVOI-001" classification="FOR PUBLIC RELEASE">
@@ -14,7 +14,7 @@ const title = 'Savoi.ai — AI Employees That Actually Do the Work';
     <div class="container hero-inner">
       <div class="hero-content">
         <div class="hero-meta">
-          <span class="label hero-meta-item">PROVEN // REAL BUSINESSES</span>
+          <span class="label hero-meta-item">MANAGED AGENTS // BUILT · INSTALLED · RUN</span>
           <span class="stamp stamp-animate">Proven in Production</span>
         </div>
         <h1 class="hero-headline reveal">
@@ -27,8 +27,12 @@ const title = 'Savoi.ai — AI Employees That Actually Do the Work';
           drafts your quotes, and follows up on your deals — all inside the tools
           you already use. You approve anything that costs money. It handles the rest.
         </p>
+        <p class="hero-category reveal">
+          These are managed agents. We build them, install them in your tools,
+          and run them for you. When something breaks, our phone rings, not yours.
+        </p>
         <div class="hero-actions reveal">
-          <a href="/contact" class="btn">Book a Strategy Call</a>
+          <a href="/contact" class="btn">Book a Workflow Call</a>
           <a href="/what-we-install" class="btn btn-secondary">See How It Works</a>
         </div>
       </div>
@@ -110,7 +114,7 @@ const title = 'Savoi.ai — AI Employees That Actually Do the Work';
         <div class="owns-left">
           <h2 class="owns-headline reveal">
             This is not a chatbot.<br />
-            <span class="owns-headline-accent">This is a digital employee<br />that handles real work.</span>
+            <span class="owns-headline-accent">This is a managed agent<br />that owns real work.</span>
           </h2>
           <ul class="owns-list">
             <li class="owns-item reveal">
@@ -146,6 +150,13 @@ const title = 'Savoi.ai — AI Employees That Actually Do the Work';
               <div>
                 <h4>Smart about cost</h4>
                 <p>Uses the right AI for the right job. Heavy thinking gets the good stuff. Simple tasks get the fast, affordable stuff. You don't overpay.</p>
+              </div>
+            </li>
+            <li class="owns-item reveal">
+              <span class="owns-num">06</span>
+              <div>
+                <h4>It comes with the operator</h4>
+                <p>Managed means managed. We monitor it, maintain it, and improve it under retainer, the way your MSP runs your network. You get an employee, not a project.</p>
               </div>
             </li>
           </ul>
@@ -194,8 +205,8 @@ const title = 'Savoi.ai — AI Employees That Actually Do the Work';
       <div class="changes-proof reveal">
         <span class="stamp stamp-green stamp-animate">Case Verified</span>
         <p class="changes-proof-text">
-          Already proven with Shelter Forest International — a global manufacturer
-          that got their senior team's time back.
+          Already proven with Shelter Forest International — a global plywood manufacturer
+          whose senior team got their time back.
           <a href="/case-studies" class="changes-proof-link">Read the case study →</a>
         </p>
       </div>
@@ -206,7 +217,7 @@ const title = 'Savoi.ai — AI Employees That Actually Do the Work';
   <CTA
     headline="Ready for an employee that never sleeps?"
     subtext="Book a 30-minute call. We'll find 1–2 things eating your time and show you exactly what your AI employee would handle."
-    buttonLabel="Book Strategy Call"
+    buttonLabel="Book a Workflow Call"
     fileNo="SAVOI-001 / CTA"
   />
 </Base>
@@ -249,7 +260,17 @@ const title = 'Savoi.ai — AI Employees That Actually Do the Work';
     line-height: 1.65;
     color: var(--ink-faint);
     max-width: 620px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-category {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--file-tab);
+    max-width: 620px;
     margin-bottom: 2.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--classification);
   }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 

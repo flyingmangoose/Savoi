@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import CTA from '../components/CTA.astro';
 
-const title = 'Pricing — Clear Packages. Real Production Systems. | Savoi.ai';
+const title = 'Pricing — Managed Agents. Clear Packages. | Savoi.ai';
 
 const packages = [
   {
@@ -19,7 +19,7 @@ const packages = [
     tagline: 'AI employees for your whole team',
     implementation: '$60,000 – $90,000',
     managed: '$6,000 – $10,000 / month',
-    features: ['Everything in Starter', 'Multiple AI employees working together', 'More tool connections', 'Cost-smart AI routing', 'Tasks that run on their own', 'Optional ongoing support'],
+    features: ['Everything in Starter', 'Multiple AI employees working together', 'More tool connections', 'Cost-smart AI routing', 'Tasks that run on their own', 'Quarterly improvements included'],
     featured: true,
   },
   {
@@ -33,17 +33,45 @@ const packages = [
 ];
 ---
 
-<Base title={title} fileNo="SAVOI-006" classification="FOR PUBLIC RELEASE">
+<Base title={title} fileNo="SAVOI-007" classification="FOR PUBLIC RELEASE">
   <section class="section section-dark page-hero">
     <div class="container">
-      <div class="page-meta label">FILE 06 — PRICING</div>
-      <h1 class="page-title reveal">Clear Pricing.<br /><span class="page-title-accent">Real AI Employees.</span></h1>
+      <div class="page-meta label">FILE 07 — PRICING</div>
+      <h1 class="page-title reveal">Clear Pricing.<br /><span class="page-title-accent">Managed Agents.</span></h1>
     </div>
   </section>
 
   <section class="section paper-texture">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 01 — AI Employee Packages</span></div>
+      <div class="rule-label reveal"><span>§ 01 — Step One: The Diagnostic</span></div>
+      <div class="diag-card reveal">
+        <div class="diag-main">
+          <h3 class="diag-title">Service Layer Diagnostic</h3>
+          <p class="diag-desc">
+            Every engagement starts here. In two weeks we map the repetitive work inside
+            every role on your team, tell you which job an agent should absorb first,
+            and hand you a fixed quote for the build. If we don't find enough to justify
+            an agent, we tell you that instead.
+          </p>
+          <ul class="doc-list">
+            <li>An 80/20 map of where your team's time actually goes</li>
+            <li>The first role an agent should own, with the business case</li>
+            <li>A fixed build quote. No hourly meter, no surprises</li>
+          </ul>
+        </div>
+        <div class="diag-price-col">
+          <div class="label diag-price-label">Fixed fee</div>
+          <div class="diag-price">$7,500</div>
+          <div class="diag-credit">Fully credited against any build signed within 60 days</div>
+          <a href="/contact" class="btn">Book a Workflow Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 02 — Managed Agent Packages</span></div>
       <div class="grid grid-3 pricing-grid">
         {packages.map((pkg) => (
           <div class={`pricing-card reveal ${pkg.featured ? 'pricing-featured' : ''}`}>
@@ -59,7 +87,7 @@ const packages = [
               <div class="pricing-price">{pkg.implementation}</div>
             </div>
             <div class="pricing-price-group">
-              <div class="pricing-price-label label">Managed service</div>
+              <div class="pricing-price-label label">Management retainer</div>
               <div class="pricing-price-sm">{pkg.managed}</div>
             </div>
             <hr class="rule" />
@@ -69,12 +97,18 @@ const packages = [
           </div>
         ))}
       </div>
+      <p class="pricing-note reveal">
+        The retainer is the managed part. Monitoring, maintenance, model costs, and a
+        working session every month with the people who built your agents. We price
+        against the role the agent absorbs, not against software. Compare the numbers
+        above to the salary of the hire you won't need to make.
+      </p>
     </div>
   </section>
 
-  <section class="section section-dark">
+  <section class="section paper-texture">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 02 — Simple Tools</span></div>
+      <div class="rule-label reveal"><span>§ 03 — Simple Tools</span></div>
       <div class="micro-saas-pricing reveal">
         <p class="msp-text">
           Most of our simple tools run between
@@ -88,7 +122,7 @@ const packages = [
   <CTA
     headline="Not sure which one fits?"
     subtext="Book a call — we'll look at your actual business and tell you honestly what makes sense."
-    fileNo="SAVOI-006 / CTA"
+    fileNo="SAVOI-007 / CTA"
   />
 </Base>
 
@@ -99,6 +133,16 @@ const packages = [
   .page-title-accent { color: var(--classification-soft); font-style: italic; font-weight: 600; }
 
   .pricing-grid { margin-top: 1rem; align-items: start; }
+  .pricing-note {
+    margin-top: 2.5rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 2px solid var(--classification);
+    background: var(--paper-2);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 760px;
+  }
   .pricing-card {
     background: var(--paper);
     border: 1px solid var(--rule);
@@ -144,7 +188,28 @@ const packages = [
   .pricing-features li { font-size: 0.875rem; }
 
   .micro-saas-pricing { max-width: 620px; }
-  .msp-text { font-size: 1.25rem; line-height: 1.5; color: var(--paper); }
+  .diag-card {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2.5rem;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--classification);
+    border-radius: var(--radius);
+    padding: 2.25rem;
+    align-items: start;
+  }
+  .diag-title { font-size: 1.375rem; margin-bottom: 0.75rem; }
+  .diag-desc { font-size: 0.9688rem; line-height: 1.65; color: var(--ink-soft); margin-bottom: 1.25rem; }
+  .diag-price-col { display: flex; flex-direction: column; gap: 0.6rem; align-items: flex-start; border-left: 1px solid var(--rule); padding-left: 2rem; }
+  .diag-price-label { color: var(--classification); }
+  .diag-price { font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; }
+  .diag-credit { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; line-height: 1.5; color: var(--ink-muted); letter-spacing: 0.02em; max-width: 220px; margin-bottom: 0.75rem; }
+  @media (max-width: 800px) {
+    .diag-card { grid-template-columns: 1fr; }
+    .diag-price-col { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 1.5rem; }
+  }
+  .msp-text { font-size: 1.25rem; line-height: 1.5; color: var(--ink); }
   .msp-price {
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.25rem;
