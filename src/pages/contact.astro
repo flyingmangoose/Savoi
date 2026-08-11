@@ -21,7 +21,7 @@ const title = 'Book a Workflow Call | Savoi.ai';
   <section class="section paper-texture">
     <div class="container contact-grid">
       <div class="contact-form-wrap">
-        <form class="contact-form" action="mailto:commercial@savoi.ai" method="post" enctype="text/plain">
+        <form class="contact-form" id="savoi-contact-form" novalidate>
           <div class="form-group">
             <label class="form-label" for="name">Name</label>
             <input class="form-input" type="text" id="name" name="name" required />
@@ -45,7 +45,8 @@ const title = 'Book a Workflow Call | Savoi.ai';
             </label>
             <textarea class="form-textarea" id="process" name="process" rows="4" placeholder="Tell us about the repetitive stuff that's slowing you down..."></textarea>
           </div>
-          <button type="submit" class="btn contact-submit">Book My Call</button>
+          <button type="submit" class="btn contact-submit" id="savoi-submit">Book My Call</button>
+          <p class="form-status" id="savoi-form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
 
@@ -88,6 +89,9 @@ const title = 'Book a Workflow Call | Savoi.ai';
   }
   .contact-form { max-width: 540px; }
   .contact-submit { margin-top: 0.5rem; }
+  .form-status { font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; margin-top: 1rem; min-height: 1.25rem; }
+  .form-status.ok { color: var(--stamp-green); }
+  .form-status.err { color: var(--classification); }
 
   .contact-aside { display: flex; flex-direction: column; gap: 2rem; padding-left: 2rem; border-left: 1px solid var(--rule); }
   .contact-aside-label { color: var(--classification); margin-bottom: 0.75rem; }
@@ -106,3 +110,72 @@ const title = 'Book a Workflow Call | Savoi.ai';
     .contact-aside { padding-left: 0; border-left: none; border-top: 1px solid var(--rule); padding-top: 2rem; }
   }
 </style>
+
+<script>
+  const PORTAL_ID = '24211389';
+  const FORM_GUID = 'dff85219-f923-4afe-ab33-f913c885c00e';
+
+  const form = document.getElementById('savoi-contact-form');
+  const status = document.getElementById('savoi-form-status');
+  const submitBtn = document.getElementById('savoi-submit');
+
+  function getCookie(name) {
+    const m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return m ? m[2] : undefined;
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const name = (document.getElementById('name')).value.trim();
+    const spaceAt = name.indexOf(' ');
+    const firstname = spaceAt === -1 ? name : name.slice(0, spaceAt);
+    const lastname = spaceAt === -1 ? '' : name.slice(spaceAt + 1);
+
+    const fields = [
+      { objectTypeId: '0-1', name: 'email', value: (document.getElementById('email')).value.trim() },
+      { objectTypeId: '0-1', name: 'firstname', value: firstname },
+      { objectTypeId: '0-1', name: 'company', value: (document.getElementById('company')).value.trim() },
+    ];
+    if (lastname) fields.push({ objectTypeId: '0-1', name: 'lastname', value: lastname });
+    const role = (document.getElementById('role')).value.trim();
+    if (role) fields.push({ objectTypeId: '0-1', name: 'jobtitle', value: role });
+    const process = (document.getElementById('process')).value.trim();
+    if (process) fields.push({ objectTypeId: '0-1', name: 'message', value: process });
+
+    const payload = {
+      fields,
+      context: {
+        pageUri: window.location.href,
+        pageName: document.title,
+      },
+    };
+    const hutk = getCookie('hubspotutk');
+    if (hutk) payload.context.hutk = hutk;
+
+    submitBtn.disabled = true;
+    status.textContent = 'FILING...';
+    status.className = 'form-status';
+
+    try {
+      const res = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_GUID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (res.ok) {
+        status.textContent = 'RECEIVED. WE RESPOND WITHIN ONE BUSINESS DAY.';
+        status.className = 'form-status ok';
+        form.reset();
+      } else {
+        throw new Error('submit failed');
+      }
+    } catch {
+      status.textContent = 'SOMETHING BROKE. EMAIL US INSTEAD: COMMERCIAL@SAVOI.AI';
+      status.className = 'form-status err';
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+</script>
