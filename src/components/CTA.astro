@@ -1,0 +1,63 @@
+---
+interface Props {
+  headline?: string;
+  subtext?: string;
+  buttonLabel?: string;
+  buttonHref?: string;
+  fileNo?: string;
+}
+
+const {
+  headline = 'Ready to install the team that never sleeps?',
+  subtext = 'Book a 30-minute workflow mapping call. We\u2019ll identify 1\u20132 high-ROI processes and show you exactly what a Savoi agent would own.',
+  buttonLabel = 'Book Strategy Call',
+  buttonHref = '/contact',
+  fileNo = 'SAVOI-CTA',
+} = Astro.props;
+---
+
+<section class="section section-dark cta-section">
+  <div class="container cta-inner">
+    <div class="cta-file-no label">FILE NO. {fileNo}</div>
+    <h2 class="cta-headline reveal">{headline}</h2>
+    <p class="cta-subtext reveal">{subtext}</p>
+    <a href={buttonHref} class="btn cta-btn reveal">{buttonLabel}</a>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(244,239,230,0.02) 39px, rgba(244,239,230,0.02) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(244,239,230,0.02) 39px, rgba(244,239,230,0.02) 40px);
+    pointer-events: none;
+  }
+  .cta-inner { position: relative; z-index: 1; }
+  .cta-file-no {
+    color: var(--file-tab);
+    margin-bottom: 1.5rem;
+  }
+  .cta-headline {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 800;
+    line-height: 1.1;
+    max-width: 720px;
+    margin: 0 auto 1.5rem;
+  }
+  .cta-subtext {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--ink-faint);
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+  }
+  .cta-btn { font-size: 0.875rem; padding: 1rem 2.25rem; }
+</style>

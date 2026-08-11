@@ -1,0 +1,123 @@
+---
+// SVG schematic of the AI workforce — core team, specialists, tools,
+// knowledge, and human approval gates. Drawn in the dossier visual language.
+---
+
+<div class="system-diagram">
+  <svg viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" class="system-svg" role="img" aria-label="Diagram showing AI workforce structure: core team connected to specialists, tools, knowledge base, and human approval gates">
+    <!-- Grid background -->
+    <defs>
+      <pattern id="grid-dia" width="20" height="20" patternUnits="userSpaceOnUse">
+        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(26,23,20,0.04)" stroke-width="0.5"/>
+      </pattern>
+      <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6" fill="none" stroke="var(--ink-muted)" stroke-width="1"/>
+      </marker>
+    </defs>
+    <rect width="600" height="480" fill="url(#grid-dia)"/>
+
+    <!-- Connection lines (drawn first, behind nodes) -->
+    <!-- Core to specialists -->
+    <line x1="300" y1="130" x2="120" y2="210" stroke="var(--rule-2)" stroke-width="1.5"/>
+    <line x1="300" y1="130" x2="240" y2="210" stroke="var(--rule-2)" stroke-width="1.5"/>
+    <line x1="300" y1="130" x2="360" y2="210" stroke="var(--rule-2)" stroke-width="1.5"/>
+    <line x1="300" y1="130" x2="480" y2="210" stroke="var(--rule-2)" stroke-width="1.5"/>
+
+    <!-- Specialists to tools -->
+    <line x1="120" y1="270" x2="120" y2="340" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="240" y1="270" x2="240" y2="340" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="360" y1="270" x2="360" y2="340" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="480" y1="270" x2="480" y2="340" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+
+    <!-- Approval gate line -->
+    <line x1="300" y1="130" x2="300" y2="60" stroke="var(--classification)" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <line x1="300" y1="380" x2="300" y2="440" stroke="var(--classification)" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+    <!-- Core team node -->
+    <g>
+      <rect x="220" y="90" width="160" height="48" rx="2" fill="var(--ink)" stroke="var(--ink)"/>
+      <text x="300" y="112" text-anchor="middle" fill="var(--paper)" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600" letter-spacing="1">YOUR AI TEAM</text>
+      <text x="300" y="127" text-anchor="middle" fill="var(--file-tab)" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="0.5">CORE ORCHESTRATOR</text>
+    </g>
+
+    <!-- Human approval gate (top) -->
+    <g>
+      <rect x="230" y="35" width="140" height="30" rx="2" fill="var(--paper)" stroke="var(--classification)" stroke-width="1.5"/>
+      <text x="300" y="54" text-anchor="middle" fill="var(--classification)" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" letter-spacing="0.5">⚠ YOU APPROVE</text>
+    </g>
+
+    <!-- Specialist nodes -->
+    <!-- Sales -->
+    <g>
+      <rect x="62" y="210" width="116" height="48" rx="2" fill="var(--paper)" stroke="var(--rule-2)" stroke-width="1.5"/>
+      <text x="120" y="230" text-anchor="middle" fill="var(--ink)" font-family="Spectral, serif" font-size="13" font-weight="600">Sales</text>
+      <text x="120" y="245" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.5">SPECIALIST</text>
+    </g>
+    <!-- Support -->
+    <g>
+      <rect x="182" y="210" width="116" height="48" rx="2" fill="var(--paper)" stroke="var(--rule-2)" stroke-width="1.5"/>
+      <text x="240" y="230" text-anchor="middle" fill="var(--ink)" font-family="Spectral, serif" font-size="13" font-weight="600">Support</text>
+      <text x="240" y="245" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.5">SPECIALIST</text>
+    </g>
+    <!-- Operations -->
+    <g>
+      <rect x="302" y="210" width="116" height="48" rx="2" fill="var(--paper)" stroke="var(--rule-2)" stroke-width="1.5"/>
+      <text x="360" y="230" text-anchor="middle" fill="var(--ink)" font-family="Spectral, serif" font-size="13" font-weight="600">Operations</text>
+      <text x="360" y="245" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.5">SPECIALIST</text>
+    </g>
+    <!-- Knowledge -->
+    <g>
+      <rect x="422" y="210" width="116" height="48" rx="2" fill="var(--paper)" stroke="var(--rule-2)" stroke-width="1.5"/>
+      <text x="480" y="230" text-anchor="middle" fill="var(--ink)" font-family="Spectral, serif" font-size="13" font-weight="600">Knowledge</text>
+      <text x="480" y="245" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.5">SPECIALIST</text>
+    </g>
+
+    <!-- Tool nodes -->
+    <g>
+      <rect x="72" y="340" width="96" height="32" rx="2" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+      <text x="120" y="360" text-anchor="middle" fill="var(--ink-soft)" font-family="JetBrains Mono, monospace" font-size="7" font-weight="500" letter-spacing="0.5">CRM</text>
+    </g>
+    <g>
+      <rect x="192" y="340" width="96" height="32" rx="2" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+      <text x="240" y="360" text-anchor="middle" fill="var(--ink-soft)" font-family="JetBrains Mono, monospace" font-size="7" font-weight="500" letter-spacing="0.5">EMAIL / SLACK</text>
+    </g>
+    <g>
+      <rect x="312" y="340" width="96" height="32" rx="2" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+      <text x="360" y="360" text-anchor="middle" fill="var(--ink-soft)" font-family="JetBrains Mono, monospace" font-size="7" font-weight="500" letter-spacing="0.5">INVENTORY</text>
+    </g>
+    <g>
+      <rect x="432" y="340" width="96" height="32" rx="2" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+      <text x="480" y="360" text-anchor="middle" fill="var(--ink-soft)" font-family="JetBrains Mono, monospace" font-size="7" font-weight="500" letter-spacing="0.5">INTERNAL API</text>
+    </g>
+
+    <!-- Knowledge base (bottom) -->
+    <g>
+      <rect x="180" y="440" width="240" height="32" rx="2" fill="var(--paper)" stroke="var(--file-tab)" stroke-width="1.5"/>
+      <text x="300" y="460" text-anchor="middle" fill="var(--ink)" font-family="JetBrains Mono, monospace" font-size="8" font-weight="600" letter-spacing="0.5">YOUR KNOWLEDGE BASE</text>
+    </g>
+    <!-- Lines from specialists to knowledge base -->
+    <line x1="120" y1="372" x2="220" y2="440" stroke="var(--rule)" stroke-width="0.75" stroke-dasharray="2,3"/>
+    <line x1="240" y1="372" x2="260" y2="440" stroke="var(--rule)" stroke-width="0.75" stroke-dasharray="2,3"/>
+    <line x1="360" y1="372" x2="340" y2="440" stroke="var(--rule)" stroke-width="0.75" stroke-dasharray="2,3"/>
+    <line x1="480" y1="372" x2="380" y2="440" stroke="var(--rule)" stroke-width="0.75" stroke-dasharray="2,3"/>
+
+    <!-- Labels on connections -->
+    <text x="180" y="170" fill="var(--ink-faint)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.5">HANDOFF</text>
+    <text x="310" y="75" fill="var(--classification)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.5">ESCALATION</text>
+    <text x="130" y="310" fill="var(--ink-faint)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.5">USES</text>
+  </svg>
+</div>
+
+<style>
+  .system-diagram {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .system-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>

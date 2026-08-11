@@ -1,0 +1,184 @@
+---
+import Base from '../layouts/Base.astro';
+import CTA from '../components/CTA.astro';
+import WorkflowDiagram from '../components/WorkflowDiagram.astro';
+
+const title = 'Case Studies — Shelter Forest International | Savoi.ai';
+
+const questions = [
+  'Product specs and performance',
+  'Will this work for my project?',
+  'Sustainability and sourcing',
+  'Availability and pricing',
+];
+
+const capabilities = [
+  'Knows the full TigerPLY product line inside out',
+  'Talks like Shelter Forest, not like a robot',
+  'Matches the right product to each customer need',
+  'Handles quotes and only escalates the hard stuff to humans',
+  'Follows up with customers automatically',
+];
+---
+
+<Base title={title} fileNo="SAVOI-004" classification="CASE FILE — VERIFIED">
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-meta label">FILE 04 — CASE STUDY</div>
+      <h1 class="page-title reveal">Shelter Forest International</h1>
+      <p class="page-subtitle reveal">
+        Global hardwood plywood manufacturer (TigerPLY™)<br />
+        Portland, Oregon · tigerply.com
+      </p>
+      <div class="case-stamp-wrap">
+        <span class="stamp stamp-green stamp-animate">Case Verified</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT FILE -->
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 01 — Client Dossier</span></div>
+      <div class="client-grid">
+        <div class="client-field reveal">
+          <div class="label client-field-label">CLIENT</div>
+          <div class="client-field-value">Shelter Forest International</div>
+        </div>
+        <div class="client-field reveal">
+          <div class="label client-field-label">LOCATION</div>
+          <div class="client-field-value">Portland, Oregon</div>
+        </div>
+        <div class="client-field reveal">
+          <div class="label client-field-label">INDUSTRY</div>
+          <div class="client-field-value">Global hardwood plywood manufacturer</div>
+        </div>
+        <div class="client-field reveal">
+          <div class="label client-field-label">COMPANY</div>
+          <div class="client-field-value">A third-generation family business selling to distributors, manufacturers, and contractors across North America. Known for quality products and sustainable sourcing.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHALLENGE -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 02 — The Challenge</span></div>
+      <div class="challenge reveal">
+        <p class="challenge-text">
+          Their sales and technical teams were spending hours answering the same
+          questions from customers, over and over:
+        </p>
+        <ul class="doc-list challenge-list">
+          {questions.map((q) => <li>{q}</li>)}
+        </ul>
+        <p class="challenge-text">
+          All that knowledge lived in a few people's heads. Their best people
+          were getting interrupted constantly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW DIAGRAM -->
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 02.A — How It Works in Practice</span></div>
+      <div class="diagram-wrap reveal">
+        <WorkflowDiagram />
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 03 — The Solution</span></div>
+      <div class="solution reveal">
+        <p class="solution-text">
+          We built them a custom AI sales assistant that knows their products
+          inside out and talks like their brand. Here's what it does:
+        </p>
+        <ul class="doc-list solution-list">
+          {capabilities.map((c) => <li>{c}</li>)}
+        </ul>
+        <div class="solution-quote">
+          <p class="solution-quote-text">It became the always-on version of their best salesperson.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY THIS MATTERS -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 04 — Why This Matters</span></div>
+      <div class="matters reveal">
+        <p class="matters-text">
+          Most manufacturers and distributors deal with the same problem: your best
+          people are stuck answering the same questions, and your sales team is stretched thin.
+        </p>
+        <p class="matters-text">
+          This project proves we can build AI that knows your products, talks like
+          your brand, and handles real B2B sales — <em>not a generic chatbot</em>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    headline="Want this for your team?"
+    subtext="Book a call. We'll show you exactly what an AI employee would do in your business."
+    fileNo="SAVOI-004 / CTA"
+  />
+</Base>
+
+<style>
+  .page-hero { padding: 5rem 0 4rem; }
+  .page-meta { color: var(--file-tab); margin-bottom: 1rem; }
+  .page-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1rem; }
+  .page-subtitle { font-size: 1.0625rem; color: var(--ink-faint); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.02em; line-height: 1.7; }
+  .case-stamp-wrap { margin-top: 2rem; }
+  .diagram-wrap { max-width: 720px; margin: 0 auto; }
+
+  .client-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+  }
+  .client-field { border-left: 2px solid var(--rule-2); padding-left: 1.25rem; }
+  .client-field-label { color: var(--classification); margin-bottom: 0.5rem; }
+  .client-field-value { font-size: 1rem; line-height: 1.55; }
+
+  .challenge { max-width: 720px; }
+  .challenge-text { font-size: 1.0625rem; line-height: 1.7; color: var(--paper); margin-bottom: 1.25rem; }
+  .challenge-list { margin: 1.25rem 0; }
+
+  .solution { max-width: 720px; }
+  .solution-text { font-size: 1.0625rem; line-height: 1.7; margin-bottom: 1.25rem; }
+  .solution-list { margin: 1.25rem 0 2rem; }
+  .solution-quote {
+    padding: 1rem 1.5rem;
+    margin-top: 2rem;
+    background: rgba(140,32,32,0.03);
+    border-top: 1px solid var(--classification-faint);
+    border-bottom: 1px solid var(--classification-faint);
+  }
+  .solution-quote-text {
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .matters { max-width: 720px; }
+  .matters-text { font-size: 1.0625rem; line-height: 1.7; color: var(--paper); margin-bottom: 1.25rem; }
+  .matters-text em { color: var(--classification-soft); font-weight: 600; }
+
+  @media (max-width: 700px) {
+    .client-grid { grid-template-columns: 1fr; }
+  }
+</style>

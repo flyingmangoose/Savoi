@@ -1,0 +1,180 @@
+---
+const navItems = [
+  { label: 'Home', href: '/', file: '01' },
+  { label: 'AI Employees', href: '/what-we-install', file: '02' },
+  { label: 'Tools', href: '/micro-saas', file: '03' },
+  { label: 'Case Study', href: '/case-studies', file: '04' },
+  { label: 'How It Works', href: '/how-it-works', file: '05' },
+  { label: 'Pricing', href: '/pricing', file: '06' },
+  { label: 'FAQ', href: '/faq', file: '07' },
+  { label: 'Contact', href: '/contact', file: '08' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-text">SAVOI</span>
+      <span class="nav-logo-dot">.</span>
+      <span class="nav-logo-ai">AI</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+    </button>
+
+    <ul class="nav-tabs" id="nav-tabs">
+      {navItems.map((item) => {
+        const isActive = currentPath === item.href ||
+          (item.href !== '/' && currentPath.startsWith(item.href));
+        return (
+          <li class={`nav-tab ${isActive ? 'active' : ''}`}>
+            <a href={item.href} class="nav-tab-link">
+              <span class="nav-tab-file">{item.file}</span>
+              <span class="nav-tab-label">{item.label}</span>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    background: var(--ink);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--ink-soft);
+  }
+  .nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    min-height: 64px;
+  }
+  .nav-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--paper);
+    text-decoration: none;
+    margin-right: 2.5rem;
+    white-space: nowrap;
+  }
+  .nav-logo-dot { color: var(--classification-soft); }
+  .nav-logo-ai { color: var(--file-tab); font-weight: 500; }
+
+  .nav-tabs {
+    list-style: none;
+    display: flex;
+    gap: 0;
+    flex: 1;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+
+  .nav-tab {
+    flex-shrink: 0;
+  }
+  .nav-tab-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.875rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 200ms, border-color 200ms, transform 200ms;
+    white-space: nowrap;
+  }
+  .nav-tab-link:hover {
+    color: var(--paper);
+    transform: translateY(-1px);
+  }
+  .nav-tab.active .nav-tab-link {
+    color: var(--paper);
+    border-bottom-color: var(--classification-soft);
+  }
+  .nav-tab-file {
+    color: var(--file-tab);
+    font-size: 0.5625rem;
+    font-weight: 600;
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto;
+  }
+  .nav-toggle-line {
+    width: 24px;
+    height: 2px;
+    background: var(--paper);
+    transition: transform 200ms, opacity 200ms;
+  }
+  .nav-toggle[aria-expanded='true'] .nav-toggle-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  .nav-toggle[aria-expanded='true'] .nav-toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle[aria-expanded='true'] .nav-toggle-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  @media (max-width: 900px) {
+    .nav-toggle { display: flex; }
+    .nav-tabs {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--ink);
+      border-bottom: 1px solid var(--ink-soft);
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .nav-tabs.open { display: flex; }
+    .nav-tab-link {
+      padding: 0.75rem 0.5rem;
+      border-bottom: 1px solid var(--ink-soft);
+      border-bottom-width: 1px;
+    }
+    .nav-tab.active .nav-tab-link {
+      border-bottom-color: var(--classification-soft);
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const tabs = document.getElementById('nav-tabs');
+  if (toggle && tabs) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      tabs.classList.toggle('open', !expanded);
+    });
+  }
+</script>

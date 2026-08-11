@@ -1,0 +1,113 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-logo">SAVOI<span class="dot">.</span>AI</div>
+      <p class="footer-tagline">AI employees that handle the work, so you don't have to.</p>
+    </div>
+    <div class="footer-col">
+      <div class="label footer-label">Files</div>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/what-we-install">AI Employees</a></li>
+        <li><a href="/micro-saas">Tools</a></li>
+        <li><a href="/case-studies">Case Study</a></li>
+        <li><a href="/how-it-works">How It Works</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="label footer-label">Records</div>
+      <ul class="footer-links">
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="label footer-label">Contact</div>
+      <a href="mailto:commercial@savoi.ai" class="footer-email">commercial@savoi.ai</a>
+      <a href="/contact" class="btn btn-secondary footer-btn">Book a Call</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="label">© {year} SAVOI.AI — ALL FILES CLASSIFIED FOR PUBLIC RELEASE</span>
+    <span class="label footer-file">FILE NO. SAVOI-000 / END OF DOSSIER</span>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--ink);
+    color: var(--ink-faint);
+    padding: 4rem 2rem 2rem;
+    border-top: 1px solid var(--ink-soft);
+  }
+  .footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 2rem;
+  }
+  .footer-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 0.5rem;
+  }
+  .footer-logo .dot { color: var(--classification-soft); }
+  .footer-tagline {
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    color: var(--ink-faint);
+    font-size: 0.9375rem;
+  }
+  .footer-label { margin-bottom: 0.75rem; }
+  .footer-links {
+    list-style: none;
+  }
+  .footer-links li { margin-bottom: 0.5rem; }
+  .footer-links a {
+    color: var(--ink-faint);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 200ms;
+  }
+  .footer-links a:hover { color: var(--paper); }
+  .footer-email {
+    color: var(--classification-soft);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    display: block;
+    margin-bottom: 1rem;
+    text-decoration: none;
+  }
+  .footer-email:hover { color: var(--paper); }
+  .footer-btn {
+    font-size: 0.6875rem;
+    padding: 0.625rem 1rem;
+  }
+  .footer-bottom {
+    max-width: var(--max-width);
+    margin: 2.5rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .footer-file { color: var(--file-tab); }
+
+  @media (max-width: 768px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 500px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; }
+  }
+</style>

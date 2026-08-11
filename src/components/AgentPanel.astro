@@ -1,0 +1,287 @@
+---
+// Mock "agent at work" panel — shows AI employees handling conversations,
+// running tasks, and routing approvals to humans. Proves the concept visually.
+---
+
+<div class="agent-panel">
+  <div class="agent-panel-header">
+    <div class="agent-panel-title">
+      <span class="agent-status-dot"></span>
+      <span class="agent-panel-name">SALES ASSISTANT — ACTIVE</span>
+    </div>
+    <span class="label agent-panel-time">LIVE FEED</span>
+  </div>
+
+  <div class="agent-panel-body">
+    <!-- Active conversations -->
+    <div class="agent-section">
+      <div class="agent-section-label label">Handling now</div>
+
+      <div class="conv-item">
+        <div class="conv-row">
+          <span class="conv-status conv-status-active">●</span>
+          <span class="conv-customer">Northeast Distributors Inc.</span>
+          <span class="conv-time">2m ago</span>
+        </div>
+        <p class="conv-preview">"Do you carry structural-grade sheets in 4×8?"</p>
+        <div class="conv-response">
+          <span class="conv-response-label">AI:</span>
+          Yes — our structural line is available in 4×8 with full spec ratings
+          and certification docs. Would you like a quote for 50+ sheets?
+        </div>
+      </div>
+
+      <div class="conv-item">
+        <div class="conv-row">
+          <span class="conv-status conv-status-active">●</span>
+          <span class="conv-customer">Cascade Manufacturing Co.</span>
+          <span class="conv-time">5m ago</span>
+        </div>
+        <p class="conv-preview">"Can your product handle high-humidity environments?"</p>
+        <div class="conv-response">
+          <span class="conv-response-label">AI:</span>
+          Our standard line handles moderate humidity. For high-moisture
+          applications, I'd recommend our marine-grade variant. Shall I
+          send specs for both?
+        </div>
+      </div>
+    </div>
+
+    <!-- Pending human approval -->
+    <div class="agent-section agent-section-approval">
+      <div class="agent-section-label label agent-approval-label">Waiting for your approval</div>
+
+      <div class="approval-item">
+        <div class="approval-header">
+          <span class="approval-flag">⚠</span>
+          <span class="approval-customer">Pacific OEM Solutions</span>
+          <span class="approval-type">CUSTOM QUOTE</span>
+        </div>
+        <p class="approval-desc">
+          Customer wants pricing on 500 units with a custom finish. AI drafted
+          quote at $4.20/unit based on standard tier pricing.
+        </p>
+        <div class="approval-actions">
+          <button class="approval-btn approval-approve">Approve</button>
+          <button class="approval-btn approval-edit">Review & Edit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Running on schedule -->
+    <div class="agent-section">
+      <div class="agent-section-label label">Running on its own</div>
+
+      <div class="task-item">
+        <span class="task-icon">⏰</span>
+        <span class="task-text">Following up with 12 prospects from last week</span>
+        <span class="task-status">In progress</span>
+      </div>
+      <div class="task-item">
+        <span class="task-icon">📊</span>
+        <span class="task-text">Monday pipeline report compiling</span>
+        <span class="task-status">Scheduled 8am</span>
+      </div>
+      <div class="task-item">
+        <span class="task-icon">🔄</span>
+        <span class="task-text">Checking 3 overdue invoices — sending reminders</span>
+        <span class="task-status">Done</span>
+      </div>
+    </div>
+
+    <!-- Stats footer -->
+    <div class="agent-stats">
+      <div class="agent-stat">
+        <span class="agent-stat-num">147</span>
+        <span class="agent-stat-label">Questions handled today</span>
+      </div>
+      <div class="agent-stat">
+        <span class="agent-stat-num">3</span>
+        <span class="agent-stat-label">Sent to human</span>
+      </div>
+      <div class="agent-stat">
+        <span class="agent-stat-num">98%</span>
+        <span class="agent-stat-label">Handled on its own</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .agent-panel {
+    background: var(--paper);
+    border: 1px solid var(--rule-2);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(26,23,20,0.06);
+    font-family: 'Spectral', Georgia, serif;
+  }
+  .agent-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .agent-panel-title { display: flex; align-items: center; gap: 0.5rem; }
+  .agent-panel-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+  .agent-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 0 2px rgba(74,222,128,0.2);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  .agent-panel-time { color: var(--ink-faint); }
+
+  .agent-panel-body { padding: 1.5rem; }
+
+  .agent-section { margin-bottom: 1.75rem; }
+  .agent-section-label { color: var(--ink-muted); margin-bottom: 0.75rem; }
+  .agent-approval-label { color: var(--classification); }
+
+  .conv-item {
+    padding: 0.875rem;
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    margin-bottom: 0.625rem;
+  }
+  .conv-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .conv-status { font-size: 0.5rem; color: #4ade80; }
+  .conv-customer {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--ink);
+    flex: 1;
+  }
+  .conv-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.625rem;
+    color: var(--ink-faint);
+  }
+  .conv-preview {
+    font-size: 0.8125rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: 0 0 0.625rem;
+    line-height: 1.4;
+  }
+  .conv-response {
+    font-size: 0.8125rem;
+    color: var(--ink);
+    line-height: 1.5;
+    padding: 0.625rem 0.75rem;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+  }
+  .conv-response-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    color: var(--file-tab);
+    letter-spacing: 0.08em;
+    margin-right: 0.375rem;
+  }
+
+  .agent-section-approval {
+    background: rgba(140,32,32,0.04);
+    border: 1px solid var(--classification-faint);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+  .approval-item { }
+  .approval-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .approval-flag { color: var(--classification); font-size: 0.875rem; }
+  .approval-customer { font-size: 0.8125rem; font-weight: 600; flex: 1; }
+  .approval-type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--classification);
+    padding: 0.1rem 0.375rem;
+    border: 1px solid var(--classification);
+    border-radius: var(--radius);
+  }
+  .approval-desc {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 0 0 0.75rem;
+  }
+  .approval-actions { display: flex; gap: 0.5rem; }
+  .approval-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5625rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius);
+    border: 1px solid;
+    cursor: pointer;
+    transition: all 200ms;
+  }
+  .approval-approve { background: var(--stamp-green); color: var(--paper); border-color: var(--stamp-green); }
+  .approval-approve:hover { opacity: 0.85; }
+  .approval-edit { background: transparent; color: var(--ink-soft); border-color: var(--rule-2); }
+  .approval-edit:hover { border-color: var(--ink-soft); }
+
+  .task-item {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.5rem 0;
+    font-size: 0.8125rem;
+  }
+  .task-item + .task-item { border-top: 1px solid var(--rule); }
+  .task-icon { font-size: 0.875rem; }
+  .task-text { flex: 1; color: var(--ink-soft); }
+  .task-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5625rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+  }
+
+  .agent-stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+  .agent-stat { flex: 1; text-align: center; }
+  .agent-stat-num {
+    display: block;
+    font-family: 'Spectral', serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .agent-stat-label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+    margin-top: 0.375rem;
+    text-transform: uppercase;
+  }
+</style>

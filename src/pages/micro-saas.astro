@@ -1,0 +1,123 @@
+---
+import Base from '../layouts/Base.astro';
+import CTA from '../components/CTA.astro';
+
+const title = 'Micro SaaS — Focused Products. High ROI. | Savoi.ai';
+
+const products = [
+  { num: '01', name: 'Proposal Builder', status: 'CURRENT', desc: 'Turn what you know about a prospect into a clear, professional proposal fast. No more staring at a blank page.' },
+  { num: '02', name: 'Revenue Guardian', status: 'CURRENT', desc: 'Watches your pipeline, follows up on quiet deals, and chases overdue payments. Fewer opportunities slip through the cracks.' },
+  { num: '03', name: 'Ops Sentinel', status: 'CURRENT', desc: 'Keeps an eye on your processes, spots problems early, and helps fix them before they cost you.' },
+  { num: '04', name: 'Meeting → Action', status: 'CURRENT', desc: 'Takes your meeting notes, pulls out the action items, assigns owners, and tracks follow-up. Nothing gets forgotten.' },
+  { num: '05', name: 'Sales Assistant for Manufacturers', status: 'EMERGING', desc: 'Knows your products, talks like your brand, answers customer questions, and helps close deals. Built from the Shelter Forest project.', featured: true },
+];
+---
+
+<Base title={title} fileNo="SAVOI-003" classification="FOR PUBLIC RELEASE">
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-meta label">FILE 03 — OUR TOOLS</div>
+      <h1 class="page-title reveal">Simple Tools.<br /><span class="page-title-accent">Big Time Savings.</span></h1>
+      <p class="page-subtitle reveal">
+        We take what works in our AI employees and turn it into simple, affordable tools.<br />
+        Each one solves one painful problem. No bloat, no learning curve, no nonsense.
+      </p>
+    </div>
+  </section>
+
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 01 — Our Tools</span></div>
+      <div class="products">
+        {products.map((p) => (
+          <div class={`product-row reveal ${p.featured ? 'product-featured' : ''}`}>
+            <div class="product-num">{p.num}</div>
+            <div class="product-body">
+              <div class="product-header">
+                <h3 class="product-name">{p.name}</h3>
+                <span class={`product-status ${p.status === 'EMERGING' ? 'status-emerging' : 'status-current'}`}>{p.status}</span>
+              </div>
+              <p class="product-desc">{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 02 — Our Rule</span></div>
+      <div class="philosophy reveal">
+        <p class="philosophy-text">
+          We only build tools we've already proven work in real businesses.
+        </p>
+        <p class="philosophy-sub">No experiments. No vaporware. Only what's already saved someone time and money.</p>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    headline="Want a specific tool or early access?"
+    subtext="Talk to us. We'll tell you honestly what's ready, what's coming, and what fits your business."
+    buttonLabel="Talk to Us"
+    fileNo="SAVOI-003 / CTA"
+  />
+</Base>
+
+<style>
+  .page-hero { padding: 5rem 0 4rem; }
+  .page-meta { color: var(--file-tab); margin-bottom: 1rem; }
+  .page-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1.25rem; }
+  .page-title-accent { color: var(--classification-soft); font-style: italic; font-weight: 600; }
+  .page-subtitle { font-size: 1.1875rem; color: var(--ink-faint); max-width: 620px; line-height: 1.65; }
+
+  .products { margin-top: 1rem; }
+  .product-row {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: flex-start;
+  }
+  .product-row:first-child { border-top: 1px solid var(--rule); }
+  .product-featured {
+    background: rgba(184,148,90,0.05);
+    padding: 2rem 1.5rem;
+    margin: 0 -1.5rem;
+    border-top: 1px solid var(--file-tab-soft);
+    border-bottom: 1px solid var(--file-tab-soft);
+  }
+  .product-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--file-tab);
+    flex-shrink: 0;
+    min-width: 3rem;
+  }
+  .product-body { flex: 1; }
+  .product-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.625rem; flex-wrap: wrap; }
+  .product-name { font-size: 1.1875rem; margin: 0; }
+  .product-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5625rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius);
+  }
+  .status-current { background: var(--stamp-green); color: var(--paper); }
+  .status-emerging { background: var(--file-tab); color: var(--ink); }
+  .product-desc { font-size: 0.9375rem; line-height: 1.6; color: var(--ink-soft); margin: 0; max-width: 720px; }
+
+  .philosophy { max-width: 720px; }
+  .philosophy-text { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; line-height: 1.2; color: var(--paper); font-style: italic; }
+  .philosophy-sub { font-size: 1.0625rem; color: var(--classification-soft); margin-top: 1rem; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.04em; }
+
+  @media (max-width: 600px) {
+    .product-row { flex-direction: column; gap: 0.75rem; }
+    .product-featured { padding-left: 1rem; margin-left: 0; }
+  }
+</style>

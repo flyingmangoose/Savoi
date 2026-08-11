@@ -1,0 +1,84 @@
+---
+// SVG workflow diagram — shows how a customer question flows through the
+// AI employee: receive → check knowledge → respond or escalate to human
+---
+
+<div class="workflow-diagram">
+  <svg viewBox="0 0 580 260" xmlns="http://www.w3.org/2000/svg" class="workflow-svg" role="img" aria-label="Workflow diagram: customer question flows to AI employee, which checks the knowledge base, then either responds directly or routes to human for approval">
+    <defs>
+      <pattern id="grid-wf" width="20" height="20" patternUnits="userSpaceOnUse">
+        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(26,23,20,0.03)" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="580" height="260" fill="url(#grid-wf)"/>
+
+    <!-- Step 1: Customer asks -->
+    <g>
+      <rect x="10" y="100" width="120" height="52" rx="2" fill="var(--paper-2)" stroke="var(--rule-2)" stroke-width="1.5"/>
+      <text x="70" y="122" text-anchor="middle" fill="var(--ink)" font-family="Spectral, serif" font-size="12" font-weight="600">Customer</text>
+      <text x="70" y="138" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.5">ASKS QUESTION</text>
+    </g>
+
+    <!-- Arrow 1→2 -->
+    <line x1="130" y1="126" x2="165" y2="126" stroke="var(--ink-muted)" stroke-width="1.2"/>
+    <polygon points="165,126 160,123 160,129" fill="var(--ink-muted)"/>
+
+    <!-- Step 2: AI receives -->
+    <g>
+      <rect x="170" y="90" width="130" height="72" rx="2" fill="var(--ink)" stroke="var(--ink)"/>
+      <text x="235" y="115" text-anchor="middle" fill="var(--paper)" font-family="Spectral, serif" font-size="13" font-weight="700">AI Employee</text>
+      <text x="235" y="130" text-anchor="middle" fill="var(--file-tab)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.5">REVIEWS QUESTION</text>
+      <text x="235" y="148" text-anchor="middle" fill="var(--paper)" font-family="JetBrains Mono, monospace" font-size="5.5" letter-spacing="0.3" opacity="0.6">Checks knowledge base</text>
+    </g>
+
+    <!-- Arrow 2→3 (split) -->
+    <!-- Simple path (down) -->
+    <path d="M 300 140 L 340 140 L 340 180 L 380 180" fill="none" stroke="var(--stamp-green)" stroke-width="1.5"/>
+    <polygon points="380,180 374,177 374,183" fill="var(--stamp-green)"/>
+    <text x="345" y="155" fill="var(--stamp-green)" font-family="JetBrains Mono, monospace" font-size="6" font-weight="600" letter-spacing="0.3">SIMPLE</text>
+
+    <!-- Complex path (up) -->
+    <path d="M 300 112 L 340 112 L 340 72 L 380 72" fill="none" stroke="var(--classification)" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <polygon points="380,72 374,69 374,75" fill="var(--classification)"/>
+    <text x="345" y="100" fill="var(--classification)" font-family="JetBrains Mono, monospace" font-size="6" font-weight="600" letter-spacing="0.3">NEEDS APPROVAL</text>
+
+    <!-- Step 3a: AI responds (bottom path) -->
+    <g>
+      <rect x="385" y="155" width="180" height="50" rx="2" fill="var(--paper)" stroke="var(--stamp-green)" stroke-width="1.5"/>
+      <text x="475" y="175" text-anchor="middle" fill="var(--stamp-green)" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" letter-spacing="0.5">✓ AI RESPONDS</text>
+      <text x="475" y="192" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.3">98% of questions</text>
+    </g>
+
+    <!-- Step 3b: Human approves (top path) -->
+    <g>
+      <rect x="385" y="45" width="180" height="50" rx="2" fill="var(--paper)" stroke="var(--classification)" stroke-width="1.5"/>
+      <text x="475" y="65" text-anchor="middle" fill="var(--classification)" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" letter-spacing="0.5">⚠ YOU REVIEW</text>
+      <text x="475" y="82" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.3">Pricing · commitments</text>
+    </g>
+
+    <!-- Arrow from human back to AI -->
+    <path d="M 475 95 L 475 130 L 300 130" fill="none" stroke="var(--classification)" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+    <text x="380" y="125" fill="var(--classification)" font-family="JetBrains Mono, monospace" font-size="5.5" letter-spacing="0.3" opacity="0.7">approved → AI sends</text>
+
+    <!-- Follow-up note -->
+    <g>
+      <rect x="385" y="215" width="180" height="35" rx="2" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="475" y="233" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.3">⏰ AI SCHEDULES FOLLOW-UP</text>
+    </g>
+    <line x1="475" y1="205" x2="475" y2="215" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2,2"/>
+  </svg>
+</div>
+
+<style>
+  .workflow-diagram {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .workflow-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>

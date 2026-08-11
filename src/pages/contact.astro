@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Book a Strategy Call | Savoi.ai';
+---
+
+<Base title={title} fileNo="SAVOI-008" classification="INTAKE FORM">
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-meta label">FILE 08 — GET STARTED</div>
+      <h1 class="page-title reveal">Book a 30-Minute<br /><span class="page-title-accent">Call With Us</span></h1>
+      <p class="page-subtitle reveal">
+        We'll find 1–2 things eating your time and show you exactly what an
+        AI employee would handle.<br />
+        No sales pitch. No pressure. Just a clear picture of what it costs
+        and what you'd get.
+      </p>
+    </div>
+  </section>
+
+  <section class="section paper-texture">
+    <div class="container contact-grid">
+      <div class="contact-form-wrap">
+        <form class="contact-form" action="mailto:commercial@savoi.ai" method="post" enctype="text/plain">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-input" type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="company">Company</label>
+            <input class="form-input" type="text" id="company" name="company" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="role">Role</label>
+            <input class="form-input" type="text" id="role" name="role" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="process">
+              What's eating the most time in your business right now?
+              <span class="form-optional">optional</span>
+            </label>
+            <textarea class="form-textarea" id="process" name="process" rows="4" placeholder="Tell us about the repetitive stuff that's slowing you down..."></textarea>
+          </div>
+          <button type="submit" class="btn contact-submit">Book My Call</button>
+        </form>
+      </div>
+
+      <aside class="contact-aside">
+        <div class="contact-aside-block">
+          <div class="label contact-aside-label">ALTERNATIVE</div>
+          <p class="contact-aside-text">Prefer email?</p>
+          <a href="mailto:commercial@savoi.ai" class="contact-email">commercial@savoi.ai</a>
+        </div>
+        <div class="contact-aside-block">
+          <div class="label contact-aside-label">WHAT TO EXPECT</div>
+          <ul class="doc-list contact-expect">
+            <li>30 minutes, no commitment</li>
+            <li>We find 1–2 things eating your time</li>
+            <li>You see exactly what your AI employee would do</li>
+            <li>Clear pricing, no surprises</li>
+          </ul>
+        </div>
+        <div class="contact-aside-block">
+          <div class="label contact-aside-label">RESPONSE TIME</div>
+          <p class="contact-aside-text">We respond within one business day.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page-hero { padding: 5rem 0 4rem; }
+  .page-meta { color: var(--file-tab); margin-bottom: 1rem; }
+  .page-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; }
+  .page-title-accent { color: var(--classification-soft); font-style: italic; font-weight: 600; }
+  .page-subtitle { font-size: 1.125rem; color: var(--ink-faint); max-width: 620px; line-height: 1.65; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contact-form { max-width: 540px; }
+  .contact-submit { margin-top: 0.5rem; }
+
+  .contact-aside { display: flex; flex-direction: column; gap: 2rem; padding-left: 2rem; border-left: 1px solid var(--rule); }
+  .contact-aside-label { color: var(--classification); margin-bottom: 0.75rem; }
+  .contact-aside-text { font-size: 0.9375rem; color: var(--ink-soft); margin: 0 0 0.5rem; }
+  .contact-email {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    color: var(--classification);
+    text-decoration: none;
+  }
+  .contact-email:hover { color: var(--ink); }
+  .contact-expect li { font-size: 0.875rem; }
+
+  @media (max-width: 800px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-aside { padding-left: 0; border-left: none; border-top: 1px solid var(--rule); padding-top: 2rem; }
+  }
+</style>

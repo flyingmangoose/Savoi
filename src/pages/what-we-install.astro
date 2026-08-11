@@ -1,0 +1,127 @@
+---
+import Base from '../layouts/Base.astro';
+import CTA from '../components/CTA.astro';
+import SystemDiagram from '../components/SystemDiagram.astro';
+
+const title = 'What We Install — Production Multi-Agent Systems | Savoi.ai';
+const capabilities = [
+  { num: '01', title: 'A Team of AI Specialists', desc: 'Not one AI doing everything. Different AI employees for sales, support, operations, and more. Each one knows its job and hands off cleanly to the next.' },
+  { num: '02', title: 'It Knows Your Business', desc: 'It learns your products, your customers, and your way of working. It gets smarter the longer it runs. No starting from zero every time.' },
+  { num: '03', title: 'It Works in Your Tools', desc: 'Your CRM, email, Slack or Teams, calendar, inventory system. It works where you already work. No new software to learn.' },
+  { num: '04', title: 'Smart About Cost', desc: 'It uses the right AI for the right job. Tough decisions get the best AI. Simple stuff gets the fast, affordable AI. You get quality where it matters without overpaying.' },
+  { num: '05', title: 'It Runs on Its Own', desc: 'Scheduled tasks, monitoring, follow-ups, alerts. Things that need to happen every day or every week just happen. Nobody has to remember.' },
+  { num: '06', title: 'You Stay in Control', desc: 'Anything involving pricing, commitments, or big decisions can require your approval first. You decide what the AI can do on its own and what comes to you.' },
+];
+
+const phases = [
+  { num: '01', title: 'We Learn Your Business', duration: '2–3 weeks', desc: 'We find the tasks eating the most time and money. Then we design your AI team: who does what, what tools they use, and where you stay in control.' },
+  { num: '02', title: 'We Build and Connect', duration: '3–6 weeks', desc: 'We build the AI, connect it to your tools, train it on your business, and put the right guardrails in place.' },
+  { num: '03', title: 'We Train Your Team', duration: 'Ongoing', desc: 'We show your people how to work with the AI. We document everything. We agree on what success looks like.' },
+  { num: '04', title: 'We Keep It Running', duration: 'Optional', desc: 'Ongoing monitoring, improvements, new AI employees, and upgrades as the technology gets better.' },
+];
+---
+
+<Base title={title} fileNo="SAVOI-002" classification="FOR PUBLIC RELEASE">
+  <!-- HERO -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-meta label">FILE 02 — HOW IT WORKS</div>
+      <h1 class="page-title reveal">AI Employees for Your Business</h1>
+      <p class="page-subtitle reveal">
+        We don't drop in a chatbot and walk away.<br />
+        We build a team of AI employees that work inside your business and handle real work.
+      </p>
+    </div>
+  </section>
+
+  <!-- CORE CAPABILITIES -->
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 01 — What Your AI Employee Can Do</span></div>
+      <div class="grid grid-2">
+        {capabilities.map((cap) => (
+          <div class="doc-card cap-card reveal">
+            <div class="doc-card-header">
+              <span class="doc-card-number">SPEC {cap.num}</span>
+            </div>
+            <h3 class="cap-title">{cap.title}</h3>
+            <p class="cap-desc">{cap.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEM DIAGRAM -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 02 — How Your AI Team Is Structured</span></div>
+      <div class="diagram-wrap reveal">
+        <SystemDiagram />
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW ENGAGEMENTS WORK -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 03 — How We Work With You</span></div>
+      <div class="phases">
+        {phases.map((phase) => (
+          <div class="phase reveal">
+            <div class="phase-header">
+              <span class="phase-num">{phase.num}</span>
+              <span class="phase-duration">{phase.duration}</span>
+            </div>
+            <h3 class="phase-title">{phase.title}</h3>
+            <p class="phase-desc">{phase.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    headline="Want to see what an AI employee would do in your business?"
+    subtext="Book a 30-minute call. We'll find 1–2 things eating your time and show you exactly what we'd build."
+    fileNo="SAVOI-002 / CTA"
+  />
+</Base>
+
+<style>
+  .page-hero { padding: 5rem 0 4rem; }
+  .page-meta { color: var(--file-tab); margin-bottom: 1rem; }
+  .page-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1.25rem; }
+  .page-subtitle { font-size: 1.1875rem; color: var(--ink-faint); max-width: 620px; line-height: 1.65; }
+
+  .diagram-wrap { max-width: 680px; margin: 0 auto; }
+  .diagram-wrap :global(.system-diagram) { background: var(--ink-2); border-color: var(--ink-soft); }
+
+  .cap-card { display: flex; flex-direction: column; }
+  .cap-title { font-size: 1.1875rem; margin-bottom: 0.75rem; }
+  .cap-desc { font-size: 0.9375rem; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+
+  .phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .phase {
+    padding: 2rem;
+    border-left: 1px solid var(--ink-soft);
+    position: relative;
+  }
+  .phase:first-child { border-left: none; padding-left: 0; }
+  .phase-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem; }
+  .phase-num { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 700; color: var(--file-tab); }
+  .phase-duration { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--classification-soft); }
+  .phase-title { font-size: 1.125rem; margin-bottom: 0.625rem; color: var(--paper); }
+  .phase-desc { font-size: 0.9375rem; line-height: 1.55; color: var(--ink-faint); margin: 0; }
+
+  @media (max-width: 900px) {
+    .phases { grid-template-columns: 1fr 1fr; }
+    .phase { border-left: 1px solid var(--ink-soft); padding: 1.5rem; }
+    .phase:nth-child(odd) { border-left: none; padding-left: 0; }
+  }
+  @media (max-width: 600px) {
+    .phases { grid-template-columns: 1fr; }
+    .phase { border-left: none; padding: 1.5rem 0; border-top: 1px solid var(--ink-soft); }
+    .phase:first-child { border-top: none; }
+  }
+</style>

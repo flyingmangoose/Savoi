@@ -1,0 +1,400 @@
+---
+import Base from '../layouts/Base.astro';
+import CTA from '../components/CTA.astro';
+import AgentPanel from '../components/AgentPanel.astro';
+import SystemDiagram from '../components/SystemDiagram.astro';
+
+const title = 'Savoi.ai — AI Employees That Actually Do the Work';
+---
+
+<Base title={title} fileNo="SAVOI-001" classification="FOR PUBLIC RELEASE">
+  <!-- ════════ HERO ════════ -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-meta">
+          <span class="label hero-meta-item">PROVEN // REAL BUSINESSES</span>
+          <span class="stamp stamp-animate">Proven in Production</span>
+        </div>
+        <h1 class="hero-headline reveal">
+          AI Employees<br />
+          <span class="hero-headline-accent">That Actually Do</span><br />
+          The Work
+        </h1>
+        <p class="hero-subhead reveal">
+          We build AI that knows your products, answers your customers' questions,
+          drafts your quotes, and follows up on your deals — all inside the tools
+          you already use. You approve anything that costs money. It handles the rest.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="/contact" class="btn">Book a Strategy Call</a>
+          <a href="/what-we-install" class="btn btn-secondary">See How It Works</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bottom-bar">
+      <div class="container hero-trust">
+        <div class="hero-trust-item">
+          <span class="label">PROVEN IN</span>
+          <span class="hero-trust-text">Real businesses, from manufacturers to service companies</span>
+        </div>
+        <div class="hero-trust-divider"></div>
+        <div class="hero-trust-item">
+          <span class="label">BUILT ON</span>
+          <span class="hero-trust-text">Technology proven in high-stakes government work</span>
+        </div>
+        <div class="hero-trust-divider"></div>
+        <div class="hero-trust-item">
+          <span class="label">BUILT FOR</span>
+          <span class="hero-trust-text">Real businesses · Real results · You stay in control</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ WHAT YOU GET ════════ -->
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal">
+        <span>§ 01 — What You Actually Get</span>
+      </div>
+      <div class="get-grid">
+        <div class="get-main reveal">
+          <h2 class="get-headline">An AI employee<br />that knows your business<br />inside and out.</h2>
+          <p class="get-text">
+            We study your products, your catalog, your pricing, and the way you talk
+            to customers. Then we build AI that can do the work your best people do —
+            answering product questions, matching specs to customer needs, drafting quotes,
+            following up on deals, and running the repetitive tasks that eat your team's day.
+          </p>
+          <p class="get-text">
+            It lives in your CRM, your email, your Slack or Teams. It works the same
+            hours your customers do — all of them. And anything involving money or
+            commitments comes to you for a yes or no first.
+          </p>
+        </div>
+        <div class="get-side reveal">
+          <div class="get-card">
+            <div class="get-card-label label">WHAT IT HANDLES</div>
+            <ul class="get-card-list">
+              <li>Customer product questions — answered instantly, 24/7</li>
+              <li>Spec matching — "will this work for my project?"</li>
+              <li>Quote drafts — ready for you to approve and send</li>
+              <li>Follow-ups — no deal goes quiet</li>
+              <li>Pipeline reports — compiled and sent on schedule</li>
+              <li>Overdue invoice reminders — sent automatically</li>
+            </ul>
+          </div>
+          <div class="get-card get-card-dark">
+            <div class="get-card-label label">WHAT YOU STILL DO</div>
+            <ul class="get-card-list">
+              <li>Approve quotes and pricing</li>
+              <li>Handle the complex, high-value conversations</li>
+              <li>Make the final call on commitments</li>
+              <li>Set the rules — what the AI can and can't do</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ WHAT AN AGENT OWNS ════════ -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="rule-label reveal">
+        <span>§ 02 — What Your AI Employee Actually Does</span>
+      </div>
+      <div class="owns-grid">
+        <div class="owns-left">
+          <h2 class="owns-headline reveal">
+            This is not a chatbot.<br />
+            <span class="owns-headline-accent">This is a digital employee<br />that handles real work.</span>
+          </h2>
+          <ul class="owns-list">
+            <li class="owns-item reveal">
+              <span class="owns-num">01</span>
+              <div>
+                <h4>It remembers your business</h4>
+                <p>Knows your products, your customers, and your way of doing things. It doesn't start from scratch every time.</p>
+              </div>
+            </li>
+            <li class="owns-item reveal">
+              <span class="owns-num">02</span>
+              <div>
+                <h4>It uses your tools</h4>
+                <p>Slack, Teams, your CRM, email, your internal systems. It works where you already work.</p>
+              </div>
+            </li>
+            <li class="owns-item reveal">
+              <span class="owns-num">03</span>
+              <div>
+                <h4>It's a team, not just one thing</h4>
+                <p>Different AI specialists for sales, support, operations. They hand off to each other so nothing falls through the cracks.</p>
+              </div>
+            </li>
+            <li class="owns-item reveal">
+              <span class="owns-num">04</span>
+              <div>
+                <h4>You approve anything important</h4>
+                <p>Pricing, commitments, big decisions. Anything that matters goes through you first. You set the rules.</p>
+              </div>
+            </li>
+            <li class="owns-item reveal">
+              <span class="owns-num">05</span>
+              <div>
+                <h4>Smart about cost</h4>
+                <p>Uses the right AI for the right job. Heavy thinking gets the good stuff. Simple tasks get the fast, affordable stuff. You don't overpay.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="owns-panel reveal">
+          <AgentPanel />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ WHAT CHANGES ════════ -->
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal">
+        <span>§ 03 — What Changes When You Add an AI Employee</span>
+      </div>
+      <div class="changes-grid">
+        <div class="changes-col changes-before reveal">
+          <div class="changes-header">
+            <span class="changes-label label">WITHOUT</span>
+            <span class="changes-tag changes-tag-before">BEFORE</span>
+          </div>
+          <ul class="changes-list">
+            <li>A distributor calls about load ratings — your best guy is in a meeting</li>
+            <li>Same product spec questions, asked 40 times a week</li>
+            <li>Quotes sit in someone's inbox for two days</li>
+            <li>Hot leads go cold because nobody followed up</li>
+            <li>Your sales team is answering basic questions instead of closing deals</li>
+          </ul>
+        </div>
+        <div class="changes-col changes-after reveal">
+          <div class="changes-header">
+            <span class="changes-label label">WITH SAVOI</span>
+            <span class="changes-tag changes-tag-after">AFTER</span>
+          </div>
+          <ul class="changes-list">
+            <li>The AI answers load-rating questions instantly — correctly, every time</li>
+            <li>Your experts only get the questions that actually need them</li>
+            <li>Quotes are drafted in minutes, waiting for your approval</li>
+            <li>Every lead gets a follow-up — automatically, on time</li>
+            <li>Your sales team closes deals while the AI handles the rest</li>
+          </ul>
+        </div>
+      </div>
+      <div class="changes-proof reveal">
+        <span class="stamp stamp-green stamp-animate">Case Verified</span>
+        <p class="changes-proof-text">
+          Already proven with Shelter Forest International — a global manufacturer
+          that got their senior team's time back.
+          <a href="/case-studies" class="changes-proof-link">Read the case study →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FINAL CTA ════════ -->
+  <CTA
+    headline="Ready for an employee that never sleeps?"
+    subtext="Book a 30-minute call. We'll find 1–2 things eating your time and show you exactly what your AI employee would handle."
+    buttonLabel="Book Strategy Call"
+    fileNo="SAVOI-001 / CTA"
+  />
+</Base>
+
+<style>
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 0 0;
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(244,239,230,0.03) 59px, rgba(244,239,230,0.03) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(244,239,230,0.03) 59px, rgba(244,239,230,0.03) 60px);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; z-index: 1; flex: 1; display: flex; align-items: center; }
+  .hero-content { max-width: 760px; padding: 2rem 0; }
+  .hero-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+  .hero-meta-item { color: var(--file-tab); }
+  .hero-headline {
+    font-size: clamp(2.75rem, 7vw, 5rem);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.75rem;
+  }
+  .hero-headline-accent { color: var(--classification-soft); font-style: italic; font-weight: 600; }
+  .hero-subhead {
+    font-size: 1.1875rem;
+    line-height: 1.65;
+    color: var(--ink-faint);
+    max-width: 620px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .hero-bottom-bar {
+    position: relative;
+    z-index: 1;
+    background: var(--ink-2);
+    border-top: 1px solid var(--ink-soft);
+    padding: 1.5rem 0;
+  }
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .hero-trust-item { display: flex; flex-direction: column; gap: 0.35rem; }
+  .hero-trust-text { font-size: 0.9375rem; color: var(--paper); line-height: 1.4; }
+  .hero-trust-item:first-child .hero-trust-text { font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; }
+  .hero-trust-divider { width: 1px; height: 40px; background: var(--ink-soft); flex-shrink: 0; }
+
+  /* WHAT YOU GET */
+  .get-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: start; }
+  .get-headline { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; line-height: 1.15; margin-bottom: 1.5rem; }
+  .get-text { font-size: 1rem; line-height: 1.65; color: var(--ink-soft); margin-bottom: 1rem; }
+  .get-side { display: flex; flex-direction: column; gap: 1.25rem; }
+  .get-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+  }
+  .get-card-dark { background: var(--ink); color: var(--paper); }
+  .get-card-label { color: var(--classification); margin-bottom: 1rem; }
+  .get-card-dark .get-card-label { color: var(--file-tab); }
+  .get-card-list { list-style: none; }
+  .get-card-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9375rem;
+    line-height: 1.45;
+  }
+  .get-card-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--classification);
+  }
+  .get-card-dark .get-card-list li::before { color: var(--classification-soft); }
+  .get-card-dark .get-card-list li { color: var(--paper); }
+
+  /* OWNS */
+  .owns-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .owns-headline { font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.15; font-weight: 700; margin-bottom: 2rem; }
+  .owns-headline-accent { color: var(--classification-soft); font-style: italic; }
+  .owns-list { list-style: none; }
+  .owns-item { display: flex; gap: 1.25rem; padding-bottom: 1.75rem; margin-bottom: 1.75rem; border-bottom: 1px solid var(--ink-soft); }
+  .owns-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .owns-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--file-tab);
+    letter-spacing: 0.06em;
+    flex-shrink: 0;
+    padding-top: 0.15rem;
+  }
+  .owns-item h4 { font-size: 1.0625rem; margin-bottom: 0.35rem; color: var(--paper); }
+  .owns-item p { font-size: 0.9375rem; color: var(--ink-faint); line-height: 1.5; margin: 0; }
+
+  /* WHAT CHANGES */
+  .changes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .changes-col {
+    border-radius: var(--radius);
+    padding: 2rem;
+    position: relative;
+  }
+  .changes-before { background: var(--paper-2); border: 1px solid var(--rule); }
+  .changes-after { background: var(--ink); color: var(--paper); }
+  .changes-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .changes-label { color: var(--ink-muted); }
+  .changes-after .changes-label { color: var(--ink-faint); }
+  .changes-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius);
+  }
+  .changes-tag-before { background: var(--rule); color: var(--ink-muted); }
+  .changes-tag-after { background: var(--stamp-green); color: var(--paper); }
+  .changes-list { list-style: none; }
+  .changes-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .changes-list li::before {
+    position: absolute;
+    left: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+  }
+  .changes-before .changes-list li::before { content: '✕'; color: var(--ink-faint); }
+  .changes-after .changes-list li::before { content: '✓'; color: var(--stamp-green-soft); }
+  .changes-after .changes-list li { color: var(--paper); }
+
+  .changes-proof {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    flex-wrap: wrap;
+  }
+  .changes-proof-text {
+    font-size: 0.9375rem;
+    color: var(--ink-soft);
+    margin: 0;
+    line-height: 1.5;
+  }
+  .changes-proof-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 900px) {
+    .owns-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .get-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .changes-grid { grid-template-columns: 1fr; }
+    .hero-trust { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .hero-trust-divider { width: 100%; height: 1px; }
+  }
+  @media (max-width: 600px) {
+    .proof-card { padding: 1.75rem; }
+    .proof-header { flex-direction: column; gap: 1rem; }
+  }
+</style>
