@@ -6,18 +6,17 @@ import WorkflowDiagram from '../components/WorkflowDiagram.astro';
 const title = 'Case Study — A Global Plywood Manufacturer | Savoi.ai';
 
 const problems = [
-  'Pipeline reporting assembled by hand, out of date the moment it was sent',
-  'Receivables chased from memory, or not chased at all',
-  'Deal and account data scattered across the CRM, inventory, and spreadsheets',
-  'Leadership asking questions the numbers should already answer',
+  'Sales management ran on the CEO personally reviewing numbers and prompting his traders',
+  'The weekly trader report was assembled by hand from exports',
+  'Receivables got chased when someone remembered, not on a cadence',
+  'The discipline only happened when leadership had time for it',
 ];
 
-const capabilities = [
-  'Reads the CRM and operations systems live, not from a nightly export',
-  'Compiles trader and pipeline reporting on a schedule, without being asked',
-  'Tracks receivables aging and surfaces what needs a human today',
-  'Flags deals going quiet before they go cold',
-  'Escalates exceptions to leadership and logs what gets decided',
+const deliverables = [
+  { name: 'Weekly trader report', desc: 'Performance by trader, compiled from live CRM data and posted to the team channel.' },
+  { name: 'Receivables review', desc: 'Aging tracked against credit limits, with what needs a human decision surfaced.' },
+  { name: 'Morning briefing', desc: 'What matters today, in the channel before the desk starts trading.' },
+  { name: 'Evening briefing', desc: 'What moved, what closed, what went quiet, at the end of the trading day.' },
 ];
 ---
 
@@ -51,7 +50,7 @@ const capabilities = [
         </div>
         <div class="client-field reveal">
           <div class="label client-field-label">AGENT SCOPE</div>
-          <div class="client-field-value">Internal sales operations and reporting. No customer-facing contact.</div>
+          <div class="client-field-value">Internal sales management and reporting for the trading desk. No customer-facing contact.</div>
         </div>
         <div class="client-field reveal">
           <div class="label client-field-label">COMPANY</div>
@@ -67,15 +66,15 @@ const capabilities = [
       <div class="rule-label reveal"><span>§ 02 — The Challenge</span></div>
       <div class="challenge reveal">
         <p class="challenge-text">
-          A trading desk moves too fast for manual reporting. Their sales
-          management ran on people remembering to look:
+          The CEO had a sales management process that worked. The problem was that it
+          only ran when he ran it:
         </p>
         <ul class="doc-list challenge-list">
           {problems.map((q) => <li>{q}</li>)}
         </ul>
         <p class="challenge-text">
-          The data existed. Somebody just had to go get it, assemble it, and
-          circulate it, every single day, on top of actually selling.
+          None of it was complicated. All of it was on one person's calendar, competing
+          with running the company.
         </p>
       </div>
     </div>
@@ -97,15 +96,25 @@ const capabilities = [
       <div class="rule-label reveal"><span>§ 03 — The Solution</span></div>
       <div class="solution reveal">
         <p class="solution-text">
-          We built and now manage an internal sales operations agent, connected
-          directly to their CRM with live read access. It never speaks to a
-          customer. It works for the desk:
+          We encoded the CEO's own sales management routine into an agent and put it on
+          a machine in their office, reading their CRM live over an authenticated
+          connection. It runs the routine whether or not anyone remembers to. It never
+          contacts a customer. It reports to the desk:
         </p>
-        <ul class="doc-list solution-list">
-          {capabilities.map((c) => <li>{c}</li>)}
+        <ul class="deliverable-list">
+          {deliverables.map((d) => (
+            <li class="deliverable">
+              <span class="deliverable-name">{d.name}</span>
+              <span class="deliverable-desc">{d.desc}</span>
+            </li>
+          ))}
         </ul>
+        <p class="solution-text">
+          Everything lands in the channel the team already lives in. Exceptions get
+          escalated to leadership rather than buried in a report nobody opens.
+        </p>
         <div class="solution-quote">
-          <p class="solution-quote-text">The reporting layer stopped being somebody's afternoon.</p>
+          <p class="solution-quote-text">The process stopped depending on the CEO having a free hour.</p>
         </div>
       </div>
     </div>
@@ -117,14 +126,14 @@ const capabilities = [
       <div class="rule-label reveal"><span>§ 04 — Why This Matters</span></div>
       <div class="matters reveal">
         <p class="matters-text">
-          Most distributors and manufacturers run sales management the same way: the
-          data is in the system, and a person is the integration layer. That person is
-          usually your most expensive one.
+          In most owner-led companies the sales process lives in the owner's head and
+          runs at the owner's pace. It is real judgment, refined over years, and it is
+          the single biggest bottleneck in the business.
         </p>
         <p class="matters-text">
-          This engagement is the pattern in its clearest form. The agent absorbed the
-          reporting and follow-up discipline. The traders kept the trading, and the
-          leadership team stopped waiting on numbers — <em>no chatbot involved</em>.
+          That judgment is what we encode. The agent runs on hardware the client owns,
+          so the process stays theirs: inspectable, portable, and not sitting in someone
+          else's cloud — <em>no chatbot involved</em>.
         </p>
       </div>
     </div>
@@ -184,5 +193,11 @@ const capabilities = [
   @media (max-width: 700px) {
     .client-grid { grid-template-columns: 1fr; }
   }
+  .deliverable-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+  .deliverable { border-top: 1px solid var(--rule); padding: 1rem 0; display: grid; grid-template-columns: 200px 1fr; gap: 1.5rem; }
+  .deliverable:last-child { border-bottom: 1px solid var(--rule); }
+  .deliverable-name { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--classification); padding-top: 0.15rem; }
+  .deliverable-desc { font-size: 0.9375rem; line-height: 1.6; color: var(--ink-soft); }
+  @media (max-width: 700px) { .deliverable { grid-template-columns: 1fr; gap: 0.35rem; } }
   .client-anon { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; color: var(--ink-muted); font-weight: 400; letter-spacing: 0.04em; }
 </style>
