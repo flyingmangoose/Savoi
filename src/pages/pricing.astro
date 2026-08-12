@@ -143,6 +143,13 @@ const packages = [
     color: var(--ink-soft);
     max-width: 760px;
   }
+  /* cards sit on a dark section, which sets color:paper — reassert ink inside them */
+  .pricing-card, .pricing-card * { color: var(--ink); }
+  .pricing-card .pricing-num { color: var(--ink-muted); }
+  .pricing-card .pricing-price-label { color: var(--classification); }
+  .pricing-card .pricing-tagline { color: var(--ink-soft); }
+  .pricing-card .doc-list li::before { color: var(--classification); }
+  .pricing-card .rule { border-top-color: var(--rule); }
   .pricing-card {
     background: var(--paper);
     border: 1px solid var(--rule);
