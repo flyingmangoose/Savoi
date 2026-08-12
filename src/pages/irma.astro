@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import CTA from '../components/CTA.astro';
 
-const title = 'Meet Irma — The Managed Agent That Runs Our Firm | Savoi.ai';
+const title = 'Case File 001 — Irma, The Agent That Runs Our Own Firm | Savoi.ai';
 const description = 'Irma is the managed agent that runs our own operations. Finance, pipeline, content, and reporting, around the clock on a machine in our office. She is the proof behind every agent we install.';
 
 const record = [
@@ -29,11 +29,11 @@ const transcript = [
 ];
 ---
 
-<Base title={title} description={description} fileNo="SAVOI-003" classification="PERSONNEL FILE">
+<Base title={title} description={description} fileNo="SAVOI-002" classification="CLIENT ZERO">
   <!-- HERO -->
   <section class="section section-dark page-hero">
     <div class="container">
-      <div class="page-meta label">FILE 03 — PERSONNEL</div>
+      <div class="page-meta label">FILE 02 — CASE FILE 001 · CLIENT ZERO</div>
       <div class="irma-hero-row">
         <h1 class="page-title reveal">Meet Irma.<br /><span class="page-title-accent">She runs our firm.</span></h1>
         <span class="stamp stamp-green stamp-animate irma-stamp">Active</span>
@@ -61,27 +61,38 @@ const transcript = [
     </div>
   </section>
 
-  <!-- EXHIBIT A: TRANSCRIPT -->
+  <!-- RESULTS -->
   <section class="section section-dark">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 02 — Exhibit A: Channel Transcript</span></div>
-      <div class="transcript reveal">
-        <div class="transcript-head label">#finance-ops · recorded in the ordinary course of business</div>
-        {transcript.map((msg) => (
-          <div class="transcript-msg">
-            <div class="transcript-meta">
-              <span class={`transcript-who ${msg.agent ? 'transcript-agent' : ''}`}>{msg.who}</span>
-              {msg.agent && <span class="transcript-badge">AGENT</span>}
-              <span class="transcript-time">{msg.time}</span>
-            </div>
-            <p class="transcript-text">{msg.text}</p>
-          </div>
-        ))}
+      <div class="rule-label reveal"><span>§ 02 — Findings</span></div>
+      <h2 class="findings-headline reveal">What changed after Irma.</h2>
+      <div class="findings-grid">
+        <div class="finding reveal">
+          <div class="finding-fig">1 FTE</div>
+          <div class="finding-desc">of operations capacity freed across finance, delivery, sales, and marketing. Nobody was let go. The work moved.</div>
+        </div>
+        <div class="finding reveal">
+          <div class="finding-fig">30+</div>
+          <div class="finding-desc">skills running in production. Bank rec, deposits, invoicing, payroll journals, utilization, pipeline hygiene, content drafts.</div>
+        </div>
+        <div class="finding reveal">
+          <div class="finding-fig">1</div>
+          <div class="finding-desc">software subscription cancelled outright. The bill approval platform went away when the work stopped needing a portal.</div>
+        </div>
+        <div class="finding reveal">
+          <div class="finding-fig">0</div>
+          <div class="finding-desc">deals lost to neglect since the Monday staleness report went live. Anything untouched for two weeks gets flagged automatically.</div>
+        </div>
       </div>
-      <p class="transcript-note reveal">
-        This is what a managed agent looks like in the wild. Real system access,
-        real approval gates, a human yes before money moves. The whole exchange took two minutes.
-      </p>
+      <div class="findings-note reveal">
+        <p>
+          The finance lead stopped processing transactions and started doing finance.
+          The delivery lead stopped compiling utilization reports and started planning
+          resources. That is the pattern in every install: the repetitive 80 percent
+          moves to the agent, and the judgment work that was always the valuable part
+          finally gets the calendar.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -125,11 +136,38 @@ const transcript = [
     </div>
   </section>
 
+  <!-- CASE OFFICER -->
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 05 — Case Officer</span></div>
+      <div class="officer reveal">
+        <div class="officer-photo">
+          <img src="/av.jpg" alt="Abhijit Verekar" width="220" height="264" loading="lazy" />
+        </div>
+        <div class="officer-body">
+          <div class="label officer-label">Built and operated by</div>
+          <h3 class="officer-name">Abhijit Verekar</h3>
+          <p class="officer-title">Founder · Author of <em>Start at Zero</em></p>
+          <p class="officer-text">
+            Twenty years in enterprise technology, most of it watching organizations buy
+            software that still needed a person to operate it. Irma started as an
+            experiment in removing that person from the loop without removing them from
+            the company. Every install since runs on what that experiment taught us.
+          </p>
+          <p class="officer-text">
+            The full build is documented in public, failures included, across a
+            six-part series in my newsletter, <a href="https://www.linkedin.com/newsletters/untangled" target="_blank" rel="noopener">Untangled</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <CTA
     headline="Want one for your company?"
     subtext="Book a 30-minute call. We'll find 1–2 things eating your team's time and show you exactly what your managed agent would own."
     buttonLabel="Book a Workflow Call"
-    fileNo="SAVOI-003 / CTA"
+    fileNo="SAVOI-002 / CTA"
   />
 </Base>
 
@@ -199,7 +237,27 @@ const transcript = [
   .why-body p { font-size: 1rem; line-height: 1.65; color: var(--ink-faint); margin-bottom: 1.25rem; }
   .why-body .btn { margin-top: 0.5rem; }
 
+  /* FINDINGS */
+  .findings-headline { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; margin: 1.5rem 0 2rem; }
+  .findings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+  .finding { border-top: 2px solid var(--classification); padding-top: 1.25rem; }
+  .finding-fig { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.75rem; color: var(--paper); }
+  .finding-desc { font-size: 0.9375rem; line-height: 1.6; color: var(--ink-faint); }
+  .findings-note { margin-top: 2.5rem; padding-left: 1.5rem; border-left: 1px solid var(--ink-soft); max-width: 680px; }
+  .findings-note p { font-size: 1rem; line-height: 1.7; color: var(--ink-faint); margin: 0; }
+
+  /* CASE OFFICER */
+  .officer { display: grid; grid-template-columns: 220px 1fr; gap: 2.5rem; align-items: start; }
+  .officer-photo { border: 1px solid var(--rule); padding: 0.5rem; background: var(--paper); }
+  .officer-photo img { display: block; width: 100%; height: auto; filter: grayscale(100%) contrast(1.05); }
+  .officer-label { color: var(--classification); margin-bottom: 0.5rem; }
+  .officer-name { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .officer-title { font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--ink-muted); margin-bottom: 1.25rem; }
+  .officer-text { font-size: 0.9688rem; line-height: 1.65; color: var(--ink-soft); margin-bottom: 1rem; }
+
   @media (max-width: 900px) {
     .why-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .officer { grid-template-columns: 1fr; gap: 1.5rem; }
+    .officer-photo { max-width: 200px; }
   }
 </style>

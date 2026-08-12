@@ -57,6 +57,48 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
     </div>
   </section>
 
+  <!-- ════════ EXHIBIT A: TRANSCRIPT ════════ -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ Exhibit A — Two Minutes of Real Work</span></div>
+      <div class="tx-layout">
+        <div class="tx-panel reveal">
+          <div class="tx-head label">#finance-ops</div>
+          <div class="tx-msg">
+            <div class="tx-meta"><span class="tx-who">Finance Lead</span><span class="tx-time">9:41 AM</span></div>
+            <p class="tx-text">@Irma new bill. $3,200 from Zoom, due March 15, Operations.</p>
+          </div>
+          <div class="tx-msg">
+            <div class="tx-meta"><span class="tx-who tx-agent">Irma</span><span class="tx-badge">AGENT</span><span class="tx-time">9:41 AM</span></div>
+            <p class="tx-text">Created in the ERP as unpaid. Vendor and category match last month, no duplicate found. Approve for the March 14 payment run?</p>
+          </div>
+          <div class="tx-msg">
+            <div class="tx-meta"><span class="tx-who">Finance Lead</span><span class="tx-time">9:43 AM</span></div>
+            <p class="tx-text">Approved.</p>
+          </div>
+          <div class="tx-msg">
+            <div class="tx-meta"><span class="tx-who tx-agent">Irma</span><span class="tx-badge">AGENT</span><span class="tx-time">9:43 AM</span></div>
+            <p class="tx-text">Queued for payment and logged. It will show in Friday's summary with the other four bills this week.</p>
+          </div>
+        </div>
+        <div class="tx-side reveal">
+          <h2 class="tx-headline">This is the whole pitch.</h2>
+          <p class="tx-body">
+            A bill arrived, got filed correctly, waited for a human yes, and got paid.
+            No one opened a portal. No one uploaded a PDF. No one remembered to
+            reconcile it later.
+          </p>
+          <p class="tx-body">
+            That exchange is from our own firm, where Irma has run operations since
+            2025. Every agent we install works the same way: real system access,
+            real approval gates, and a person in the loop wherever money moves.
+          </p>
+          <a href="/irma" class="btn btn-secondary">Read Irma's File</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ════════ WHAT YOU GET ════════ -->
   <section class="section paper-texture">
     <div class="container">
@@ -205,7 +247,7 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
       <div class="changes-proof reveal">
         <span class="stamp stamp-green stamp-animate">Case Verified</span>
         <p class="changes-proof-text">
-          Already proven with Shelter Forest International — a global plywood manufacturer
+          Already proven inside our own firm, and with a global plywood manufacturer
           whose senior team got their time back.
           <a href="/case-studies" class="changes-proof-link">Read the case study →</a>
         </p>
@@ -326,6 +368,22 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
 
   /* OWNS */
   .owns-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  /* EXHIBIT A — TRANSCRIPT */
+  .tx-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 1rem; }
+  .tx-panel { background: var(--ink-2); border: 1px solid var(--ink-soft); border-radius: var(--radius); padding: 1.75rem; }
+  .tx-head { color: var(--file-tab); padding-bottom: 1.125rem; margin-bottom: 1.125rem; border-bottom: 1px solid var(--ink-soft); }
+  .tx-msg { margin-bottom: 1.125rem; }
+  .tx-msg:last-child { margin-bottom: 0; }
+  .tx-meta { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.25rem; }
+  .tx-who { font-weight: 700; font-size: 0.9375rem; color: var(--paper); }
+  .tx-agent { color: var(--classification-soft); }
+  .tx-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.5625rem; font-weight: 700; letter-spacing: 0.12em; padding: 0.1rem 0.45rem; border: 1px solid var(--classification-soft); border-radius: var(--radius); color: var(--classification-soft); }
+  .tx-time { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; color: var(--ink-faint); }
+  .tx-text { font-size: 0.9375rem; line-height: 1.55; color: var(--paper); margin: 0; }
+  .tx-headline { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; line-height: 1.15; margin-bottom: 1.25rem; }
+  .tx-body { font-size: 1rem; line-height: 1.65; color: var(--ink-faint); margin-bottom: 1.25rem; }
+  @media (max-width: 900px) { .tx-layout { grid-template-columns: 1fr; gap: 2rem; } }
+
   .owns-headline { font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.15; font-weight: 700; margin-bottom: 2rem; }
   .owns-headline-accent { color: var(--classification-soft); font-style: italic; }
   .owns-list { list-style: none; }
