@@ -5,19 +5,19 @@ import WorkflowDiagram from '../components/WorkflowDiagram.astro';
 
 const title = 'Case Study — A Global Plywood Manufacturer | Savoi.ai';
 
-const questions = [
-  'Product specs and performance',
-  'Will this work for my project?',
-  'Sustainability and sourcing',
-  'Availability and pricing',
+const problems = [
+  'Pipeline reporting assembled by hand, out of date the moment it was sent',
+  'Receivables chased from memory, or not chased at all',
+  'Deal and account data scattered across the CRM, inventory, and spreadsheets',
+  'Leadership asking questions the numbers should already answer',
 ];
 
 const capabilities = [
-  'Knows the full product line inside out',
-  'Talks like the client, not like a robot',
-  'Matches the right product to each customer need',
-  'Handles quotes and only escalates the hard stuff to humans',
-  'Follows up with customers automatically',
+  'Reads the CRM and operations systems live, not from a nightly export',
+  'Compiles trader and pipeline reporting on a schedule, without being asked',
+  'Tracks receivables aging and surfaces what needs a human today',
+  'Flags deals going quiet before they go cold',
+  'Escalates exceptions to leadership and logs what gets decided',
 ];
 ---
 
@@ -50,12 +50,12 @@ const capabilities = [
           <div class="client-field-value">Pacific Northwest, USA</div>
         </div>
         <div class="client-field reveal">
-          <div class="label client-field-label">INDUSTRY</div>
-          <div class="client-field-value">Global hardwood plywood manufacturer</div>
+          <div class="label client-field-label">AGENT SCOPE</div>
+          <div class="client-field-value">Internal sales operations and reporting. No customer-facing contact.</div>
         </div>
         <div class="client-field reveal">
           <div class="label client-field-label">COMPANY</div>
-          <div class="client-field-value">A third-generation family business selling to distributors, manufacturers, and contractors across North America. Known for quality products and sustainable sourcing.</div>
+          <div class="client-field-value">A family-run trading and manufacturing business selling to distributors, manufacturers, and contractors across North America.</div>
         </div>
       </div>
     </div>
@@ -67,15 +67,15 @@ const capabilities = [
       <div class="rule-label reveal"><span>§ 02 — The Challenge</span></div>
       <div class="challenge reveal">
         <p class="challenge-text">
-          Their sales and technical teams were spending hours answering the same
-          questions from customers, over and over:
+          A trading desk moves too fast for manual reporting. Their sales
+          management ran on people remembering to look:
         </p>
         <ul class="doc-list challenge-list">
-          {questions.map((q) => <li>{q}</li>)}
+          {problems.map((q) => <li>{q}</li>)}
         </ul>
         <p class="challenge-text">
-          All that knowledge lived in a few people's heads. Their best people
-          were getting interrupted constantly.
+          The data existed. Somebody just had to go get it, assemble it, and
+          circulate it, every single day, on top of actually selling.
         </p>
       </div>
     </div>
@@ -84,7 +84,7 @@ const capabilities = [
   <!-- WORKFLOW DIAGRAM -->
   <section class="section paper-texture">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 02.A — How It Works in Practice</span></div>
+      <div class="rule-label reveal"><span>§ 02.A — Data Flow</span></div>
       <div class="diagram-wrap reveal">
         <WorkflowDiagram />
       </div>
@@ -97,14 +97,15 @@ const capabilities = [
       <div class="rule-label reveal"><span>§ 03 — The Solution</span></div>
       <div class="solution reveal">
         <p class="solution-text">
-          We built them a custom AI sales assistant that knows their products
-          inside out and talks like their brand. Here's what it does:
+          We built and now manage an internal sales operations agent, connected
+          directly to their CRM with live read access. It never speaks to a
+          customer. It works for the desk:
         </p>
         <ul class="doc-list solution-list">
           {capabilities.map((c) => <li>{c}</li>)}
         </ul>
         <div class="solution-quote">
-          <p class="solution-quote-text">It became the always-on version of their best salesperson.</p>
+          <p class="solution-quote-text">The reporting layer stopped being somebody's afternoon.</p>
         </div>
       </div>
     </div>
@@ -116,12 +117,14 @@ const capabilities = [
       <div class="rule-label reveal"><span>§ 04 — Why This Matters</span></div>
       <div class="matters reveal">
         <p class="matters-text">
-          Most manufacturers and distributors deal with the same problem: your best
-          people are stuck answering the same questions, and your sales team is stretched thin.
+          Most distributors and manufacturers run sales management the same way: the
+          data is in the system, and a person is the integration layer. That person is
+          usually your most expensive one.
         </p>
         <p class="matters-text">
-          This project proves we can build AI that knows your products, talks like
-          your brand, and handles real B2B sales — <em>not a generic chatbot</em>.
+          This engagement is the pattern in its clearest form. The agent absorbed the
+          reporting and follow-up discipline. The traders kept the trading, and the
+          leadership team stopped waiting on numbers — <em>no chatbot involved</em>.
         </p>
       </div>
     </div>
@@ -129,8 +132,8 @@ const capabilities = [
 
   <CTA
     headline="Want this for your team?"
-    subtext="Book a call. We'll show you exactly what an AI employee would do in your business."
-    fileNo="SAVOI-005 / CTA"
+    subtext="Book a call. We'll show you exactly what a managed agent would own in your business."
+    fileNo="SAVOI-003 / CTA"
   />
 </Base>
 
