@@ -106,19 +106,6 @@ const packages = [
     </div>
   </section>
 
-  <section class="section paper-texture">
-    <div class="container">
-      <div class="rule-label reveal"><span>§ 03 — Simple Tools</span></div>
-      <div class="micro-saas-pricing reveal">
-        <p class="msp-text">
-          Most of our simple tools run between
-          <span class="msp-price">$99 – $999</span>
-          a month, depending on what you need.
-        </p>
-      </div>
-    </div>
-  </section>
-
   <CTA
     headline="Not sure which one fits?"
     subtext="Book a call — we'll look at your actual business and tell you honestly what makes sense."
@@ -194,7 +181,6 @@ const packages = [
   .pricing-features { margin-top: 0.5rem; }
   .pricing-features li { font-size: 0.875rem; }
 
-  .micro-saas-pricing { max-width: 620px; }
   .diag-card {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
@@ -215,14 +201,6 @@ const packages = [
   @media (max-width: 800px) {
     .diag-card { grid-template-columns: 1fr; }
     .diag-price-col { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 1.5rem; }
-  }
-  .msp-text { font-size: 1.25rem; line-height: 1.5; color: var(--ink); }
-  .msp-price {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--file-tab);
-    padding: 0 0.3rem;
   }
 
   @media (max-width: 900px) {
