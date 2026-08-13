@@ -57,6 +57,21 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
     </div>
   </section>
 
+  <!-- ════════ STATEMENT ════════ -->
+  <section class="section-lg statement paper-texture">
+    <div class="container">
+      <h2 class="statement-line reveal">
+        An agent is not a tool<br />you go and use.
+      </h2>
+      <h2 class="statement-line statement-line-2 reveal">
+        It is a role<br />somebody has to fill.
+      </h2>
+      <p class="statement-sub reveal">
+        Software waits for a person. An employee does the work and tells you when it needs you.
+      </p>
+    </div>
+  </section>
+
   <!-- ════════ EXHIBIT A: TRANSCRIPT ════════ -->
   <section class="section section-dark">
     <div class="container">
@@ -368,7 +383,7 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
     color: var(--paper);
     position: relative;
     overflow: hidden;
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -497,6 +512,26 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
   }
   .owns-item h4 { font-size: 1.0625rem; margin-bottom: 0.35rem; color: var(--paper); }
   .owns-item p { font-size: 0.9375rem; color: var(--ink-faint); line-height: 1.5; margin: 0; }
+
+  /* STATEMENT */
+  .statement { text-align: left; }
+  .statement-line {
+    font-size: clamp(2.25rem, 6.5vw, 4.75rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    max-width: 18ch;
+  }
+  .statement-line-2 { margin-top: 0.35em; color: var(--classification); font-style: italic; font-weight: 600; }
+  .statement-sub {
+    margin-top: 3rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--rule-2);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
 
   /* INTEGRATIONS */
   .int-headline { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; line-height: 1.15; margin: 1.5rem 0 1rem; }
