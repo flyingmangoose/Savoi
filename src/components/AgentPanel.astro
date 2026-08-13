@@ -1,48 +1,49 @@
 ---
-// Mock "agent at work" panel — shows AI employees handling conversations,
-// running tasks, and routing approvals to humans. Proves the concept visually.
+// Illustrative panel showing the shape of a working day for a managed agent:
+// internal requests answered, work waiting on a human, and scheduled work running.
+// Clearly labelled as an illustration. No fabricated metrics.
 ---
 
 <div class="agent-panel">
   <div class="agent-panel-header">
     <div class="agent-panel-title">
       <span class="agent-status-dot"></span>
-      <span class="agent-panel-name">SALES ASSISTANT — ACTIVE</span>
+      <span class="agent-panel-name">OPERATIONS AGENT — A TYPICAL DAY</span>
     </div>
-    <span class="label agent-panel-time">LIVE FEED</span>
+    <span class="label agent-panel-time">ILLUSTRATION</span>
   </div>
 
   <div class="agent-panel-body">
-    <!-- Active conversations -->
+    <!-- Answering the team -->
     <div class="agent-section">
-      <div class="agent-section-label label">Handling now</div>
+      <div class="agent-section-label label">Answering the team</div>
 
       <div class="conv-item">
         <div class="conv-row">
           <span class="conv-status conv-status-active">●</span>
-          <span class="conv-customer">Northeast Distributors Inc.</span>
-          <span class="conv-time">2m ago</span>
+          <span class="conv-customer">Trader, in the sales channel</span>
+          <span class="conv-time">9:12 AM</span>
         </div>
-        <p class="conv-preview">"Do you carry structural-grade sheets in 4×8?"</p>
+        <p class="conv-preview">"What do we have on hand in 4x8, and who owns those accounts?"</p>
         <div class="conv-response">
-          <span class="conv-response-label">AI:</span>
-          Yes — our structural line is available in 4×8 with full spec ratings
-          and certification docs. Would you like a quote for 50+ sheets?
+          <span class="conv-response-label">AGENT:</span>
+          Pulled from inventory and the CRM just now. Full breakdown by location and
+          rep is in the thread. Two of those accounts have open opportunities closing
+          this month.
         </div>
       </div>
 
       <div class="conv-item">
         <div class="conv-row">
           <span class="conv-status conv-status-active">●</span>
-          <span class="conv-customer">Cascade Manufacturing Co.</span>
-          <span class="conv-time">5m ago</span>
+          <span class="conv-customer">Sales lead, in a direct message</span>
+          <span class="conv-time">9:40 AM</span>
         </div>
-        <p class="conv-preview">"Can your product handle high-humidity environments?"</p>
+        <p class="conv-preview">"Can we substitute on the spec that came in yesterday?"</p>
         <div class="conv-response">
-          <span class="conv-response-label">AI:</span>
-          Our standard line handles moderate humidity. For high-moisture
-          applications, I'd recommend our marine-grade variant. Shall I
-          send specs for both?
+          <span class="conv-response-label">AGENT:</span>
+          Two substitutions meet that spec. One is a grade this customer has rejected
+          before, per the account notes. I would lead with the other.
         </div>
       </div>
     </div>
@@ -54,16 +55,16 @@
       <div class="approval-item">
         <div class="approval-header">
           <span class="approval-flag">⚠</span>
-          <span class="approval-customer">Pacific OEM Solutions</span>
-          <span class="approval-type">CUSTOM QUOTE</span>
+          <span class="approval-customer">Draft quote, 500 units</span>
+          <span class="approval-type">NEEDS A HUMAN</span>
         </div>
         <p class="approval-desc">
-          Customer wants pricing on 500 units with a custom finish. AI drafted
-          quote at $4.20/unit based on standard tier pricing.
+          Drafted against your standard tier pricing and this account's history.
+          Nothing sends until you say so.
         </p>
         <div class="approval-actions">
-          <button class="approval-btn approval-approve">Approve</button>
-          <button class="approval-btn approval-edit">Review & Edit</button>
+          <button class="approval-btn approval-approve" type="button" disabled>Approve</button>
+          <button class="approval-btn approval-edit" type="button" disabled>Review &amp; Edit</button>
         </div>
       </div>
     </div>
@@ -74,40 +75,30 @@
 
       <div class="task-item">
         <span class="task-icon">⏰</span>
-        <span class="task-text">Following up with 12 prospects from last week</span>
+        <span class="task-text">Flagging deals with no activity in two weeks</span>
         <span class="task-status">In progress</span>
       </div>
       <div class="task-item">
         <span class="task-icon">📊</span>
-        <span class="task-text">Monday pipeline report compiling</span>
+        <span class="task-text">Weekly pipeline report compiling</span>
         <span class="task-status">Scheduled 8am</span>
       </div>
       <div class="task-item">
         <span class="task-icon">🔄</span>
-        <span class="task-text">Checking 3 overdue invoices — sending reminders</span>
+        <span class="task-text">Receivables aging reviewed, exceptions routed</span>
         <span class="task-status">Done</span>
       </div>
     </div>
 
-    <!-- Stats footer -->
-    <div class="agent-stats">
-      <div class="agent-stat">
-        <span class="agent-stat-num">147</span>
-        <span class="agent-stat-label">Questions handled today</span>
-      </div>
-      <div class="agent-stat">
-        <span class="agent-stat-num">3</span>
-        <span class="agent-stat-label">Sent to human</span>
-      </div>
-      <div class="agent-stat">
-        <span class="agent-stat-num">98%</span>
-        <span class="agent-stat-label">Handled on its own</span>
-      </div>
+    <div class="agent-note">
+      An illustration of the shape of the work, not a live feed. Real deployments are
+      built around your systems and your rules.
     </div>
   </div>
 </div>
 
 <style>
+  .agent-note { padding: 1rem 1.25rem; margin-top: 0.5rem; border-top: 1px solid var(--rule); font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; line-height: 1.6; color: var(--ink-muted); }
   .agent-panel {
     background: var(--paper);
     border: 1px solid var(--rule-2);
