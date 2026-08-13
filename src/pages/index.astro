@@ -39,7 +39,7 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
     </div>
     <div class="hero-bottom-bar">
       <div class="container hero-logos">
-        <span class="hero-logos-k label">CONNECTS TO THE SYSTEMS YOU ALREADY RUN</span>
+        <span class="hero-logos-k label">WORKS INSIDE THE SYSTEMS YOU ALREADY RUN</span>
         <div class="hero-logos-marks">
           <img src="/logos/salesforce.svg" alt="Salesforce" width="24" height="24" />
           <img src="/logos/oracle.svg" alt="Oracle" width="24" height="24" />
@@ -57,37 +57,27 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
     </div>
   </section>
 
-  <!-- ════════ STATEMENT ════════ -->
-  <section class="section-lg statement paper-texture">
-    <div class="container">
-      <h2 class="statement-line reveal">
-        Your software<br />doesn't do the work.
-      </h2>
-      <h2 class="statement-line statement-line-2 reveal">
-        Somebody does.
-      </h2>
-      <p class="statement-sub reveal">
-        And most of that somebody's week is the repetitive part: pulling the numbers,
-        chasing the follow-up, filing the paperwork. That is the part we take.
-      </p>
-    </div>
-  </section>
-
   <!-- ════════ INTEGRATIONS ════════ -->
   <section class="section paper-texture" id="integrations">
     <div class="container">
       <div class="rule-label reveal"><span>§ 01 — What It Plugs Into</span></div>
-      <h2 class="int-headline reveal">It reads the systems<br /><span class="int-accent">you already pay for.</span></h2>
+      <h2 class="int-headline reveal">It doesn't just read your systems.<br /><span class="int-accent">It works in them.</span></h2>
       <p class="int-lede reveal">
-        Your ERP and CRM already hold the answers. What they do not have is somebody
-        reading them all day. A managed agent connects to the systems of record you
-        already run, then works in the chat tool your team already opens. Nothing new
-        for anyone to learn, and no portal to log into.
+        Your ERP and CRM already hold the answers. What they have never had is somebody
+        who acts on them. A managed agent creates the record, drafts the quote, updates
+        the deal, files the bill, and builds the report, then brings you the handful of
+        decisions that actually need a person.
+      </p>
+      <p class="int-lede int-lede-2 reveal">
+        Think of it as a team that has worked in your business, and your industry, for
+        decades. It knows your products, your customers, your pricing discipline, and
+        your process, and it does the work inside the tools your team already opens.
+        Nothing new to learn. No portal to log into.
       </p>
 
       <div class="int-band">
         <div class="int-row int-row-hero reveal">
-          <span class="int-row-k label">SYSTEMS OF RECORD</span>
+          <span class="int-row-k label">WORKS INSIDE</span>
           <div class="int-marks int-marks-lg">
             <span class="int-mark"><img src="/logos/salesforce.svg" alt="" width="34" height="34" /><span>Salesforce</span></span>
             <span class="int-mark"><img src="/logos/oracle.svg" alt="" width="34" height="34" /><span>Oracle</span></span>
@@ -101,14 +91,14 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
           </div>
         </div>
         <div class="int-row reveal">
-          <span class="int-row-k label">DOCUMENTS AND MAIL</span>
+          <span class="int-row-k label">AND ACROSS</span>
           <div class="int-marks">
             <span class="int-mark"><img src="/logos/microsoft-365.svg" alt="" width="26" height="26" /><span>Microsoft 365</span></span>
             <span class="int-mark"><img src="/logos/google-workspace.svg" alt="" width="26" height="26" /><span>Google Workspace</span></span>
           </div>
         </div>
         <div class="int-row reveal">
-          <span class="int-row-k label">TALKS TO YOU IN</span>
+          <span class="int-row-k label">REPORTS BACK IN</span>
           <div class="int-marks">
             <span class="int-mark"><img src="/logos/slack.svg" alt="" width="26" height="26" /><span>Slack</span></span>
             <span class="int-mark"><img src="/logos/microsoft-teams.svg" alt="" width="26" height="26" /><span>Teams</span></span>
@@ -122,17 +112,20 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
       <div class="int-custom reveal">
         <div class="int-custom-k label">AND THE ONES NOBODY ELSE SUPPORTS</div>
         <p class="int-custom-text">
-          The industry system with an API and no integrations. The internal database.
-          The spreadsheets on the shared drive, the document library, the twenty-year-old
+          The industry system with an API and no integrations. The internal database. The
+          spreadsheets on the shared drive, the document library, the twenty-year-old
           system everybody complains about. Off-the-shelf AI connects to whatever its
-          vendor decided to support. We build the connection your business actually runs on.
+          vendor decided to support, and then hands the actual work back to you. We build
+          the connection your business runs on, and the agent does the work on the other
+          side of it.
         </p>
       </div>
 
       <p class="int-note reveal">
-        Every connection uses your own credentials and is scoped read-only unless you
-        decide otherwise. Product names and logos belong to their owners and are shown to
-        indicate compatibility, not partnership.
+        Every connection uses your own credentials, and you decide what it is allowed to
+        change. Anything that costs money or leaves the building waits for a human yes.
+        Product names and logos belong to their owners and are shown to indicate
+        compatibility, not partnership.
       </p>
     </div>
   </section>
@@ -527,30 +520,11 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
   .hero-logos-link:hover { color: var(--paper); }
   @media (max-width: 860px) { .hero-logos { gap: 1rem; } .hero-logos-marks { gap: 1.1rem; } }
 
-  /* STATEMENT */
-  .statement { text-align: left; }
-  .statement-line {
-    font-size: clamp(2.25rem, 6.5vw, 4.75rem);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    max-width: 18ch;
-  }
-  .statement-line-2 { margin-top: 0.35em; color: var(--classification); font-style: italic; font-weight: 600; }
-  .statement-sub {
-    margin-top: 3rem;
-    padding-left: 1.5rem;
-    border-left: 2px solid var(--rule-2);
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: var(--ink-soft);
-    max-width: 46ch;
-  }
-
   /* INTEGRATIONS */
   .int-headline { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.15; margin: 1.5rem 0 1rem; }
   .int-accent { color: var(--classification); font-style: italic; }
-  .int-lede { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-soft); max-width: 60ch; margin-bottom: 2.5rem; }
+  .int-lede { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-soft); max-width: 62ch; margin-bottom: 1.25rem; }
+  .int-lede-2 { margin-bottom: 2.5rem; }
   .int-band { border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper); overflow: hidden; }
   .int-row { display: grid; grid-template-columns: 190px 1fr; gap: 1.5rem; align-items: center; padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--rule); }
   .int-row:last-child { border-bottom: none; }
