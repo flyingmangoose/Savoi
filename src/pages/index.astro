@@ -109,16 +109,42 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
         </div>
       </div>
 
-      <div class="int-custom reveal">
-        <div class="int-custom-k label">AND THE ONES NOBODY ELSE SUPPORTS</div>
-        <p class="int-custom-text">
-          The industry system with an API and no integrations. The internal database. The
-          spreadsheets on the shared drive, the document library, the twenty-year-old
-          system everybody complains about. Off-the-shelf AI connects to whatever its
-          vendor decided to support, and then hands the actual work back to you. We build
-          the connection your business runs on, and the agent does the work on the other
-          side of it.
+      <div class="sys-block">
+        <h3 class="sys-headline reveal">Modern SaaS or a system from 1998.<br /><span class="sys-accent">Both are connectable.</span></h3>
+        <p class="sys-lede reveal">
+          Cloud AI tools can only reach systems that are already on the internet with a
+          modern API. That rules out most of what actually runs mid-market businesses.
+          A managed agent runs inside your network, which means it can reach things a
+          hosted product never will.
         </p>
+
+        <div class="sys-cols">
+          <div class="sys-col reveal">
+            <div class="sys-k label">MODERN SAAS</div>
+            <p class="sys-desc">Salesforce, HubSpot, NetSuite, QuickBooks, Microsoft 365, anything with a published API.</p>
+            <div class="sys-how">Authenticated API access using your own credentials, scoped to what you approve. This is the easy case and it is usually live in days.</div>
+          </div>
+          <div class="sys-col reveal">
+            <div class="sys-k label">LEGACY AND ON-PREMISE</div>
+            <p class="sys-desc">The ERP running on a server in the back room. The AS/400. The system your vendor stopped updating years ago.</p>
+            <div class="sys-how">Direct read access to the database, scheduled exports, watched file drops, or the reporting layer it already produces. No internet exposure required, because the agent is already inside.</div>
+          </div>
+          <div class="sys-col reveal">
+            <div class="sys-k label">HOME-GROWN</div>
+            <p class="sys-desc">The Access database somebody built in 2009. The internal tool with one author. The spreadsheet that is really an application.</p>
+            <div class="sys-how">A purpose-built connector, written for your system and yours alone. This is the work off-the-shelf AI will not do, and it is often where the highest-value work lives.</div>
+          </div>
+        </div>
+
+        <div class="int-custom reveal">
+          <div class="int-custom-k label">THE RULE WE WORK BY</div>
+          <p class="int-custom-text">
+            If a person on your team can get to it, the agent can be built to get to it.
+            Off-the-shelf AI connects to whatever its vendor decided to support, then hands
+            the actual work back to you. We build the connection your business runs on, and
+            the agent does the work on the other side of it.
+          </p>
+        </div>
       </div>
 
       <p class="int-note reveal">
@@ -512,8 +538,8 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
   .hero-logos { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; padding: 1.25rem 2rem; }
   .hero-logos-k { color: var(--file-tab); white-space: nowrap; }
   .hero-logos-marks { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; flex: 1; }
-  .hero-logos-marks img { width: 24px; height: 24px; color: var(--paper); opacity: 0.55; transition: opacity 300ms ease; }
-  .hero-logos:hover .hero-logos-marks img { opacity: 0.8; }
+  .hero-logos-marks img { width: 24px; height: 24px; filter: brightness(0) invert(1); opacity: 0.72; transition: opacity 300ms ease; }
+  .hero-logos:hover .hero-logos-marks img { opacity: 1; }
   .hero-logos-link { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.06em; color: var(--classification-soft); white-space: nowrap; }
   .hero-logos-link:hover { color: var(--paper); }
   @media (max-width: 860px) { .hero-logos { gap: 1rem; } .hero-logos-marks { gap: 1.1rem; } }
@@ -539,6 +565,18 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
   .int-custom-k { color: var(--classification); margin-bottom: 0.75rem; }
   .int-custom-text { font-size: 1rem; line-height: 1.7; color: var(--ink); margin: 0; max-width: 72ch; }
   @media (max-width: 760px) { .int-row { grid-template-columns: 1fr; gap: 0.875rem; } .int-marks { gap: 1.25rem 1.5rem; } }
+
+  /* SYSTEM SITUATIONS */
+  .sys-block { margin-top: 3rem; }
+  .sys-headline { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; line-height: 1.15; margin-bottom: 1rem; }
+  .sys-accent { color: var(--classification); font-style: italic; }
+  .sys-lede { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-soft); max-width: 64ch; margin-bottom: 2rem; }
+  .sys-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+  .sys-col { border: 1px solid var(--rule); border-radius: var(--radius); padding: 1.5rem; background: var(--paper); display: flex; flex-direction: column; }
+  .sys-k { color: var(--classification); margin-bottom: 0.875rem; }
+  .sys-desc { font-size: 0.9375rem; line-height: 1.6; color: var(--ink); margin-bottom: 1rem; }
+  .sys-how { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; line-height: 1.75; color: var(--ink-muted); padding-top: 1rem; border-top: 1px dotted var(--rule-2); margin-top: auto; }
+  @media (max-width: 860px) { .sys-cols { grid-template-columns: 1fr; } }
 
   /* SOVEREIGNTY */
   .sov-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 3rem; align-items: start; margin-top: 1rem; }
