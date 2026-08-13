@@ -156,16 +156,35 @@ const deliverables = [
   <section class="section section-dark">
     <div class="container">
       <div class="rule-label reveal"><span>§ 04 — Why This Matters</span></div>
+      <h2 class="matters-headline reveal">The secret sauce stays<br /><span class="matters-accent">in the building.</span></h2>
       <div class="matters reveal">
         <p class="matters-text">
-          In most owner-led companies the sales process lives in the owner's head and
-          runs at the owner's pace. It is real judgment, refined over years, and it is
-          the single biggest bottleneck in the business.
+          Look at what this agent knows. Which mills can actually hit a spec and which
+          ones say they can. How to read a trade case before it moves a price. Which
+          substitution a particular customer will accept and which one loses the order.
+          What margin to hold and when to walk. That is not public information. It is
+          decades of hard-won judgment, and it is the reason the company wins business
+          its competitors do not.
         </p>
         <p class="matters-text">
-          That judgment is what we encode. The agent runs on hardware the client owns,
-          so the process stays theirs: inspectable, portable, and not sitting in someone
-          else's cloud — <em>no chatbot involved</em>.
+          Encoding that into an agent is the whole point, and it is also the moment the
+          question gets serious: where does it live now? Type it into a hosted AI
+          platform and the most valuable thing the company owns becomes a configuration
+          in a vendor's account, on infrastructure it does not control, governed by terms
+          it did not write and cannot see change.
+        </p>
+        <p class="matters-text">
+          So we do not do that. The agent runs on a machine in the client's building. The
+          knowledge base is theirs, on their disk, in files they can read. Access to every
+          connected system is read-only and authenticated with their own credentials.
+          Nothing about how this company sells is sitting in a vendor's cloud waiting to
+          become a bargaining chip at renewal.
+        </p>
+        <p class="matters-text">
+          That is the real argument for on-premise, and it has nothing to do with
+          paranoia. A company's operating knowledge is an asset. Assets belong on the
+          balance sheet, not in someone else's account — <em>and the day this engagement
+          ends, everything it learned stays exactly where it is</em>.
         </p>
       </div>
     </div>
@@ -225,6 +244,8 @@ const deliverables = [
   @media (max-width: 700px) {
     .client-grid { grid-template-columns: 1fr; }
   }
+  .matters-headline { font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; line-height: 1.12; margin: 1.5rem 0 1.75rem; }
+  .matters-accent { color: var(--classification-soft); font-style: italic; }
   .hood-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem; margin-top: 1.5rem; }
   .hood-k { color: var(--classification); margin-bottom: 0.5rem; }
   .hood-v { font-size: 0.9375rem; line-height: 1.65; color: var(--ink-soft); }
