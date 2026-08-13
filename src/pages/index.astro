@@ -255,10 +255,62 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
     </div>
   </section>
 
+  <!-- ════════ INTEGRATIONS ════════ -->
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 04 — What It Plugs Into</span></div>
+      <h2 class="int-headline reveal">It works where your team<br /><span class="int-accent">already works.</span></h2>
+      <p class="int-lede reveal">
+        No new software for your team to learn and no portal for anyone to log into.
+        Your agent shows up in the chat tool you already use and reads the systems you
+        already pay for.
+      </p>
+
+      <div class="int-band">
+        <div class="int-row reveal">
+          <span class="int-row-k label">TALKS TO YOU IN</span>
+          <div class="int-marks">
+            <span class="int-mark"><img src="/logos/slack.svg" alt="" width="26" height="26" /><span>Slack</span></span>
+            <span class="int-mark"><img src="/logos/microsoft-teams.svg" alt="" width="26" height="26" /><span>Teams</span></span>
+            <span class="int-mark"><img src="/logos/imessage.svg" alt="" width="26" height="26" /><span>iMessage</span></span>
+            <span class="int-mark"><img src="/logos/telegram.svg" alt="" width="26" height="26" /><span>Telegram</span></span>
+            <span class="int-mark"><img src="/logos/whatsapp.svg" alt="" width="26" height="26" /><span>WhatsApp</span></span>
+          </div>
+        </div>
+        <div class="int-row reveal">
+          <span class="int-row-k label">READS AND WRITES</span>
+          <div class="int-marks">
+            <span class="int-mark"><img src="/logos/salesforce.svg" alt="" width="26" height="26" /><span>Salesforce</span></span>
+            <span class="int-mark"><img src="/logos/hubspot.svg" alt="" width="26" height="26" /><span>HubSpot</span></span>
+            <span class="int-mark"><img src="/logos/quickbooks.svg" alt="" width="26" height="26" /><span>QuickBooks</span></span>
+            <span class="int-mark"><img src="/logos/google-workspace.svg" alt="" width="26" height="26" /><span>Google Workspace</span></span>
+            <span class="int-mark"><img src="/logos/microsoft-365.svg" alt="" width="26" height="26" /><span>Microsoft 365</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="int-custom reveal">
+        <div class="int-custom-k label">AND THE ONES NOBODY ELSE SUPPORTS</div>
+        <p class="int-custom-text">
+          Your ERP. Your inventory system. The internal database, the spreadsheets on the
+          shared drive, the document library, the twenty-year-old system everybody
+          complains about. Off-the-shelf AI connects to whatever its vendor decided to
+          support. We build the connection your business actually runs on.
+        </p>
+      </div>
+
+      <p class="int-note reveal">
+        Every connection uses your own credentials and is scoped read-only unless you
+        decide otherwise. Product names and logos belong to their owners and are shown to
+        indicate compatibility, not partnership.
+      </p>
+    </div>
+  </section>
+
   <!-- ════════ SOVEREIGNTY ════════ -->
   <section class="section section-dark" id="sovereignty-note">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 04 — Where It Lives</span></div>
+      <div class="rule-label reveal"><span>§ 05 — Where It Lives</span></div>
       <div class="sov-grid">
         <div class="sov-lead reveal">
           <h2 class="sov-headline">Your secret sauce stays<br /><span class="sov-accent">in the building.</span></h2>
@@ -445,6 +497,23 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
   }
   .owns-item h4 { font-size: 1.0625rem; margin-bottom: 0.35rem; color: var(--paper); }
   .owns-item p { font-size: 0.9375rem; color: var(--ink-faint); line-height: 1.5; margin: 0; }
+
+  /* INTEGRATIONS */
+  .int-headline { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; line-height: 1.15; margin: 1.5rem 0 1rem; }
+  .int-accent { color: var(--classification); font-style: italic; }
+  .int-lede { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-soft); max-width: 60ch; margin-bottom: 2.5rem; }
+  .int-band { border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper); overflow: hidden; }
+  .int-row { display: grid; grid-template-columns: 190px 1fr; gap: 1.5rem; align-items: center; padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--rule); }
+  .int-row:last-child { border-bottom: none; }
+  .int-row-k { color: var(--classification); }
+  .int-marks { display: flex; flex-wrap: wrap; gap: 1.75rem 2.25rem; align-items: center; }
+  .int-mark { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--ink); }
+  .int-mark img { width: 26px; height: 26px; opacity: 0.85; flex-shrink: 0; }
+  .int-mark span { font-size: 0.875rem; font-weight: 500; white-space: nowrap; }
+  .int-custom { margin-top: 1.5rem; border: 1px solid var(--classification); border-radius: var(--radius); padding: 1.5rem 1.75rem; background: var(--paper-2); }
+  .int-custom-k { color: var(--classification); margin-bottom: 0.75rem; }
+  .int-custom-text { font-size: 1rem; line-height: 1.7; color: var(--ink); margin: 0; max-width: 72ch; }
+  @media (max-width: 760px) { .int-row { grid-template-columns: 1fr; gap: 0.875rem; } .int-marks { gap: 1.25rem 1.5rem; } }
 
   /* SOVEREIGNTY */
   .sov-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 3rem; align-items: start; margin-top: 1rem; }
