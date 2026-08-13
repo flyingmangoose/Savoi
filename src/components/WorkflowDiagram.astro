@@ -17,12 +17,12 @@
     <g>
       <rect x="10" y="70" width="120" height="46" rx="2" fill="var(--paper-2)" stroke="var(--rule-2)" stroke-width="1.5"/>
       <text x="70" y="90" text-anchor="middle" fill="var(--ink)" font-family="Spectral, serif" font-size="12" font-weight="600">CRM</text>
-      <text x="70" y="105" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.5">DEALS · ACCOUNTS</text>
+      <text x="70" y="105" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.5">DEALS · INVENTORY</text>
     </g>
     <g>
       <rect x="10" y="136" width="120" height="46" rx="2" fill="var(--paper-2)" stroke="var(--rule-2)" stroke-width="1.5"/>
-      <text x="70" y="156" text-anchor="middle" fill="var(--ink)" font-family="Spectral, serif" font-size="12" font-weight="600">Operations</text>
-      <text x="70" y="171" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.5">ORDERS · CREDIT</text>
+      <text x="70" y="156" text-anchor="middle" fill="var(--ink)" font-family="Spectral, serif" font-size="12" font-weight="600">Knowledge</text>
+      <text x="70" y="171" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.5">SPECS · TRADE · MAIL</text>
     </g>
 
     <!-- Arrows into agent -->
@@ -42,35 +42,35 @@
     <!-- Routine path -->
     <path d="M 302 140 L 342 140 L 342 180 L 380 180" fill="none" stroke="var(--stamp-green)" stroke-width="1.5"/>
     <polygon points="382,180 376,177 376,183" fill="var(--stamp-green)"/>
-    <text x="347" y="155" fill="var(--stamp-green)" font-family="JetBrains Mono, monospace" font-size="6" font-weight="600" letter-spacing="0.3">ROUTINE</text>
+    <text x="347" y="155" fill="var(--stamp-green)" font-family="JetBrains Mono, monospace" font-size="6" font-weight="600" letter-spacing="0.3">ASKED</text>
 
     <!-- Exception path -->
     <path d="M 302 112 L 342 112 L 342 72 L 380 72" fill="none" stroke="var(--classification)" stroke-width="1.5" stroke-dasharray="4,3"/>
     <polygon points="382,72 376,69 376,75" fill="var(--classification)"/>
-    <text x="347" y="100" fill="var(--classification)" font-family="JetBrains Mono, monospace" font-size="6" font-weight="600" letter-spacing="0.3">EXCEPTION</text>
+    <text x="347" y="100" fill="var(--classification)" font-family="JetBrains Mono, monospace" font-size="6" font-weight="600" letter-spacing="0.3">NOTICED</text>
 
     <!-- Trader briefing -->
     <g>
       <rect x="385" y="155" width="180" height="50" rx="2" fill="var(--paper)" stroke="var(--stamp-green)" stroke-width="1.5"/>
-      <text x="475" y="175" text-anchor="middle" fill="var(--stamp-green)" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" letter-spacing="0.5">✓ POSTED TO TEAM CHAT</text>
-      <text x="475" y="192" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.3">AM · PM briefings · weekly report</text>
+      <text x="475" y="175" text-anchor="middle" fill="var(--stamp-green)" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" letter-spacing="0.5">✓ ANSWERS IN CHANNEL</text>
+      <text x="475" y="192" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.3">Specs · pipeline · inventory</text>
     </g>
 
     <!-- Escalation -->
     <g>
       <rect x="385" y="45" width="180" height="50" rx="2" fill="var(--paper)" stroke="var(--classification)" stroke-width="1.5"/>
-      <text x="475" y="65" text-anchor="middle" fill="var(--classification)" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" letter-spacing="0.5">⚠ ESCALATED</text>
-      <text x="475" y="82" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.3">Aging receivables · credit limits</text>
+      <text x="475" y="65" text-anchor="middle" fill="var(--classification)" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" letter-spacing="0.5">⚠ ALERTS THE OWNER</text>
+      <text x="475" y="82" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.3">Freight moves · account changes</text>
     </g>
 
     <!-- Human decision loop -->
     <path d="M 475 95 L 475 128 L 302 128" fill="none" stroke="var(--classification)" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
-    <text x="360" y="123" fill="var(--classification)" font-family="JetBrains Mono, monospace" font-size="5.5" letter-spacing="0.3" opacity="0.7">human decides → agent logs it</text>
+    <text x="360" y="123" fill="var(--classification)" font-family="JetBrains Mono, monospace" font-size="5.5" letter-spacing="0.3" opacity="0.7">routed to the person who owns it</text>
 
     <!-- Footer note -->
     <g>
       <rect x="385" y="215" width="180" height="35" rx="2" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,2"/>
-      <text x="475" y="233" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.3">🔒 INTERNAL ONLY · NO CUSTOMER CONTACT</text>
+      <text x="475" y="233" text-anchor="middle" fill="var(--ink-muted)" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.3">🔒 READ-ONLY · NO CUSTOMER CONTACT</text>
     </g>
     <line x1="475" y1="205" x2="475" y2="215" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2,2"/>
   </svg>

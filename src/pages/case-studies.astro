@@ -6,17 +6,18 @@ import WorkflowDiagram from '../components/WorkflowDiagram.astro';
 const title = 'Case Study — A Global Plywood Manufacturer | Savoi.ai';
 
 const problems = [
-  'Sales management ran on the CEO personally reviewing numbers and prompting his traders',
-  'The weekly trader report was assembled by hand from exports',
-  'Receivables got chased when someone remembered, not on a cadence',
-  'The discipline only happened when leadership had time for it',
+  'Product and grading expertise lived with a handful of senior people, who got interrupted all day',
+  'Answering "what do we have, where, and who owns it" meant logging in and hunting',
+  'Trade and tariff guidance sat in one or two heads and in old email threads',
+  'Nobody was watching for the changes that quietly cost money',
 ];
 
 const deliverables = [
-  { name: 'Weekly trader report', desc: 'Performance by trader, compiled from live CRM data and posted to the team channel.' },
-  { name: 'Receivables review', desc: 'Aging tracked against credit limits, with what needs a human decision surfaced.' },
-  { name: 'Morning briefing', desc: 'What matters today, in the channel before the desk starts trading.' },
-  { name: 'Evening briefing', desc: 'What moved, what closed, what went quiet, at the end of the trading day.' },
+  { name: 'House expert', desc: 'Species, grades, dimensions, grading standards, mill capabilities, and substitutions. Answers in seconds, in the channel, without interrupting a senior trader.' },
+  { name: 'Live CRM lookups', desc: 'Pipeline by rep, account, or stage. Open deals and close dates. Inventory on hand by location, trader, and product. Read straight from the system, not from a stale export.' },
+  { name: 'Trade and pricing context', desc: 'Tariff and trade case guidance, sourcing partner background, and margin discipline, all encoded from how the company actually decides.' },
+  { name: 'Watchful alerts', desc: 'Freight rates, account reassignments, and inbound business mail, routed to the person who needs them as they happen.' },
+  { name: 'Standing reports', desc: 'A recurring market report compiled and delivered every week without anyone remembering to ask.' },
 ];
 ---
 
@@ -66,15 +67,16 @@ const deliverables = [
       <div class="rule-label reveal"><span>§ 02 — The Challenge</span></div>
       <div class="challenge reveal">
         <p class="challenge-text">
-          The CEO had a sales management process that worked. The problem was that it
-          only ran when he ran it:
+          The company had deep expertise and good systems. What it did not have was a
+          way to get at either one quickly:
         </p>
         <ul class="doc-list challenge-list">
           {problems.map((q) => <li>{q}</li>)}
         </ul>
         <p class="challenge-text">
-          None of it was complicated. All of it was on one person's calendar, competing
-          with running the company.
+          A trading desk runs on answers. Every minute spent finding one is a minute not
+          spent selling, and the people with the answers were the people who could least
+          afford the interruption.
         </p>
       </div>
     </div>
@@ -96,10 +98,10 @@ const deliverables = [
       <div class="rule-label reveal"><span>§ 03 — The Solution</span></div>
       <div class="solution reveal">
         <p class="solution-text">
-          We encoded the CEO's own sales management routine into an agent and put it on
-          a machine in their office, reading their CRM live over an authenticated
-          connection. It runs the routine whether or not anyone remembers to. It never
-          contacts a customer. It reports to the desk:
+          We built an agent that holds the company's own expertise and reads its systems
+          live, then put it in the chat channel the desk already works in. It runs on a
+          machine in their building with read-only access to the CRM, inventory, and
+          mailbox. It never contacts a customer. It works for the traders:
         </p>
         <ul class="deliverable-list">
           {deliverables.map((d) => (
@@ -110,13 +112,43 @@ const deliverables = [
           ))}
         </ul>
         <p class="solution-text">
-          Everything lands in the channel the team already lives in. Exceptions get
-          escalated to leadership rather than buried in a report nobody opens.
+          Ask it a question and it answers. Leave it alone and it watches. When something
+          needs a person, it goes to that specific person rather than into a report
+          nobody opens.
         </p>
         <div class="solution-quote">
-          <p class="solution-quote-text">The process stopped depending on the CEO having a free hour.</p>
+          <p class="solution-quote-text">The company's expertise stopped being a calendar problem.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- UNDER THE HOOD -->
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 03.A — Under the Hood</span></div>
+      <div class="hood-grid">
+        <div class="hood reveal">
+          <div class="hood-k label">WHERE IT RUNS</div>
+          <div class="hood-v">A dedicated machine at the client's own site, running as a system service. No agent workload in a third-party cloud.</div>
+        </div>
+        <div class="hood reveal">
+          <div class="hood-k label">WHAT IT READS</div>
+          <div class="hood-v">The CRM and inventory system over an authenticated connection, the shared mailbox, and a curated library of the company's own product and trade knowledge.</div>
+        </div>
+        <div class="hood reveal">
+          <div class="hood-k label">ACCESS POSTURE</div>
+          <div class="hood-v">Read-only across every connected system. The agent informs decisions; it does not change the record.</div>
+        </div>
+        <div class="hood reveal">
+          <div class="hood-k label">HOW IT SCALES</div>
+          <div class="hood-v">It keeps a working memory of standing instructions and daily context, and hands heavier analysis to purpose-built sub-agents so routine lookups stay fast and cheap.</div>
+        </div>
+      </div>
+      <p class="hood-note reveal">
+        Phase two is in build: a sales management layer covering rep coaching, cadence
+        discipline, and daily briefings to the desk.
+      </p>
     </div>
   </section>
 
@@ -193,6 +225,11 @@ const deliverables = [
   @media (max-width: 700px) {
     .client-grid { grid-template-columns: 1fr; }
   }
+  .hood-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem; margin-top: 1.5rem; }
+  .hood-k { color: var(--classification); margin-bottom: 0.5rem; }
+  .hood-v { font-size: 0.9375rem; line-height: 1.65; color: var(--ink-soft); }
+  .hood-note { margin-top: 2.5rem; padding-left: 1.25rem; border-left: 2px solid var(--rule); font-size: 0.875rem; font-family: 'JetBrains Mono', monospace; line-height: 1.6; color: var(--ink-muted); max-width: 620px; }
+  @media (max-width: 760px) { .hood-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
   .deliverable-list { list-style: none; padding: 0; margin: 1.5rem 0; }
   .deliverable { border-top: 1px solid var(--rule); padding: 1rem 0; display: grid; grid-template-columns: 200px 1fr; gap: 1.5rem; }
   .deliverable:last-child { border-bottom: 1px solid var(--rule); }
