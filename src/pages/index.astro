@@ -214,7 +214,7 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
   <section class="section paper-texture">
     <div class="container">
       <div class="rule-label reveal">
-        <span>§ 03 — What Changes When You Add an AI Employee</span>
+        <span>§ 03 — What Changes When You Add a Managed Agent</span>
       </div>
       <div class="changes-grid">
         <div class="changes-col changes-before reveal">
@@ -251,6 +251,51 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
           whose senior team got their time back.
           <a href="/case-studies" class="changes-proof-link">Read the case study →</a>
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ SOVEREIGNTY ════════ -->
+  <section class="section section-dark" id="sovereignty-note">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 04 — Where It Lives</span></div>
+      <div class="sov-grid">
+        <div class="sov-lead reveal">
+          <h2 class="sov-headline">Your secret sauce stays<br /><span class="sov-accent">in the building.</span></h2>
+          <p class="sov-text">
+            The whole point of a managed agent is that it holds what your company actually
+            knows. Which supplier delivers on the promise and which one does not. What a
+            particular customer will accept. What margin to hold and when to walk away.
+            That is not public information. It is the reason you win business your
+            competitors do not.
+          </p>
+          <p class="sov-text">
+            Which makes the next question the important one. Once that knowledge is
+            written down, where does it live? Put it in a hosted AI platform and the most
+            valuable thing you own becomes a configuration in a vendor's account, on
+            infrastructure you do not control, governed by terms you did not write and
+            cannot see change.
+          </p>
+          <p class="sov-text">
+            So we do not do that. Your agent runs on a machine in your building. The
+            knowledge base sits on your disk, in files you can open. Every system it
+            touches is connected with your own credentials, read-only by default. Nothing
+            about how your company operates ends up as leverage in somebody's renewal
+            conversation.
+          </p>
+        </div>
+        <div class="sov-panel reveal">
+          <div class="sov-panel-head label">CUSTODY</div>
+          <div class="sov-row"><span class="sov-k">Hardware</span><span class="sov-v">Yours. On your premises.</span></div>
+          <div class="sov-row"><span class="sov-k">Knowledge base</span><span class="sov-v">Your disk. Readable files.</span></div>
+          <div class="sov-row"><span class="sov-k">Credentials</span><span class="sov-v">Yours. Read-only by default.</span></div>
+          <div class="sov-row"><span class="sov-k">Data in transit</span><span class="sov-v">Stays inside your network.</span></div>
+          <div class="sov-row"><span class="sov-k">If you fire us</span><span class="sov-v">Everything stays where it is.</span></div>
+          <p class="sov-note">
+            A company's operating knowledge is an asset. Assets belong on your balance
+            sheet, not in someone else's account.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -400,6 +445,19 @@ const title = 'Savoi.ai — Managed Agents. AI Employees That Actually Do the Wo
   }
   .owns-item h4 { font-size: 1.0625rem; margin-bottom: 0.35rem; color: var(--paper); }
   .owns-item p { font-size: 0.9375rem; color: var(--ink-faint); line-height: 1.5; margin: 0; }
+
+  /* SOVEREIGNTY */
+  .sov-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 3rem; align-items: start; margin-top: 1rem; }
+  .sov-headline { font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; line-height: 1.12; margin-bottom: 1.5rem; }
+  .sov-accent { color: var(--classification-soft); font-style: italic; }
+  .sov-text { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-faint); margin-bottom: 1.25rem; }
+  .sov-panel { border: 1px solid var(--ink-soft); border-radius: var(--radius); padding: 1.75rem; background: var(--ink-2); }
+  .sov-panel-head { color: var(--classification-soft); padding-bottom: 1rem; margin-bottom: 0.5rem; border-bottom: 1px solid var(--ink-soft); }
+  .sov-row { display: flex; justify-content: space-between; gap: 1rem; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .sov-k { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--file-tab); white-space: nowrap; }
+  .sov-v { font-size: 0.875rem; color: var(--paper); text-align: right; line-height: 1.45; }
+  .sov-note { margin-top: 1.5rem; font-size: 0.875rem; line-height: 1.6; color: var(--ink-faint); font-style: italic; }
+  @media (max-width: 900px) { .sov-grid { grid-template-columns: 1fr; gap: 2rem; } }
 
   /* WHAT CHANGES */
   .changes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
