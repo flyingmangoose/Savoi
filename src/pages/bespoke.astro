@@ -1,0 +1,103 @@
+---
+import Base from '../layouts/Base.astro';
+import CTA from '../components/CTA.astro';
+
+const title = 'Bespoke Software | Savoi.ai';
+---
+
+<Base title={title} fileNo="SAVOI-003" classification="FOR PUBLIC RELEASE">
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-meta label">FILE 03 · BESPOKE SOFTWARE</div>
+      <h1 class="page-title reveal">Bespoke Software.<br /><span class="page-title-accent">Built to fit, and yours to keep.</span></h1>
+      <p class="page-subtitle reveal">
+        Bespoke software is the future of how businesses get the systems they need, and it is
+        available now: a scoped build that starts with your requirements, puts a thin working system
+        in your hands early, and leaves you owning the code, the harness and the data.
+      </p>
+    </div>
+  </section>
+
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 01 · Why Bespoke</span></div>
+      <h2 class="bs-headline reveal">The old way gave software<br /><span class="bs-accent">a bad name.</span></h2>
+      <p class="bs-text reveal">
+        Most people who have lived through a traditional made-to-order software project remember it the
+        same way. A long specification was written up front, the vendor went quiet for months, the
+        timeline stretched, and what finally arrived was a one-off build that
+        only its original authors understood. Every later change meant going back to them, which is
+        why so many businesses decided that a workaround they could live with was safer than a
+        system that actually fit.
+      </p>
+      <p class="bs-text reveal">
+        Bespoke software keeps the part that was always worth having, a system shaped around how your
+        business really runs, and removes the parts that made it risky. The scope is agreed before work
+        begins, you see working software early instead of a promise, and nothing about the result is
+        locked away from you once it is delivered.
+      </p>
+
+      <div class="rule-label reveal"><span>§ 02 · How It Runs</span></div>
+      <div class="bs-cols">
+        <div class="bs-col reveal">
+          <div class="bs-col-k label">01 · REQUIREMENTS FIRST</div>
+          <p class="bs-col-text">We sit with the people who do the work and write down what the system has to do, what it must never do, and how you will know it is working, so the build starts from shared understanding rather than guesswork.</p>
+        </div>
+        <div class="bs-col reveal">
+          <div class="bs-col-k label">02 · A THIN WORKING SYSTEM</div>
+          <p class="bs-col-text">Before anything grows large, we ship a small version that runs end to end on your real work, which lets your team use it, push on it, and tell us what matters while changes are still easy.</p>
+        </div>
+        <div class="bs-col reveal">
+          <div class="bs-col-k label">03 · SCOPED STEPS FROM THERE</div>
+          <p class="bs-col-text">Each extension is scoped and agreed before it starts, so you always know what is being built next and why, and the system grows in the direction your business actually needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 03 · What You Own</span></div>
+      <h2 class="bs-headline reveal">When the build is done,<br /><span class="bs-accent-dark">it belongs to you.</span></h2>
+      <p class="bs-text bs-text-dark reveal">
+        We think the most important thing about bespoke software is who holds it afterward. You
+        own the code, which lives in your repository rather than ours. You own the harness that
+        runs, tests and deploys it, so any capable team can pick it up and keep going. And you own
+        the data, which stays in systems you control. We would like to keep working with you because
+        the work is good, not because you have no other choice.
+      </p>
+      <ul class="doc-list bs-list reveal">
+        <li>The code, in your repository</li>
+        <li>The harness that runs, tests and deploys it</li>
+        <li>The data, in systems you control</li>
+      </ul>
+    </div>
+  </section>
+
+  <CTA
+    headline="Have a system you wish existed?"
+    subtext="Book a call and walk us through the work it would need to do. We will tell you plainly whether a bespoke build is the right answer, and what the thin first version would look like."
+    buttonLabel="Book a Call"
+    fileNo="SAVOI-003 / CTA"
+  />
+</Base>
+
+<style>
+  .page-hero { padding: 5rem 0 4rem; }
+  .page-meta { color: var(--file-tab); margin-bottom: 1rem; }
+  .page-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1.25rem; }
+  .page-title-accent { color: var(--classification-soft); font-style: italic; font-weight: 600; }
+  .page-subtitle { font-size: 1.1875rem; color: var(--ink-faint); max-width: 620px; line-height: 1.65; }
+
+  .bs-headline { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; line-height: 1.15; margin: 1.5rem 0 1.25rem; }
+  .bs-accent { color: var(--classification); font-style: italic; }
+  .bs-accent-dark { color: var(--classification-soft); font-style: italic; }
+  .bs-text { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-soft); max-width: 62ch; margin-bottom: 1.25rem; }
+  .bs-text-dark { color: var(--ink-faint); }
+  .bs-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .bs-col { background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--classification); border-radius: var(--radius); padding: 1.75rem; }
+  .bs-col-k { color: var(--classification); margin-bottom: 1rem; }
+  .bs-col-text { font-size: 0.9375rem; line-height: 1.6; color: var(--ink-soft); }
+  .bs-list { margin-top: 1.5rem; max-width: 62ch; }
+  @media (max-width: 860px) { .bs-cols { grid-template-columns: 1fr; } }
+</style>
