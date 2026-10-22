@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import CTA from '../components/CTA.astro';
 
 const title = 'Common Questions | Savoi.ai';
+const description = 'Straight answers about Savoi bespoke builds, including why bespoke beats an off-the-shelf agent, how we price after a fixed fee Diagnostic, legacy systems, managed agents and who owns what.';
 
 const faqs = [
   {
@@ -23,11 +24,11 @@ const faqs = [
   },
   {
     q: 'Our main system is old. Can this even connect to it?',
-    a: "Usually yes, and this is where a bespoke build differs from cloud AI tools, which can only reach systems already exposed to the internet with a modern API. We can run the system inside your network, so it can read the ERP on the server in the back room, the database behind a home-grown tool, or a scheduled export the system already produces. Our working rule is that if someone on your team can get to it, we can usually build the system a way to get to it, and we confirm that during the Diagnostic before anyone commits to a build.",
+    a: "Usually yes, and this is where a bespoke build differs from off-the-shelf AI tools, which can usually only reach systems already exposed to the internet with a modern API. We can run the system inside your network, so it can read the ERP on the server in the back room, the database behind a home-grown tool, or a scheduled export the system already produces. Our working rule is that if someone on your team can get to it, we can usually build the system a way to get to it, and we confirm that during the Diagnostic before anyone commits to a build.",
   },
   {
-    q: "Doesn't Salesforce or Microsoft Copilot already do this?",
-    a: "Those tools are good inside their own world, but most real businesses run on a mix of Slack, email, a CRM, an inventory system and a lot of knowledge that lives in people's heads, and platform tools do not cross those boundaries well. A bespoke system is built to work across all of it and handle the whole job, which is why a business that already uses Copilot or Salesforce can still need one.",
+    q: "Doesn't the AI built into our CRM or office suite already do this?",
+    a: "Those tools are good inside their own world, but most real businesses run on a mix of Slack, email, a CRM, an inventory system and a lot of knowledge that lives in people's heads, and platform tools do not cross those boundaries well. A bespoke system is built to work across all of it and handle the whole job, which is why a business that already pays for those built-in tools can still need one.",
   },
   {
     q: 'How do you keep the system from getting things wrong?',
@@ -40,10 +41,10 @@ const faqs = [
 ];
 ---
 
-<Base title={title} fileNo="SAVOI-008" classification="FOR PUBLIC RELEASE">
+<Base title={title} description={description} fileNo="SAVOI-009" classification="FOR PUBLIC RELEASE">
   <section class="section section-dark page-hero">
     <div class="container">
-      <div class="page-meta label">FILE 08 · Q&A</div>
+      <div class="page-meta label">FILE 09 · Q&A</div>
       <h1 class="page-title reveal">Questions You Probably Have</h1>
     </div>
   </section>
@@ -65,7 +66,7 @@ const faqs = [
   <CTA
     headline="Still have questions?"
     subtext="Book a call and ask them, and we will answer honestly, including telling you when a bespoke build is not the right answer for your business."
-    fileNo="SAVOI-008 / CTA"
+    fileNo="SAVOI-009 / CTA"
   />
 </Base>
 

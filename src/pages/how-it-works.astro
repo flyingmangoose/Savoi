@@ -3,20 +3,21 @@ import Base from '../layouts/Base.astro';
 import CTA from '../components/CTA.astro';
 
 const title = 'How It Works · From the Way Your Business Runs to a System You Own | Savoi.ai';
+const description = 'How a Savoi bespoke build runs, from a 30 minute call and a two week $7,500 Diagnostic to a thin working system, scoped steps, and a system you own outright.';
 
 const steps = [
-  { num: '01', phase: 'LISTEN', title: 'Quick Call', duration: '30 minutes', desc: "We talk through what is eating your team's time and what the system you wish existed would need to do, with no commitment and no pressure, and we tell you plainly if we do not think a bespoke build is the answer." },
-  { num: '02', phase: 'LISTEN', title: 'Service Layer Diagnostic', duration: '2 weeks · $7,500', desc: "We sit with the people who do the work, map where their time goes, and write the requirements for the first version of the system with you, ending with a fixed scope and a fixed build quote. The fee is fully credited against any build signed within 60 days, and if we do not find enough to justify a build, we tell you that instead." },
+  { num: '01', phase: 'TALK', title: 'Quick Call', duration: '30 minutes', desc: "We talk through what is eating your team's time and what the system you wish existed would need to do, with no commitment and no pressure, and we tell you plainly if we do not think a bespoke build is the answer." },
+  { num: '02', phase: 'LEARN', title: 'Service Layer Diagnostic', duration: '2 weeks · $7,500', desc: "We sit with the people who do the work, map where their time goes, and write the requirements for the first version of the system with you, ending with a fixed scope and a fixed build quote. The fee is fully credited against any build signed within 60 days, and if we do not find enough to justify a build, we tell you that instead." },
   { num: '03', phase: 'BUILD', title: 'A Thin Working System', duration: 'Scoped in the Diagnostic', desc: 'We build a small version that runs end to end on your real work, connected to your tools and tested against real situations from your day to day, so your team can use it and push on it while changes are still easy.' },
-  { num: '04', phase: 'BUILD', title: 'Scoped Steps From There', duration: 'Each step quoted first', desc: 'The system grows in steps that are each scoped, priced and agreed before they start, which might mean another workflow, another connection, or an agent built in to handle a piece of the work that needs judgment.' },
+  { num: '04', phase: 'GROW', title: 'Scoped Steps From There', duration: 'Each step quoted first', desc: 'The system grows in steps that are each scoped, priced and agreed before they start, which might mean another workflow, another connection, or an agent built in to handle a piece of the work that needs judgment.' },
   { num: '05', phase: 'OWN', title: 'Yours to Run', duration: 'Ongoing', desc: 'You own the code, the harness that runs, tests and deploys it, and the data, so your team or anyone you choose can take it from there, and if you would rather we keep running and improving it, we offer that under a managed retainer.' },
 ];
 ---
 
-<Base title={title} fileNo="SAVOI-006" classification="FOR PUBLIC RELEASE">
+<Base title={title} description={description} fileNo="SAVOI-003" classification="FOR PUBLIC RELEASE">
   <section class="section section-dark page-hero">
     <div class="container">
-      <div class="page-meta label">FILE 06 · THE PROCESS</div>
+      <div class="page-meta label">FILE 03 · THE PROCESS</div>
       <h1 class="page-title reveal">From How Your Business Runs<br /><span class="page-title-accent">to a System You Own</span></h1>
     </div>
   </section>
@@ -56,9 +57,9 @@ const steps = [
 
   <CTA
     headline="Ready to scope the system you wish existed?"
-    subtext="Thirty minutes, no commitment. Walk us through the work it would need to do, and we will tell you what the thin first version would look like."
+    subtext="It is a thirty minute call with no commitment, where you walk us through the work the system would need to do and we tell you plainly whether a bespoke build fits and what the thin first version would look like."
     buttonLabel="Scope a Bespoke Build"
-    fileNo="SAVOI-006 / CTA"
+    fileNo="SAVOI-003 / CTA"
   />
 </Base>
 

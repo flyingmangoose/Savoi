@@ -11,14 +11,14 @@ const record = [
   { k: 'On the job since', v: '2025 · no sick days' },
   { k: 'Workstation', v: 'A machine in our office. Not someone else\u2019s cloud.' },
   { k: 'Skills in production', v: '30+' },
-  { k: 'Capacity freed', v: '1 full-time equivalent and counting' },
+  { k: 'Capacity freed', v: '1 full-time equivalent' },
 ];
 
 const duties = [
-  { label: 'FINANCE', title: 'Back office, daily', desc: 'Deposit processing, reconciliations, bill approvals, invoicing, payroll entries. One software subscription cancelled outright.' },
-  { label: 'SALES', title: 'Pipeline discipline', desc: 'Staleness reports every Monday morning. Any deal untouched for two weeks gets flagged. Nothing dies of neglect in the CRM.' },
-  { label: 'CONTENT', title: 'First drafts, on schedule', desc: 'Newsletter editions and social drafts in the founder\u2019s voice, every week. Humans edit and publish. The blank page is gone.' },
-  { label: 'DELIVERY', title: 'Metrics without chasing', desc: 'Utilization reports, planned versus actual, timecard follow-ups. Compiled automatically instead of costing a lead an afternoon.' },
+  { label: 'FINANCE', title: 'Back office, daily', desc: 'She handles deposit processing, reconciliations, bill approvals, invoicing and payroll entries, which is how we were able to cancel one software subscription outright.' },
+  { label: 'SALES', title: 'Pipeline discipline', desc: 'She sends a staleness report every Monday morning and flags any deal that has gone two weeks without activity, so nothing in the CRM dies of neglect.' },
+  { label: 'CONTENT', title: 'First drafts, on schedule', desc: 'She drafts the newsletter and social posts in my voice every week, and a person edits and publishes every one of them, so nobody starts from a blank page.' },
+  { label: 'DELIVERY', title: 'Metrics without chasing', desc: 'She compiles utilization reports, planned versus actual, and chases timecards, which used to cost our delivery lead an afternoon.' },
 ];
 
 const transcript = [
@@ -29,11 +29,11 @@ const transcript = [
 ];
 ---
 
-<Base title={title} description={description} fileNo="SAVOI-002" classification="CLIENT ZERO">
+<Base title={title} description={description} fileNo="SAVOI-004" classification="CLIENT ZERO">
   <!-- HERO -->
   <section class="section section-dark page-hero">
     <div class="container">
-      <div class="page-meta label">FILE 03 · CASE FILE 001 · PROOF</div>
+      <div class="page-meta label">FILE 04 · CASE FILE 001 · PROOF</div>
       <div class="irma-hero-row">
         <h1 class="page-title reveal">Meet Irma.<br /><span class="page-title-accent">She runs our firm.</span></h1>
         <span class="stamp stamp-green stamp-animate irma-stamp">Active</span>
@@ -51,7 +51,7 @@ const transcript = [
   <!-- EMPLOYMENT RECORD -->
   <section class="section paper-texture">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 01 — Employment Record</span></div>
+      <div class="rule-label reveal"><span>§ 01 · Employment Record</span></div>
       <div class="record-grid">
         {record.map((item) => (
           <div class="record-item reveal">
@@ -66,7 +66,7 @@ const transcript = [
   <!-- RESULTS -->
   <section class="section section-dark">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 02 — Findings</span></div>
+      <div class="rule-label reveal"><span>§ 02 · Findings</span></div>
       <h2 class="findings-headline reveal">What changed after Irma.</h2>
       <div class="findings-grid">
         <div class="finding reveal">
@@ -90,9 +90,7 @@ const transcript = [
         <p>
           The finance lead stopped processing transactions and started doing finance.
           The delivery lead stopped compiling utilization reports and started planning
-          resources. That is the pattern in every install: the repetitive 80 percent
-          moves to the agent, and the judgment work that was always the valuable part
-          finally gets the calendar.
+          resources. We see the same thing in every bespoke build, where the repetitive work moves into the system and the judgment work, which was always the valuable part, finally gets time on the calendar.
         </p>
       </div>
     </div>
@@ -101,8 +99,8 @@ const transcript = [
   <!-- DUTIES -->
   <section class="section paper-texture">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 03 — Duties</span></div>
-      <h2 class="duties-headline reveal">She does the repetitive work.<br />The team does the judgment.</h2>
+      <div class="rule-label reveal"><span>§ 03 · Duties</span></div>
+      <h2 class="duties-headline reveal">She handles the repetitive work so our team can spend its time on judgment.</h2>
       <div class="grid grid-2 duties-grid">
         {duties.map((duty) => (
           <div class="doc-card reveal">
@@ -144,20 +142,18 @@ const transcript = [
   <!-- CASE OFFICER -->
   <section class="section paper-texture">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 05 — Case Officer</span></div>
+      <div class="rule-label reveal"><span>§ 05 · Case Officer</span></div>
       <div class="officer reveal">
         <div class="officer-photo">
           <img src="/av.jpg" alt="Abhijit Verekar" width="220" height="264" loading="lazy" />
         </div>
         <div class="officer-body">
-          <div class="label officer-label">Built and operated by</div>
+          <div class="label officer-label">Built by</div>
           <h3 class="officer-name">Abhijit Verekar</h3>
           <p class="officer-title">Founder · Author of <em>Start at Zero</em></p>
           <p class="officer-text">
             Twenty years in enterprise technology, most of it watching organizations buy
-            software that still needed a person to operate it. Irma started as an
-            experiment in removing that person from the loop without removing them from
-            the company. Every build since runs on what that experiment taught us.
+            software that still needed a person to operate it. Irma started as an experiment in taking that person out of the loop without taking them out of the company, and what I learned sitting with our own work while building her is the process every client build now runs on.
           </p>
           <p class="officer-text">
             The full build is documented in public, failures included, across a
@@ -172,7 +168,7 @@ const transcript = [
     headline="Want a system built this way for your company?"
     subtext="Book a 30-minute call and walk us through the work that is eating your team's time, and we will tell you what a bespoke build would look like and where an agent like Irma would fit inside it."
     buttonLabel="Scope a Bespoke Build"
-    fileNo="SAVOI-002 / CTA"
+    fileNo="SAVOI-004 / CTA"
   />
 </Base>
 

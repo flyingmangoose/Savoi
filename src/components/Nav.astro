@@ -2,10 +2,10 @@
 const navItems = [
   { label: 'Home', href: '/', file: '01' },
   { label: 'Bespoke Software', href: '/bespoke', file: '02' },
-  { label: 'Meet Irma', href: '/irma', file: '03' },
-  { label: 'Case Study', href: '/case-studies', file: '04' },
-  { label: 'Pricing', href: '/pricing', file: '05' },
-  { label: 'Contact', href: '/contact', file: '06' },
+  { label: 'How It Works', href: '/how-it-works', file: '03' },
+  { label: 'Proof', href: '/case-studies', file: '04', also: ['/irma'] },
+  { label: 'Pricing', href: '/pricing', file: '06' },
+  { label: 'Contact', href: '/contact', file: '10' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -28,7 +28,8 @@ const currentPath = Astro.url.pathname;
     <ul class="nav-tabs" id="nav-tabs">
       {navItems.map((item) => {
         const isActive = currentPath === item.href ||
-          (item.href !== '/' && currentPath.startsWith(item.href));
+          (item.href !== '/' && currentPath.startsWith(item.href)) ||
+          (item.also ?? []).some((p) => currentPath.startsWith(p));
         return (
           <li class={`nav-tab ${isActive ? 'active' : ''}`}>
             <a href={item.href} class="nav-tab-link">

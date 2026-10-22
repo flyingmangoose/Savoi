@@ -3,12 +3,13 @@ import Base from '../layouts/Base.astro';
 import CTA from '../components/CTA.astro';
 
 const title = 'Pricing · Bespoke Builds, Scoped Before They Are Priced | Savoi.ai';
+const description = 'Every Savoi engagement starts with a fixed fee $7,500 Diagnostic that ends in a fixed scope and quote for your bespoke build, with managed agent packages available as a supporting option.';
 
 const packages = [
   {
     num: '01',
     name: 'Starter',
-    tagline: 'One or two agents and the basics',
+    tagline: 'One or two agents inside the systems you already run',
     implementation: '$25,000 to $40,000',
     managed: '$2,500 to $4,000 / month',
     features: ['Planning and design', 'Build and setup', 'Connected to your tools', 'You approve anything important', 'Training and documentation'],
@@ -32,10 +33,10 @@ const packages = [
 ];
 ---
 
-<Base title={title} fileNo="SAVOI-004" classification="FOR PUBLIC RELEASE">
+<Base title={title} description={description} fileNo="SAVOI-006" classification="FOR PUBLIC RELEASE">
   <section class="section section-dark page-hero">
     <div class="container">
-      <div class="page-meta label">FILE 05 · PRICING</div>
+      <div class="page-meta label">FILE 06 · PRICING</div>
       <h1 class="page-title reveal">Scoped First.<br /><span class="page-title-accent">Then Priced.</span></h1>
       <p class="page-subtitle reveal">
         We do not put a sticker price on a bespoke build, because we have no honest way to know what
@@ -51,7 +52,7 @@ const packages = [
       <div class="rule-label reveal"><span>§ 01 · Step One · The Diagnostic</span></div>
       <div class="diag-card reveal">
         <div class="diag-main">
-          <h3 class="diag-title">Service Layer Diagnostic</h3>
+          <h3 class="diag-title">Service Layer Diagnostic (two weeks, fixed fee)</h3>
           <p class="diag-desc">
             Every engagement starts here. Over two weeks we sit with the people who do the work, map
             where their time actually goes and where the exceptions live, and write the requirements
@@ -69,7 +70,7 @@ const packages = [
           <div class="label diag-price-label">Fixed fee</div>
           <div class="diag-price">$7,500</div>
           <div class="diag-credit">Fully credited against any build signed within 60 days</div>
-          <a href="/contact" class="btn">Book a Workflow Call</a>
+          <a href="/contact" class="btn">Scope a Bespoke Build</a>
         </div>
       </div>
     </div>
@@ -83,8 +84,7 @@ const packages = [
           <span class="pricing-num">PRIMARY OFFERING</span>
           <h3 class="build-title">The Bespoke Build</h3>
           <p class="diag-desc">
-            This is the work we lead with, a system built around how your business really runs, and it
-            is scoped and priced after the requirements are written rather than before, because the
+            This is the work we lead with, a system built around how your business really runs after we have sat with your team in the Diagnostic, and it is scoped and priced once the requirements are written rather than before, because the
             price of a bespoke system depends on what it has to do, what it has to connect to and how
             much of it you want in the first version. You can start with one workflow and see how we
             work before taking on more, or bring us the whole picture and we will scope it with you in
@@ -142,7 +142,7 @@ const packages = [
       </div>
       <p class="pricing-note reveal">
         The retainer is the managed part, which covers monitoring, maintenance and model costs, plus a
-        working session every month with the people who built your agents. Whatever we build under a
+        working session every month with the people who built it. Whatever we build under a
         package, the configuration, the knowledge base and the data stay yours, and if you ever decide
         to run it yourself everything stays where it is.
       </p>
@@ -152,7 +152,7 @@ const packages = [
   <CTA
     headline="Not sure where to start?"
     subtext="Book a call and walk us through the work, and we will tell you honestly whether it calls for a bespoke build, a managed agent, or neither, and what the first step would cost."
-    fileNo="SAVOI-007 / CTA"
+    fileNo="SAVOI-006 / CTA"
   />
 </Base>
 

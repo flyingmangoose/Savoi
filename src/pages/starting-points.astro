@@ -3,20 +3,21 @@ import Base from '../layouts/Base.astro';
 import CTA from '../components/CTA.astro';
 
 const title = 'Starting Points · Patterns From Bespoke Builds | Savoi.ai';
+const description = 'Starting points for a Savoi bespoke build, patterns that have already worked in a real business and get shaped around how yours runs before you own them outright.';
 
 const products = [
-  { num: '01', name: 'Proposal Builder', status: 'CURRENT', desc: 'Turns what you know about a prospect into a clear, professional proposal, so nobody on your team starts from a blank page.' },
-  { num: '02', name: 'Revenue Guardian', status: 'CURRENT', desc: 'Watches your pipeline, follows up on quiet deals and chases overdue payments, so fewer opportunities slip through the cracks.' },
-  { num: '03', name: 'Ops Sentinel', status: 'CURRENT', desc: 'Keeps an eye on your processes and spots problems early, so they get fixed before they cost you.' },
+  { num: '01', name: 'Proposal Builder', status: 'CURRENT', desc: 'Takes what your team already knows about a prospect and your own pricing rules and drafts the proposal, so a person reviews and sends it instead of starting from a blank page.' },
+  { num: '02', name: 'Pipeline and Receivables Follow-Up', status: 'CURRENT', desc: 'Watches your pipeline, follows up on quiet deals and chases overdue payments, so fewer opportunities slip through the cracks.' },
+  { num: '03', name: 'Process Exception Watch', status: 'CURRENT', desc: 'Keeps an eye on your processes and spots problems early, so they get fixed before they cost you.' },
   { num: '04', name: 'Meeting to Action', status: 'CURRENT', desc: 'Takes your meeting notes, pulls out the action items, assigns owners and tracks the follow-up, so nothing gets forgotten.' },
   { num: '05', name: 'Sales Ops Reporting for Distributors', status: 'EMERGING', desc: 'Reads your CRM live, compiles pipeline and receivables reporting on a schedule, and flags what needs a person today. Built from a live trading-desk deployment.', featured: true },
 ];
 ---
 
-<Base title={title} fileNo="SAVOI-004" classification="FOR PUBLIC RELEASE">
+<Base title={title} description={description} fileNo="SAVOI-008" classification="FOR PUBLIC RELEASE">
   <section class="section section-dark page-hero">
     <div class="container">
-      <div class="page-meta label">FILE 04 · STARTING POINTS</div>
+      <div class="page-meta label">FILE 08 · STARTING POINTS</div>
       <h1 class="page-title reveal">Starting Points<br /><span class="page-title-accent">for a Bespoke Build.</span></h1>
       <p class="page-subtitle reveal">
         Some of the problems we solve come up again and again, so when a pattern has proven itself in a
@@ -36,7 +37,6 @@ const products = [
             <div class="product-body">
               <div class="product-header">
                 <h3 class="product-name">{p.name}</h3>
-                <span class={`product-status ${p.status === 'EMERGING' ? 'status-emerging' : 'status-current'}`}>{p.status}</span>
               </div>
               <p class="product-desc">{p.desc}</p>
             </div>
@@ -61,8 +61,8 @@ const products = [
   <CTA
     headline="See one that looks like your problem?"
     subtext="Talk to us, and we will tell you honestly whether starting from it makes sense for your business or whether the build should start from scratch."
-    buttonLabel="Talk to Us"
-    fileNo="SAVOI-004 / CTA"
+    buttonLabel="Scope a Bespoke Build"
+    fileNo="SAVOI-008 / CTA"
   />
 </Base>
 

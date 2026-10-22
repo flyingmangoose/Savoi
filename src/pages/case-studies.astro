@@ -3,7 +3,8 @@ import Base from '../layouts/Base.astro';
 import CTA from '../components/CTA.astro';
 import WorkflowDiagram from '../components/WorkflowDiagram.astro';
 
-const title = 'Case Study — A Global Plywood Manufacturer | Savoi.ai';
+const title = 'Case Study · A Global Plywood Manufacturer | Savoi.ai';
+const description = 'How we sat with a plywood trading desk, wrote down how it actually decides, and built a bespoke system that answers from its own CRM and inventory on a machine in its building.';
 
 const problems = [
   'Product and grading expertise lived with a handful of senior people, who got interrupted all day',
@@ -21,10 +22,10 @@ const deliverables = [
 ];
 ---
 
-<Base title={title} fileNo="SAVOI-003" classification="CASE FILE — VERIFIED">
+<Base title={title} description={description} fileNo="SAVOI-005" classification="CASE FILE · VERIFIED">
   <section class="section section-dark page-hero">
     <div class="container">
-      <div class="page-meta label">FILE 03 — CASE FILE 002</div>
+      <div class="page-meta label">FILE 05 · CASE FILE 002</div>
       <h1 class="page-title reveal">A Global Plywood Manufacturer</h1>
       <p class="page-subtitle reveal">
         Hardwood plywood, sold across North America<br />
@@ -39,7 +40,7 @@ const deliverables = [
   <!-- CLIENT FILE -->
   <section class="section paper-texture">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 01 — Client Dossier</span></div>
+      <div class="rule-label reveal"><span>§ 01 · Client Dossier</span></div>
       <div class="client-grid">
         <div class="client-field reveal">
           <div class="label client-field-label">CLIENT</div>
@@ -50,7 +51,7 @@ const deliverables = [
           <div class="client-field-value">Pacific Northwest, USA</div>
         </div>
         <div class="client-field reveal">
-          <div class="label client-field-label">AGENT SCOPE</div>
+          <div class="label client-field-label">SYSTEM SCOPE</div>
           <div class="client-field-value">Internal sales management and reporting for the trading desk. No customer-facing contact.</div>
         </div>
         <div class="client-field reveal">
@@ -64,7 +65,7 @@ const deliverables = [
   <!-- CHALLENGE -->
   <section class="section section-dark">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 02 — The Challenge</span></div>
+      <div class="rule-label reveal"><span>§ 02 · The Challenge</span></div>
       <div class="challenge reveal">
         <p class="challenge-text">
           The company had deep expertise and good systems. What it did not have was a
@@ -85,7 +86,7 @@ const deliverables = [
   <!-- WORKFLOW DIAGRAM -->
   <section class="section paper-texture">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 02.A — Data Flow</span></div>
+      <div class="rule-label reveal"><span>§ 02.A · Data Flow</span></div>
       <div class="diagram-wrap reveal">
         <WorkflowDiagram />
       </div>
@@ -95,11 +96,10 @@ const deliverables = [
   <!-- SOLUTION -->
   <section class="section paper-texture">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 03 — The Solution</span></div>
+      <div class="rule-label reveal"><span>§ 03 · The Solution</span></div>
       <div class="solution reveal">
         <p class="solution-text">
-          We built an agent that holds the company's own expertise and reads its systems
-          live, then put it in the chat channel the desk already works in. It runs on a
+          We sat with the traders long enough to write down how the desk actually decides, then built a bespoke system that holds that expertise, reads the company's systems live and answers in the chat channel the desk already works in, with an agent inside it for the questions that need judgment. It runs on a
           machine in their building with read-only access to the CRM, inventory, and
           mailbox. It never contacts a customer. It works for the traders:
         </p>
@@ -112,13 +112,10 @@ const deliverables = [
           ))}
         </ul>
         <p class="solution-text">
-          Ask it a question and it answers. Leave it alone and it watches. When something
-          needs a person, it goes to that specific person rather than into a report
-          nobody opens.
+          It answers when someone asks and keeps watching when nobody does, and when something needs a
+          person it goes to that specific person rather than into a report nobody opens, so getting an
+          answer from the company's own expertise no longer means waiting for a senior trader to be free.
         </p>
-        <div class="solution-quote">
-          <p class="solution-quote-text">The company's expertise stopped being a calendar problem.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -126,11 +123,11 @@ const deliverables = [
   <!-- UNDER THE HOOD -->
   <section class="section paper-texture">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 03.A — Under the Hood</span></div>
+      <div class="rule-label reveal"><span>§ 03.A · Under the Hood</span></div>
       <div class="hood-grid">
         <div class="hood reveal">
           <div class="hood-k label">WHERE IT RUNS</div>
-          <div class="hood-v">A dedicated machine at the client's own site, running as a system service. No agent workload in a third-party cloud.</div>
+          <div class="hood-v">A dedicated machine at the client's own site, running as a system service. None of it runs in a third-party cloud.</div>
         </div>
         <div class="hood reveal">
           <div class="hood-k label">WHAT IT READS</div>
@@ -138,11 +135,11 @@ const deliverables = [
         </div>
         <div class="hood reveal">
           <div class="hood-k label">ACCESS POSTURE</div>
-          <div class="hood-v">Read-only across every connected system. The agent informs decisions; it does not change the record.</div>
+          <div class="hood-v">Read-only across every connected system, because the desk wanted a system that informs decisions without changing the record, and that rule went into the requirements before anything was built.</div>
         </div>
         <div class="hood reveal">
           <div class="hood-k label">HOW IT SCALES</div>
-          <div class="hood-v">It keeps a working memory of standing instructions and daily context, and hands heavier analysis to purpose-built sub-agents so routine lookups stay fast and cheap.</div>
+          <div class="hood-v">It keeps a working memory of standing instructions and daily context, and it hands heavier analysis to separate components so routine lookups stay quick and inexpensive to run.</div>
         </div>
       </div>
       <p class="hood-note reveal">
@@ -155,15 +152,14 @@ const deliverables = [
   <!-- WHY THIS MATTERS -->
   <section class="section section-dark">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 04 — Why This Matters</span></div>
+      <div class="rule-label reveal"><span>§ 04 · Why This Matters</span></div>
       <h2 class="matters-headline reveal">This company's edge is<br /><span class="matters-accent">now written down.</span></h2>
       <div class="matters reveal">
         <p class="matters-text">
           Which mills can actually hit a spec and which ones only say they can. How to
           read a trade case before it moves a price. Which substitution a particular
           customer will accept and which one loses the order. What margin to hold and
-          when to walk. Decades of judgment, and the reason they win business their
-          competitors do not.
+          when to walk. That is decades of judgment, and it is the reason they win business their competitors do not.
         </p>
         <p class="matters-text">
           All of it is now encoded, which is exactly why it runs on a machine in their
@@ -179,9 +175,9 @@ const deliverables = [
   </section>
 
   <CTA
-    headline="Want this for your team?"
-    subtext="Book a call and walk us through how your business runs, and we will tell you what a bespoke build would look like for you and which parts of it an agent should handle."
-    fileNo="SAVOI-003 / CTA"
+    headline="Want a system built this way for your business?"
+    subtext="Book a call and walk us through how your business runs, and we will tell you plainly whether a bespoke build makes sense and what the thin first version would look like."
+    fileNo="SAVOI-005 / CTA"
   />
 </Base>
 
