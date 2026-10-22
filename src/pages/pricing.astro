@@ -2,33 +2,32 @@
 import Base from '../layouts/Base.astro';
 import CTA from '../components/CTA.astro';
 
-const title = 'Pricing — Managed Agents. Clear Packages. | Savoi.ai';
+const title = 'Pricing · Bespoke Builds, Scoped Before They Are Priced | Savoi.ai';
 
 const packages = [
   {
     num: '01',
     name: 'Starter',
-    tagline: '1–2 AI employees + the basics',
-    implementation: '$25,000 – $40,000',
-    managed: '$2,500 – $4,000 / month',
+    tagline: 'One or two agents and the basics',
+    implementation: '$25,000 to $40,000',
+    managed: '$2,500 to $4,000 / month',
     features: ['Planning and design', 'Build and setup', 'Connected to your tools', 'You approve anything important', 'Training and documentation'],
   },
   {
     num: '02',
     name: 'Growth',
-    tagline: 'AI employees for your whole team',
-    implementation: '$60,000 – $90,000',
-    managed: '$6,000 – $10,000 / month',
-    features: ['Everything in Starter', 'Multiple AI employees working together', 'More tool connections', 'Cost-smart AI routing', 'Tasks that run on their own', 'Quarterly improvements included'],
-    featured: true,
+    tagline: 'Agents working across your whole team',
+    implementation: '$60,000 to $90,000',
+    managed: '$6,000 to $10,000 / month',
+    features: ['Everything in Starter', 'Several agents working together', 'More tool connections', 'The right model for each job', 'Tasks that run on their own', 'Quarterly improvements included'],
   },
   {
     num: '03',
     name: 'Enterprise',
-    tagline: 'Multiple teams + custom security and private deployment',
-    implementation: 'Custom pricing',
-    managed: 'Custom pricing',
-    features: ['Everything in Growth', 'Custom security review', 'Private deployment options', 'Dedicated team', 'Priority support with SLA'],
+    tagline: 'Several teams, your security standards, private deployment',
+    implementation: 'Scoped after requirements',
+    managed: 'Scoped after requirements',
+    features: ['Everything in Growth', 'Security review to your standards', 'Private deployment options', 'Dedicated team', 'Priority support with SLA'],
   },
 ];
 ---
@@ -36,27 +35,34 @@ const packages = [
 <Base title={title} fileNo="SAVOI-004" classification="FOR PUBLIC RELEASE">
   <section class="section section-dark page-hero">
     <div class="container">
-      <div class="page-meta label">FILE 04 — PRICING</div>
-      <h1 class="page-title reveal">Clear Pricing.<br /><span class="page-title-accent">Managed Agents.</span></h1>
+      <div class="page-meta label">FILE 05 · PRICING</div>
+      <h1 class="page-title reveal">Scoped First.<br /><span class="page-title-accent">Then Priced.</span></h1>
+      <p class="page-subtitle reveal">
+        We do not put a sticker price on a bespoke build, because we have no honest way to know what
+        your system costs until we have sat with your team and written the requirements down, so every
+        engagement starts with a fixed fee Diagnostic and ends that stage with a fixed scope and a fixed
+        quote you can say yes or no to.
+      </p>
     </div>
   </section>
 
   <section class="section paper-texture">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 01 — Step One: The Diagnostic</span></div>
+      <div class="rule-label reveal"><span>§ 01 · Step One · The Diagnostic</span></div>
       <div class="diag-card reveal">
         <div class="diag-main">
           <h3 class="diag-title">Service Layer Diagnostic</h3>
           <p class="diag-desc">
-            Every engagement starts here. In two weeks we map the repetitive work inside
-            every role on your team, tell you which job an agent should absorb first,
-            and hand you a fixed quote for the build. If we don't find enough to justify
-            an agent, we tell you that instead.
+            Every engagement starts here. Over two weeks we sit with the people who do the work, map
+            where their time actually goes and where the exceptions live, and write the requirements
+            for the first version of the system together with you. At the end you get a fixed scope and
+            a fixed quote for the build, and if we do not find enough to justify one, we tell you that
+            instead of selling you something.
           </p>
           <ul class="doc-list">
-            <li>An 80/20 map of where your team's time actually goes</li>
-            <li>The first role an agent should own, with the business case</li>
-            <li>A fixed build quote. No hourly meter, no surprises</li>
+            <li>A plain map of where your team's time actually goes</li>
+            <li>Written requirements for the thin first version of the system</li>
+            <li>A fixed scope and a fixed build quote, with no hourly meter</li>
           </ul>
         </div>
         <div class="diag-price-col">
@@ -69,13 +75,50 @@ const packages = [
     </div>
   </section>
 
+  <section class="section paper-texture">
+    <div class="container">
+      <div class="rule-label reveal"><span>§ 02 · The Bespoke Build</span></div>
+      <div class="build-card reveal">
+        <div class="build-main">
+          <span class="pricing-num">PRIMARY OFFERING</span>
+          <h3 class="build-title">The Bespoke Build</h3>
+          <p class="diag-desc">
+            This is the work we lead with, a system built around how your business really runs, and it
+            is scoped and priced after the requirements are written rather than before, because the
+            price of a bespoke system depends on what it has to do, what it has to connect to and how
+            much of it you want in the first version. You can start with one workflow and see how we
+            work before taking on more, or bring us the whole picture and we will scope it with you in
+            steps, and in both cases each step is quoted and agreed before it starts.
+          </p>
+          <ul class="doc-list">
+            <li>Requirements written with your team before anything is built</li>
+            <li>A thin working system first, then scoped steps from there</li>
+            <li>Agents built into the system wherever they are the right tool for the job</li>
+            <li>You own the code, the harness that runs, tests and deploys it, and the data</li>
+          </ul>
+        </div>
+        <div class="diag-price-col">
+          <div class="label diag-price-label">Pricing</div>
+          <div class="build-price">Scoped and priced after requirements</div>
+          <div class="diag-credit">Each step is quoted in writing before work begins</div>
+          <a href="/bespoke" class="btn btn-secondary">How a Bespoke Build Runs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-dark">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 02 — Managed Agent Packages</span></div>
+      <div class="rule-label reveal"><span>§ 03 · Managed Agent Option</span></div>
+      <p class="pricing-intro reveal">
+        Some clients want agents running inside the systems they already have more than they want a
+        new system, and some want us to keep running what we built for them, so we still offer managed
+        agents as a supporting option, priced in the packages below with an implementation fee and a
+        monthly management retainer.
+      </p>
       <div class="grid grid-3 pricing-grid">
         {packages.map((pkg) => (
-          <div class={`pricing-card reveal ${pkg.featured ? 'pricing-featured' : ''}`}>
-            {pkg.featured && <div class="pricing-badge">RECOMMENDED</div>}
+          <div class="pricing-card reveal">
             <div class="pricing-card-header">
               <span class="pricing-num">PKG {pkg.num}</span>
               <h3 class="pricing-name">{pkg.name}</h3>
@@ -98,22 +141,39 @@ const packages = [
         ))}
       </div>
       <p class="pricing-note reveal">
-        The retainer is the managed part. Monitoring, maintenance, model costs, and a
-        working session every month with the people who built your agents. We price
-        against the role the agent absorbs, not against software. Compare the numbers
-        above to the salary of the hire you won't need to make.
+        The retainer is the managed part, which covers monitoring, maintenance and model costs, plus a
+        working session every month with the people who built your agents. Whatever we build under a
+        package, the configuration, the knowledge base and the data stay yours, and if you ever decide
+        to run it yourself everything stays where it is.
       </p>
     </div>
   </section>
 
   <CTA
-    headline="Not sure which one fits?"
-    subtext="Book a call — we'll look at your actual business and tell you honestly what makes sense."
+    headline="Not sure where to start?"
+    subtext="Book a call and walk us through the work, and we will tell you honestly whether it calls for a bespoke build, a managed agent, or neither, and what the first step would cost."
     fileNo="SAVOI-007 / CTA"
   />
 </Base>
 
 <style>
+  .page-subtitle { font-size: 1.125rem; line-height: 1.65; color: var(--ink-faint); max-width: 680px; margin-top: 1.5rem; }
+  .pricing-intro { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-faint); max-width: 70ch; margin-bottom: 2rem; }
+  .build-card {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2.5rem;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--classification);
+    border-radius: var(--radius);
+    padding: 2.25rem;
+    align-items: start;
+  }
+  .build-title { font-size: 1.75rem; margin: 0.35rem 0 0.75rem; }
+  .build-price { font-size: 1.375rem; font-weight: 700; line-height: 1.25; font-family: 'Spectral', serif; }
+  @media (max-width: 800px) { .build-card { grid-template-columns: 1fr; } }
+
   .page-hero { padding: 5rem 0 4rem; }
   .page-meta { color: var(--file-tab); margin-bottom: 1rem; }
   .page-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; }
@@ -130,7 +190,7 @@ const packages = [
     color: var(--ink-soft);
     max-width: 760px;
   }
-  /* cards sit on a dark section, which sets color:paper — reassert ink inside them */
+  /* cards sit on a dark section, which sets color:paper, so reassert ink inside them */
   .pricing-card, .pricing-card * { color: var(--ink); }
   .pricing-card .pricing-num { color: var(--ink-muted); }
   .pricing-card .pricing-price-label { color: var(--classification); }

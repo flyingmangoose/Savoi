@@ -6,36 +6,36 @@ const title = 'Common Questions | Savoi.ai';
 
 const faqs = [
   {
-    q: 'What is a managed agent?',
-    a: "An AI employee we build for one job in your company and then run for you under a monthly retainer. Your business already works this way: an MSP is accountable for your network, a payroll company is accountable for payroll. Savoi is accountable for your AI employees. We build them, install them in your tools, monitor them, and improve them. You get the work, not another system to babysit.",
+    q: 'What do you mean by bespoke software?',
+    a: "A system built around how your business really runs rather than around what a product happens to support. We sit with the people who do the work, write the requirements down with you, ship a thin working version early, and grow it in scoped steps from there. When we are done you own the code in your repository, the harness that runs, tests and deploys it, and the data in systems you control, so any capable team can pick it up after us.",
+  },
+  {
+    q: 'Why bespoke, when we could just buy an AI agent off the shelf?',
+    a: "You can, and plenty of the off-the-shelf agents are good now, which is exactly why deploying one is no longer the hard part. What none of them knows is how your business actually runs, like which exceptions matter, why the spreadsheet next to the ERP exists, and what your senior people decide without thinking about it. That understanding is what we bring, and the bespoke system is where it ends up, with agents built in wherever they are the right tool for a piece of the work.",
+  },
+  {
+    q: 'Do you still offer managed agents?',
+    a: "Yes, as a supporting option rather than the main thing we sell. Some clients want agents working inside the systems they already have, and some want us to keep running what we built for them, so we offer managed agent packages with an implementation fee and a monthly retainer that covers monitoring, maintenance and improvement. The packages and their figures are on the pricing page, and whatever we run for you stays yours.",
+  },
+  {
+    q: 'How do you price a bespoke build?',
+    a: "After the requirements are written, not before, because we have no honest way to know what your system costs until we understand what it has to do. Every engagement starts with the Service Layer Diagnostic, a two week fixed fee engagement that ends with a fixed scope and a fixed quote, and the fee is credited against any build signed within 60 days. Every step after the first is scoped and quoted before it starts.",
   },
   {
     q: 'Our main system is old. Can this even connect to it?',
-    a: "Usually yes, and this is where we differ from cloud AI tools. A hosted product can only reach systems already exposed to the internet with a modern API, which rules out most of what actually runs mid-market businesses. Your agent runs on a machine inside your network, so it can read the ERP on the server in the back room, the database behind a home-grown tool, or a scheduled export the system already produces. The working rule: if someone on your team can get to it, we can usually build the agent a way to get to it. We confirm this during the Diagnostic before anyone commits to a build.",
-  },
-  {
-    q: 'We know our products better than anyone. Why do we need this?',
-    a: "Exactly. The problem isn't that you don't know your products — it's that your best people spend all day answering the same questions instead of doing their real jobs. The AI becomes the always-on version of your best expert, so your people only deal with the conversations that actually need them.",
-  },
-  {
-    q: 'Why not just use ChatGPT?',
-    a: "ChatGPT is a brilliant intern with amnesia. It doesn't remember your products, can't access your systems, can't take any action, and doesn't sound like your brand. Every conversation starts from zero. What we build is a specialist employee that already knows your catalog, talks like you, and can actually do things — not just talk about them.",
-  },
-  {
-    q: 'What AI technology do you use?',
-    a: "We use different AI for different jobs. The hard, important work gets the best AI available. The simple, repetitive stuff gets faster, cheaper AI. This keeps quality high where it matters and costs down everywhere else. You're never locked into one provider.",
+    a: "Usually yes, and this is where a bespoke build differs from cloud AI tools, which can only reach systems already exposed to the internet with a modern API. We can run the system inside your network, so it can read the ERP on the server in the back room, the database behind a home-grown tool, or a scheduled export the system already produces. Our working rule is that if someone on your team can get to it, we can usually build the system a way to get to it, and we confirm that during the Diagnostic before anyone commits to a build.",
   },
   {
     q: "Doesn't Salesforce or Microsoft Copilot already do this?",
-    a: "Those tools are great — inside their own world. But most real businesses use a mix of Slack, email, a CRM, an inventory system, and a lot of knowledge that lives in people's heads. Platform tools can't cross those boundaries. We build AI that works across all your tools and handles the whole job. Many of our clients already use Copilot or Salesforce and still need this.",
+    a: "Those tools are good inside their own world, but most real businesses run on a mix of Slack, email, a CRM, an inventory system and a lot of knowledge that lives in people's heads, and platform tools do not cross those boundaries well. A bespoke system is built to work across all of it and handle the whole job, which is why a business that already uses Copilot or Salesforce can still need one.",
   },
   {
-    q: 'How do you stop the AI from giving wrong answers?',
-    a: "Two safeguards. First, the AI only answers based on the knowledge and tools we give it — your approved materials, not the open internet. Second, anything important (pricing, commitments, technical claims) can go through you for approval first. Simple questions run on their own. You decide where the line is.",
+    q: 'How do you keep the system from getting things wrong?',
+    a: "The rules are written into the requirements before anything is built, so the system works from your approved data and your own tools rather than the open internet, and anything important, like pricing, commitments or technical claims, can go to a person for approval first. Because you own the harness that tests the system, those rules are checked every time it changes, not just on the day it launches.",
   },
   {
-    q: 'This seems expensive. Can\u2019t we just build it ourselves?',
-    a: "You can try. Most companies that do end up with something that works in a demo but falls apart when things change — a new product, a new team member, a new tool. What you're paying for is a system that actually works in production, with monitoring, cost controls, and an architecture that doesn't break when your business grows. The real cost of doing it yourself is usually higher once you count the time lost.",
+    q: "Can't we just build it ourselves?",
+    a: "You can, and if you have the team for it we will tell you so. In my experience the hard part is not writing the code, it is understanding the work well enough to know what to build, and keeping it working when a new product, a new person or a new tool shows up. That understanding, written down and turned into a tested system you own, is what you get from us, and since you own the code and the harness, your own team can take it over whenever you are ready.",
   },
 ];
 ---
@@ -43,7 +43,7 @@ const faqs = [
 <Base title={title} fileNo="SAVOI-008" classification="FOR PUBLIC RELEASE">
   <section class="section section-dark page-hero">
     <div class="container">
-      <div class="page-meta label">FILE 08 — Q&A</div>
+      <div class="page-meta label">FILE 08 · Q&A</div>
       <h1 class="page-title reveal">Questions You Probably Have</h1>
     </div>
   </section>
@@ -64,7 +64,7 @@ const faqs = [
 
   <CTA
     headline="Still have questions?"
-    subtext="Book a call. We'll answer everything honestly — no sales pitch, no pressure."
+    subtext="Book a call and ask them, and we will answer honestly, including telling you when a bespoke build is not the right answer for your business."
     fileNo="SAVOI-008 / CTA"
   />
 </Base>

@@ -2,32 +2,33 @@
 import Base from '../layouts/Base.astro';
 import CTA from '../components/CTA.astro';
 
-const title = 'Micro SaaS — Focused Products. High ROI. | Savoi.ai';
+const title = 'Starting Points · Patterns From Bespoke Builds | Savoi.ai';
 
 const products = [
-  { num: '01', name: 'Proposal Builder', status: 'CURRENT', desc: 'Turn what you know about a prospect into a clear, professional proposal fast. No more staring at a blank page.' },
-  { num: '02', name: 'Revenue Guardian', status: 'CURRENT', desc: 'Watches your pipeline, follows up on quiet deals, and chases overdue payments. Fewer opportunities slip through the cracks.' },
-  { num: '03', name: 'Ops Sentinel', status: 'CURRENT', desc: 'Keeps an eye on your processes, spots problems early, and helps fix them before they cost you.' },
-  { num: '04', name: 'Meeting → Action', status: 'CURRENT', desc: 'Takes your meeting notes, pulls out the action items, assigns owners, and tracks follow-up. Nothing gets forgotten.' },
-  { num: '05', name: 'Sales Ops Reporting for Distributors', status: 'EMERGING', desc: 'Reads your CRM live, compiles pipeline and receivables reporting on a schedule, and flags what needs a human today. Built from a live trading-desk deployment.', featured: true },
+  { num: '01', name: 'Proposal Builder', status: 'CURRENT', desc: 'Turns what you know about a prospect into a clear, professional proposal, so nobody on your team starts from a blank page.' },
+  { num: '02', name: 'Revenue Guardian', status: 'CURRENT', desc: 'Watches your pipeline, follows up on quiet deals and chases overdue payments, so fewer opportunities slip through the cracks.' },
+  { num: '03', name: 'Ops Sentinel', status: 'CURRENT', desc: 'Keeps an eye on your processes and spots problems early, so they get fixed before they cost you.' },
+  { num: '04', name: 'Meeting to Action', status: 'CURRENT', desc: 'Takes your meeting notes, pulls out the action items, assigns owners and tracks the follow-up, so nothing gets forgotten.' },
+  { num: '05', name: 'Sales Ops Reporting for Distributors', status: 'EMERGING', desc: 'Reads your CRM live, compiles pipeline and receivables reporting on a schedule, and flags what needs a person today. Built from a live trading-desk deployment.', featured: true },
 ];
 ---
 
 <Base title={title} fileNo="SAVOI-004" classification="FOR PUBLIC RELEASE">
   <section class="section section-dark page-hero">
     <div class="container">
-      <div class="page-meta label">FILE 04 — OUR TOOLS</div>
-      <h1 class="page-title reveal">Simple Tools.<br /><span class="page-title-accent">Big Time Savings.</span></h1>
+      <div class="page-meta label">FILE 04 · STARTING POINTS</div>
+      <h1 class="page-title reveal">Starting Points<br /><span class="page-title-accent">for a Bespoke Build.</span></h1>
       <p class="page-subtitle reveal">
-        We take what works in our AI employees and turn it into simple, affordable tools.<br />
-        Each one solves one painful problem. No bloat, no learning curve, no nonsense.
+        Some of the problems we solve come up again and again, so when a pattern has proven itself in a
+        real business we keep it as a starting point, which means your build can begin from something
+        that already works and then get shaped around how your business actually runs.
       </p>
     </div>
   </section>
 
   <section class="section paper-texture">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 01 — Our Tools</span></div>
+      <div class="rule-label reveal"><span>§ 01 · The Patterns</span></div>
       <div class="products">
         {products.map((p) => (
           <div class={`product-row reveal ${p.featured ? 'product-featured' : ''}`}>
@@ -47,19 +48,19 @@ const products = [
 
   <section class="section section-dark">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 02 — Our Rule</span></div>
+      <div class="rule-label reveal"><span>§ 02 · Our Rule</span></div>
       <div class="philosophy reveal">
         <p class="philosophy-text">
-          We only build tools we've already proven work in real businesses.
+          We only keep a pattern once it has already worked in a real business.
         </p>
-        <p class="philosophy-sub">No experiments. No vaporware. Only what's already saved someone time and money.</p>
+        <p class="philosophy-sub">Nothing here is an experiment or a slide, and whichever one you start from, the version we build for you is yours to own like the rest of the system.</p>
       </div>
     </div>
   </section>
 
   <CTA
-    headline="Want a specific tool or early access?"
-    subtext="Talk to us. We'll tell you honestly what's ready, what's coming, and what fits your business."
+    headline="See one that looks like your problem?"
+    subtext="Talk to us, and we will tell you honestly whether starting from it makes sense for your business or whether the build should start from scratch."
     buttonLabel="Talk to Us"
     fileNo="SAVOI-004 / CTA"
   />

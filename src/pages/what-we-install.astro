@@ -3,21 +3,21 @@ import Base from '../layouts/Base.astro';
 import CTA from '../components/CTA.astro';
 import SystemDiagram from '../components/SystemDiagram.astro';
 
-const title = 'What We Install — Production Multi-Agent Systems | Savoi.ai';
+const title = 'What We Build · Bespoke Systems, With Agents Where They Fit | Savoi.ai';
 const capabilities = [
-  { num: '01', title: 'A Team of AI Specialists', desc: 'Not one AI doing everything. Different AI employees for sales, support, operations, and more. Each one knows its job and hands off cleanly to the next.' },
-  { num: '02', title: 'It Knows Your Business', desc: 'It learns your products, your customers, and your way of working. It gets smarter the longer it runs. No starting from zero every time.' },
-  { num: '03', title: 'It Works in Your Tools', desc: 'Your CRM, email, Slack or Teams, calendar, inventory system. It works where you already work. No new software to learn.' },
-  { num: '04', title: 'Smart About Cost', desc: 'It uses the right AI for the right job. Tough decisions get the best AI. Simple stuff gets the fast, affordable AI. You get quality where it matters without overpaying.' },
-  { num: '05', title: 'It Runs on Its Own', desc: 'Scheduled tasks, monitoring, follow-ups, alerts. Things that need to happen every day or every week just happen. Nobody has to remember.' },
-  { num: '06', title: 'You Stay in Control', desc: 'Anything involving pricing, commitments, or big decisions can require your approval first. You decide what the AI can do on its own and what comes to you.' },
+  { num: '01', title: 'Built From Your Requirements', desc: 'Every system starts with requirements written alongside the people who do the work, so what gets built reflects how your business really runs, exceptions included, rather than how a product thinks a business like yours ought to run.' },
+  { num: '02', title: 'It Knows Your Business', desc: 'Your products, your customers, your pricing rules and the judgment calls your senior people make every day end up written into the system, which means it does not start from zero every time someone asks it something.' },
+  { num: '03', title: 'It Works in Your Tools', desc: 'Your CRM, ERP, email, Slack or Teams, calendar and inventory system are where the work already happens, so that is where the system does its work and reports back, with nothing new for your team to log into.' },
+  { num: '04', title: 'Agents Where They Fit', desc: 'When part of the job needs judgment over messy inputs, like reading a bill or drafting a reply, we build an AI agent into the system for that piece, and when a plain rule or a scheduled report does it better, that is what we build instead.' },
+  { num: '05', title: 'It Runs on Its Own', desc: 'Scheduled work, monitoring, follow-ups and alerts that need to happen every day or every week just happen, so nobody on your team has to remember to kick them off.' },
+  { num: '06', title: 'You Stay in Control', desc: 'Anything involving pricing, commitments or big decisions can require a person to approve it first, and you decide where that line sits and what the system is allowed to do on its own.' },
 ];
 
 const phases = [
-  { num: '01', title: 'We Learn Your Business', duration: '2–3 weeks', desc: 'We find the tasks eating the most time and money. Then we design your AI team: who does what, what tools they use, and where you stay in control.' },
-  { num: '02', title: 'We Build and Connect', duration: '3–6 weeks', desc: 'We build the AI, connect it to your tools, train it on your business, and put the right guardrails in place.' },
-  { num: '03', title: 'We Train Your Team', duration: 'Ongoing', desc: 'We show your people how to work with the AI. We document everything. We agree on what success looks like.' },
-  { num: '04', title: 'We Keep It Running', duration: 'Retainer', desc: 'Every installation runs under a management retainer. Monitoring, maintenance, improvements, and new AI employees as you grow. When something breaks, our phone rings.' },
+  { num: '01', title: 'We Learn the Business', duration: 'Diagnostic', desc: 'We sit with your team, find the work eating the most time and money, and write the requirements for the first version of the system together with you.' },
+  { num: '02', title: 'We Ship a Thin System', duration: 'First build', desc: 'We build a small version that runs end to end on your real work, connected to your tools with the right guardrails in place, so your team can use it and react to it early.' },
+  { num: '03', title: 'We Grow It in Steps', duration: 'Scoped steps', desc: 'Each extension is scoped and agreed before it starts, and we document everything as we go so your people know exactly how the system works.' },
+  { num: '04', title: 'You Own It', duration: 'Handover', desc: 'You keep the code, the harness that runs, tests and deploys it, and the data, and you can run it yourself or have us keep running it under a managed retainer.' },
 ];
 ---
 
@@ -25,11 +25,12 @@ const phases = [
   <!-- HERO -->
   <section class="section section-dark page-hero">
     <div class="container">
-      <div class="page-meta label">FILE A01 — WHAT WE INSTALL</div>
-      <h1 class="page-title reveal">AI Employees for Your Business</h1>
+      <div class="page-meta label">FILE A01 · WHAT WE BUILD</div>
+      <h1 class="page-title reveal">Bespoke Systems, With Agents Where They Fit</h1>
       <p class="page-subtitle reveal">
-        We don't drop in a chatbot and walk away.<br />
-        We build a team of AI employees that work inside your business and handle real work.
+        We do not install a product and walk away. We build a system around how your business really
+        runs, put AI agents inside it wherever they are the right tool for a piece of the work, and
+        hand you the whole thing to own, including the code, the harness that runs it and the data.
       </p>
     </div>
   </section>
@@ -37,7 +38,7 @@ const phases = [
   <!-- CORE CAPABILITIES -->
   <section class="section paper-texture">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 01 — What Your AI Employee Can Do</span></div>
+      <div class="rule-label reveal"><span>§ 01 · What a Bespoke System Can Do</span></div>
       <div class="grid grid-2">
         {capabilities.map((cap) => (
           <div class="doc-card cap-card reveal">
@@ -55,7 +56,7 @@ const phases = [
   <!-- SYSTEM DIAGRAM -->
   <section class="section section-dark">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 02 — How Your AI Team Is Structured</span></div>
+      <div class="rule-label reveal"><span>§ 02 · How the Agents Inside a Build Are Structured</span></div>
       <div class="diagram-wrap reveal">
         <SystemDiagram />
       </div>
@@ -65,7 +66,7 @@ const phases = [
   <!-- HOW ENGAGEMENTS WORK -->
   <section class="section section-dark">
     <div class="container">
-      <div class="rule-label reveal"><span>§ 03 — How We Work With You</span></div>
+      <div class="rule-label reveal"><span>§ 03 · How We Work With You</span></div>
       <div class="phases">
         {phases.map((phase) => (
           <div class="phase reveal">
@@ -82,8 +83,9 @@ const phases = [
   </section>
 
   <CTA
-    headline="Want to see what an AI employee would do in your business?"
-    subtext="Book a 30-minute call. We'll find 1–2 things eating your time and show you exactly what we'd build."
+    headline="Want to see what we would build for your business?"
+    subtext="Book a 30-minute call and walk us through the work that is eating your team's time, and we will tell you plainly what a bespoke build would look like and where agents would fit inside it."
+    buttonLabel="Scope a Bespoke Build"
     fileNo="SAVOI-002 / CTA"
   />
 </Base>
