@@ -45,6 +45,11 @@ const description = "Book a 30 minute call with Savoi, walk us through the work 
             </label>
             <textarea class="form-textarea" id="process" name="process" rows="4" placeholder="Tell us about the repetitive stuff that's slowing you down..."></textarea>
           </div>
+          <input type="hidden" id="utm_source" name="utm_source" />
+          <input type="hidden" id="utm_medium" name="utm_medium" />
+          <input type="hidden" id="utm_campaign" name="utm_campaign" />
+          <input type="hidden" id="utm_content" name="utm_content" />
+          <input type="hidden" id="utm_term" name="utm_term" />
           <button type="submit" class="btn contact-submit" id="savoi-submit">Book My Call</button>
           <p class="form-status" id="savoi-form-status" role="status" aria-live="polite"></p>
         </form>
@@ -119,6 +124,34 @@ const description = "Book a 30 minute call with Savoi, walk us through the work 
   const status = document.getElementById('savoi-form-status');
   const submitBtn = document.getElementById('savoi-submit');
 
+  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  const LANDING_KEY = 'savoi_landing_url';
+
+  function ssGet(k) { try { return sessionStorage.getItem(k) || ''; } catch { return ''; } }
+  function ssSet(k, v) { try { sessionStorage.setItem(k, v); } catch {} }
+
+  // Read utm_* from the current URL on load and keep them in sessionStorage.
+  (function captureUtms() {
+    const params = new URLSearchParams(window.location.search);
+    if (UTM_KEYS.some((k) => params.get(k))) {
+      UTM_KEYS.forEach((k) => {
+        const v = params.get(k);
+        if (v) ssSet(k, v); else { try { sessionStorage.removeItem(k); } catch {} }
+      });
+      ssSet(LANDING_KEY, window.location.href);
+    } else if (!ssGet(LANDING_KEY)) {
+      ssSet(LANDING_KEY, window.location.href);
+    }
+  })();
+
+  function fillUtmInputs() {
+    UTM_KEYS.forEach((k) => {
+      const el = document.getElementById(k);
+      if (el) el.value = ssGet(k);
+    });
+  }
+  fillUtmInputs();
+
   function getCookie(name) {
     const m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
     return m ? m[2] : undefined;
@@ -144,10 +177,16 @@ const description = "Book a 30 minute call with Savoi, walk us through the work 
     const process = (document.getElementById('process')).value.trim();
     if (process) fields.push({ objectTypeId: '0-1', name: 'message', value: process });
 
+    fillUtmInputs();
+    UTM_KEYS.forEach((k) => {
+      const v = (document.getElementById(k)).value;
+      if (v) fields.push({ objectTypeId: '0-1', name: k, value: v });
+    });
+
     const payload = {
       fields,
       context: {
-        pageUri: window.location.href,
+        pageUri: ssGet(LANDING_KEY) || window.location.href,
         pageName: document.title,
       },
     };
@@ -168,6 +207,7 @@ const description = "Book a 30 minute call with Savoi, walk us through the work 
         status.textContent = 'RECEIVED. WE RESPOND WITHIN ONE BUSINESS DAY.';
         status.className = 'form-status ok';
         form.reset();
+        fillUtmInputs();
       } else {
         throw new Error('submit failed');
       }
